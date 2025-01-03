@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notable Events</title>
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+        OneSignalDeferred.push(async function(OneSignal) {
+            await OneSignal.init({
+                appId: "25245e3f-d2a0-439d-b12b-7ded8a71433b",
+            });
+        });
+    </script>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Pacifico&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
     <style>
