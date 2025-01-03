@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notable Events</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Pacifico&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .updates-text {
+            position: fixed;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: #ff0000;
+            font-family: 'Roboto Slab', serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInOut 3s infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .updates-text {
+                font-size: 1.2rem;
+                right: 0.5rem;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .updates-text {
+                font-size: 0.6rem;
+                right: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Notable Events</h1>
+        <h2 class="daily-dates">DAILY DATES</h2>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#" id="projects-link">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="language-switch">Switch to Hindi</button>
+    </header>
+    <section id="YOU KNOW">
+        <h2>YOU KNOW</h2>
+        <div id="events">
+            <p class="en"><b>Historical Events on January 1</b></p>
+            <p class="hi" style="display: none;">1 जनवरी के ऐतिहासिक घटनाक्रम</p>
+            <p class="en">● 1st January 1880: ‘Money order’ system started in the country.</p>
+            <p class="hi" style="display: none;">● 1 जनवरी 1880: देश में 'मनी ऑर्डर' प्रणाली शुरू हुई।</p>
+            <p class="en">● 1st January 1756: The Nicobar Islands were annexed by Denmark and renamed New Denmark.</p>
+            <p class="hi" style="display: none;">● 1 जनवरी 1756: निकोबार द्वीप समूह को डेनमार्क द्वारा कब्जा कर लिया गया और नया डेनमार्क नाम दिया गया।</p>
+            <p class="en">● 1st January 1808: Slave imports were banned in the United States.</p>
+            <p class="hi" style="display: none;">● 1 जनवरी 1808: संयुक्त राज्य अमेरिका में दास आयात पर प्रतिबंध लगा दिया गया।</p>
+            <p class="en">● 1st January 1818: The battle of Bhima Koregaon – 2nd Bombay Native Infantry Battalion, led by F. F. Stanton, defeated 28,000 Peshwa troops at Bhima Koregaon, with only 834 soldiers.</p>
+            <p class="hi" style="display: none;">● 1 जनवरी 1818: भीमा कोरेगांव की लड़ाई - एफ. एफ. स्टैंटन के नेतृत्व में 2nd बॉम्बे नेटिव इन्फैंट्री बटालियन ने केवल 834 सैनिकों के साथ भीमा कोरेगांव में 28,000 पेशवा सैनिकों को हराया।</p>
+            <p class="en">● 1st January 1848: Mahatma Jyotirao Phule and Savitribai Phule started the first girls’ school at Bhide Wada, Pune.</p>
+            <p class="hi" style="display: none;">● 1 जनवरी 1848: महात्मा ज्योतिराव फुले और सावित्रीबाई फुले ने पुणे के भिडे वाडा में पहला लड़कियों का स्कूल शुरू किया।</p>
+            <p class="en">● 1st January 1862: The Indian Penal Code came into existence.</p>
+            <p class="hi" style="display: none;">● 1 जनवरी 1862: भारतीय दंड संहिता अस्तित्व में आई।</p>
+            <p class="en">● 1st January 1877: Queen Victoria of England became the Empress of India.</p>
+            <p class="hi" style="display: none;">● 1 जनवरी 1877: इंग्लैंड की रानी विक्टोरिया भारत की महारानी बनीं।</p>
+            <p class="en">● 1st January 1903: In Great Delhi Darbar, marked the coronation of King Edward VII as Emperor of India.</p>
+            <p class="hi" style="display: none;">● 1 जनवरी 1903: ग्रेट दिल्ली दरबार में, किंग एडवर्ड VII का भारत के सम्राट के रूप में राज्याभिषेक हुआ।</p>
+            <!-- Add more historical events as needed -->
+            <div id="more-events" style="display: none;">
+                <p class="en"><b>Historical Events on January 2</b></p>
+                <p class="hi" style="display: none;">2 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">● 2nd Jan 1885: Establishment of Ferguson College in Pune.</p>
+                <p class="hi" style="display: none;">● 2 जनवरी 1885: पुणे में फर्ग्यूसन कॉलेज की स्थापना।</p>
+                <p class="en">● 2nd Jan 1936: Establishment of Madhya Pradesh High Court.</p>
+                <p class="hi" style="display: none;">● 2 जनवरी 1936: मध्य प्रदेश उच्च न्यायालय की स्थापना।</p>
+                <p class="en">● 2nd Jan 1942: During World War II, the Japanese army captured Manila, the capital of the Philippines.</p>
+                <p class="hi" style="display: none;">● 2 जनवरी 1942: द्वितीय विश्व युद्ध के दौरान, जापानी सेना ने फिलीपींस की राजधानी मनीला पर कब्जा कर लिया।</p>
+                <p class="en">● 2nd Jan 1951: Russia launched Luna-1 spacecraft towards the moon.</p>
+                <p class="hi" style="display: none;">● 2 जनवरी 1951: रूस ने चंद्रमा की ओर लूना-1 अंतरिक्ष यान लॉन्च किया।</p>
+                <p class="en">● 2nd Jan 1954: India established its highest civilian awards, the Bharat Ratna and the Padma Vibhushan.</p>
+                <p class="hi" style="display: none;">● 2 जनवरी 1954: भारत ने अपने सर्वोच्च नागरिक पुरस्कार, भारत रत्न और पद्म विभूषण की स्थापना की।</p>
+                <p class="en">● 2nd Jan 1975: Railway Minister Lalit Narayan Mishra had injured in a bomb blast in the Samastipur district of Bihar.</p>
+                <p class="hi" style="display: none;">● 2 जनवरी 1975: बिहार के समस्तीपुर जिले में बम विस्फोट में रेल मंत्री ललित नारायण मिश्रा घायल हो गए थे।</p>
+                <p class="en">● 2nd Jan 1989: Safdar Hashmi, a Marxist street playwright, writer, director, poet, and lyricist, was fatally attacked during a street play in Jhandapur, Uttar Pradesh.</p>
+                <p class="hi" style="display: none;">● 2 जनवरी 1989: सफदर हाशमी, एक मार्क्सवादी स्ट्रीट नाटककार, लेखक, निर्देशक, कवि और गीतकार, उत्तर प्रदेश के झंडापुर में एक स्ट्रीट प्ले के दौरान घातक हमला किया गया।</p>
+                <p class="en"><b>Historical Events on January 3</b></p>
+                <p class="hi" style="display: none;">3 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">● 3rd Jan 1496: Leonardo da Vinci’s flight experiment failed.</p>
+                <p class="hi" style="display: none;">● 3 जनवरी 1496: लियोनार्डो दा विंची का उड़ान प्रयोग विफल रहा।</p>
+                <p class="en">● 3rd Jan 1925: Benito Mussolini became a dictator of Italy.</p>
+                <p class="hi" style="display: none;">● 3 जनवरी 1925: बेनिटो मुसोलिनी इटली के तानाशाह बने।</p>
+                <p class="en">● 3rd Jan 1929: Mahatma Gandhi met Lord Irwin.</p>
+                <p class="hi" style="display: none;">● 3 जनवरी 1929: महात्मा गांधी ने लॉर्ड इरविन से मुलाकात की।</p>
+                <p class="en">● 3rd Jan 1943: Information about missing people broadcasted for the first time on television.</p>
+                <p class="hi" style="display: none;">● 3 जनवरी 1943: लापता लोगों की जानकारी पहली बार टेलीविजन पर प्रसारित की गई।</p>
+                <p class="en">● 3rd Jan 1947: The first televised telecast of the proceedings of the US Parliament took place.</p>
+                <p class="hi" style="display: none;">● 3 जनवरी 1947: अमेरिकी संसद की कार्यवाही का पहला टेलीविज़न प्रसारण हुआ।</p>
+                <p class="en">● 3rd Jan 1952: First national elections in independent India.</p>
+                <p class="hi" style="display: none;">● 3 जनवरी 1952: स्वतंत्र भारत में पहले राष्ट्रीय चुनाव।</p>
+                <p class="en">● 3rd Jan 1957: Hamilton Electric launched the world’s first battery-powered wristwatch.</p>
+                <p class="hi" style="display: none;">● 3 जनवरी 1957: हैमिल्टन इलेक्ट्रिक ने दुनिया की पहली बैटरी से चलने वाली कलाई घड़ी लॉन्च की।</p>
+                <p class="en">● 3rd Jan 1968: Launch of the country’s first meteorological rocket Maneka.</p>
+                <p class="hi" style="display: none;">● 3 जनवरी 1968: देश के पहले मौसम विज्ञान रॉकेट मनेका का प्रक्षेपण।</p>
+                <p class="en">● 3rd Jan 1993: USA and Russia agreed to halve their nuclear weapons numbers.</p>
+                <p class="hi" style="display: none;">● 3 जनवरी 1993: अमेरिका और रूस ने अपने परमाणु हथियारों की संख्या को आधा करने पर सहमति व्यक्त की।</p>
+                <p class="en">● 3rd Jan 2020: An American airstrike near Baghdad International Airport killed the Iranian General Qasem Soleimani.</p>
+                <p class="hi" style="display: none;">● 3 जनवरी 2020: बगदाद अंतरराष्ट्रीय हवाई अड्डे के पास एक अमेरिकी हवाई हमले में ईरानी जनरल कासेम सोलेमानी मारे गए।</p>
+            </div>
+            <button id="load-more">Load more...</button>
+        </div>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1</h3>
+            <p>soon.</p>
+        </div>
+        <div class="project">
+            <h3>Project 2</h3>
+            <p>soon.</p>
+        </div>
+        <p id="no-projects" style="display: none;">There are currently no projects available.</p>
+        <!-- Add more projects as needed -->
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    <footer>
+        <form id="subscribe-form">
+            <label for="subscribe-email">Subscribe for updates:</label>
+            <input type="email" id="subscribe-email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <p>© 2025 Notable Events. All rights reserved.</p>
+    </footer>
+    <div class="updates-text">Updates Are On The Way...</div>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('load-more').addEventListener('click', function() {
+            var moreEvents = document.getElementById('more-events');
+            if (moreEvents.style.display === 'none') {
+                moreEvents.style.display = 'block';
+                this.textContent = 'Show less';
+            } else {
+                moreEvents.style.display = 'none';
+                this.textContent = 'Load more...';
+            }
+        });
+
+        document.getElementById('projects-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('no-projects').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
