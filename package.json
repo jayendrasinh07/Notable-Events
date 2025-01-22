@@ -1,14 +1,21 @@
 {
-  "name": "portfolio-website",
-  "version": "1.0.0",
-  "description": "My portfolio website",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "mssql": "^7.1.0"
-  }
+    "name": "portfolio-website",
+    "version": "1.0.0",
+    "description": "My portfolio website",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "portfolio",
+        "website"
+    ],
+    "author": "Your Name",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "mssql": "^7.1.0"
+    }
 }
