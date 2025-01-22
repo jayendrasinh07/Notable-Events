@@ -50,4 +50,5 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Subscription failed: ' + error.message);
         });
     });
+
 });
