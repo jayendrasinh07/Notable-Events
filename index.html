@@ -4,19 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notable Events</title>
-    <script>
-        importScripts("https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.sw.js");
-    </script>
-    <script>
-        window.OneSignalDeferred = window.OneSignalDeferred || [];
-        OneSignalDeferred.push(async function(OneSignal) {
-            await OneSignal.init({
-                appId: "25245e3f-d2a0-439d-b12b-7ded8a71433b",
-            });
-        });
-    </script>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Pacifico&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    
+        <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
     <style>
         .updates-text {
             display: none; /* Hide updates text */
@@ -1137,5 +1130,24 @@
             document.getElementById('current-date').innerHTML = currentDateHtml;
         });
     </script>
+    <script>
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+        OneSignalDeferred.push(async function(OneSignal) {
+          await OneSignal.init({
+            appId: "25245e3f-d2a0-439d-b12b-7ded8a71433b",
+            // नीचे दिए गए ऑप्शन्स ऐड करें
+            allowLocalhostAsSecureOrigin: true, // Localhost के लिए
+            promptOptions: {
+              slidedown: {
+                enabled: true, // ऑटो-परमिशन प्रॉम्प्ट
+                autoPrompt: true
+              }
+            },
+            notifyButton: {
+              enable: true // नोटिफिकेशन बेल आइकन दिखाएं
+            }
+          });
+        });
+      </script>
 </body>
 </html>
