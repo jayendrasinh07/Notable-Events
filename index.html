@@ -369,6 +369,9 @@
         </nav>
         <button id="language-switch">Switch to Hindi</button>
         <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+        <button id="onesignal-bell-container">
+            <i class="fas fa-bell"></i> <!-- फ़ॉन्ट ऐवेसम इंस्टॉल करें -->
+        </button>
     </header>
     <div class="popup" id="dark-mode-popup">
         <div class="arrow-container">
@@ -1130,7 +1133,7 @@
             document.getElementById('current-date').innerHTML = currentDateHtml;
         });
     </script>
-    <script>
+     <script>
         window.OneSignalDeferred = window.OneSignalDeferred || [];
         OneSignalDeferred.push(async function(OneSignal) {
           await OneSignal.init({
@@ -1147,6 +1150,14 @@
               enable: true // नोटिफिकेशन बेल आइकन दिखाएं
             }
           });
+        });
+      </script>
+      <script>
+        OneSignalDeferred.push(async function(OneSignal) {
+            const isSubscribed = await OneSignal.User.pushSubscription.optIn;
+            if (isSubscribed) {
+                console.log("यूजर सब्सक्राइब किया हुआ है!");
+            }
         });
       </script>
 </body>
