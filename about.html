@@ -5,24 +5,207 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .back-arrow {
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            text-decoration: none;
+            color: white;
+            font-size: 10px;
+            padding: 5px 4px;
+            border: none;
+            border-radius: 25%;
+            transition: background-color 0.3s, color 0.3s;
+            position: absolute;
+            left: 10px;
+            top: 2rem;
+        }
+
+        .back-arrow svg {
+            margin-right: 3px;
+        }
+
+        .dark-mode .back-arrow {
+            background-color: transparent;
+        }
+        
+        /* CSS for a more modern look */
+        .about-section {
+            border-radius: 1rem;
+            padding: 40px 0; /* Add some padding */
+            background-color: #f8f9fa; /* Light background color */
+            transition: background-color 0.3s; /* Smooth transition for dark mode */
+            margin: 0 auto; /* Center the section */
+        }
+
+        .dark-mode .about-section {
+            background-color: #213451a4; /* Dark background color */
+        }
+
+        .container {
+            max-width: 960px; /* Adjust container width */
+            margin: 0 auto;
+        }
+
+        .about-content {
+            text-align: center; /* Center the content */
+        }
+
+        h2 {
+            font-size: 2rem; /* Decrease the font size */
+            max-width: 70%; /* Decrease the width */
+            margin: 0 auto; /* Center the element */
+            color: white; /* Dark heading color (default) */
+            margin-bottom: 20px;
+            transition: color 0.3s; /* Smooth transition for dark mode */
+        }
+
+        .dark-mode h2 {
+            color: white; /* Light heading color in dark mode */
+        }
+
+        .features {
+            margin-top: 30px;
+        }
+
+        .feature-list {
+            list-style: none; /* Remove default list styling */
+            padding: 0;
+            display: flex; /* Use flexbox for layout */
+            justify-content: center; /* Center the items horizontally */
+            gap: 30px; /* Space between the items */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .feature-list li {
+            text-align: center; /* Center the content within each feature */
+            width: 250px; /* Adjust the width of each feature */
+            padding: 20px;
+            border: 1px solid #eee; /* Add a border */
+            border-radius: 8px; /* Rounded corners */
+            background-color: white; /* White background */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            transition: transform 0.2s ease-in-out, background-color 0.3s, border-color 0.3s; /* Smooth hover effect */
+        }
+
+        .dark-mode .feature-list li {
+            background-color: #213451a4; /* Darker background in dark mode */
+            border-color: #555; /* Darker border color */
+            color: #eee; /* Text color in dark mode */
+        }
+
+        .feature-list li:hover {
+            transform: translateY(-5px); /* Move up slightly on hover */
+        }
+
+        .feature-list i { /* Style the icons */
+            font-size: 30px;
+            color: #007bff; /* Blue color */
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .dark-mode .feature-list i {
+            color: #66b3ff; /* Lighter blue in dark mode */
+        }
+
+        .feature-list h4 {
+            color: #343a40;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .dark-mode .feature-list h4 {
+            color: #ddd; /* Light heading color in dark mode */
+        }
+
+        .feature-list p {
+            color: #6c757d; /* Slightly lighter text color */
+            transition: color 0.3s;
+        }
+
+        .dark-mode .feature-list p {
+            color: #aaa; /* Even lighter text color in dark mode */
+        }
+   
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .feature-list li {
+                width: 77%; /* Make features full width on smaller screens */
+                margin-bottom: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>About</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="help.html">Help</a></li>
             </ul>
         </nav>
+        <a href="index.html" class="back-arrow">
+            &#x2190; Back
+        </a>
     </header>
-    <section id="about">
-        <h2>About</h2>
-        <p>Welcome, Information related to history is uploaded on this page every day. Which is very useful for your exam and the information is written in simple words. Stay connected to the page. Thank you</p>
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About</h2>
+            <div class="about-content">
+                <p>Welcome to TIME SNAPSHOT, your digital gateway to the rich tapestry of history. Our mission is to bring the past to life, providing you with a daily dose of historical events that have shaped our world. By exploring significant moments from various periods, we aim to foster a deeper understanding of our present and inspire a greater appreciation for our heritage.</p>
+    
+                <div class="features">
+                    <h3>Explore History with These Features</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-calendar-alt"></i>  <h4>Calendar</h4>
+                            <p>Navigate through our comprehensive calendar to discover noteworthy events that occurred on each day of the year. From monumental battles to groundbreaking achievements, our calendar serves as a daily reminder of the past's influence on the present.</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-search"></i> <h4>Events</h4>
+                            <p>Dive into our extensive database of historical events, where you can search for key moments across different dates. Whether you're a history enthusiast or a casual learner, our events section provides a treasure trove of information to satisfy your curiosity.</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-plus-circle"></i> <h4>More Historical Events</h4>
+                            <p>For those who crave more, our "More Historical Events" section delves deeper into additional significant occurrences. Explore lesser-known yet impactful events that have shaped the course of history, providing you with a more comprehensive understanding of the past.</p>
+                        </li>
+                    </ul>
+                </div>
+    
+                <p>Our user-friendly interface ensures a seamless and enjoyable experience for everyone. With features such as a language switch button and light/dark mode options, you can customize your browsing experience to suit your preferences.</p>
+    
+                <p>At TIME SNAPSHOT, we believe that history is not just a collection of dates and facts, but a vibrant narrative that connects us all. Join us on this journey through time, and together, let's uncover the stories that have defined our world. Stay curious, keep exploring, and let history inspire your present and future.</p>
+            </div>
+        </div>
     </section>
     <footer>
-        <p>© 2025 Notable Events. All rights reserved.</p>
+        <p>© 2025 Time Snapshot. All rights reserved.</p>
     </footer>
+    <script>
+        // Load dark mode state from localStorage
+        window.addEventListener('load', function() {
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                document.querySelector('header').classList.add('dark-mode');
+                document.querySelector('nav ul').classList.add('dark-mode');
+                document.querySelectorAll('nav ul li a').forEach(function(link) {
+                    link.classList.add('dark-mode');
+                });
+                document.querySelectorAll('section').forEach(function(section) {
+                    section.classList.add('dark-mode');
+                });
+                document.querySelector('footer').classList.add('dark-mode');
+            }
+        });
+
+        // Handle navigation back to home
+        document.querySelector('nav ul li a[href="index.html"]').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = 'index.html';
+        });
+    </script>
 </body>
 </html>
