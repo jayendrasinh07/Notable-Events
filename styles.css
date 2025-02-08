@@ -5,32 +5,31 @@ body {
     background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
-  }
-  
-  html,
-  body {
+}
+
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
-  }
-  
-  header {
+}
+
+header {
     position: relative;
     background-color: #123a71;
     color: #fff;
     padding: 1rem 0;
     text-align: center;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: small;
     position: relative;
     top: 51px;
     text-decoration: underline;
-  }
-  
-  
-  nav ul { 
+}
+
+nav ul {
     bottom: 10px;
     list-style: none;
     padding: 5px;
@@ -40,64 +39,60 @@ body {
     overflow-x: auto; /* Allow horizontal scrolling if needed */
     margin: 0; /* Remove default margin */
     font-size: 0.9rem; /* Decrease font size */
-  }
-  
-  nav ul li {
+}
+
+nav ul li {
     margin: 0 0.25rem; /* Further decrease margin between items */
     white-space: nowrap; /* Prevent text from wrapping */
-  }
-  
-  nav ul li a { 
+}
+
+nav ul li a {
     color: #fff;
     text-decoration: none;
     padding: 0.2rem 0.4rem; /* Further decrease padding for better touch targets */
     display: block; /* Make the link a block element */
     font-size: inherit; /* Inherit font size from ul */
-  }
-  
-  section {
+}
+
+section {
     padding: 2rem;
-    margin: 2rem 0;
+    margin: 1rem 0;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .project {
-    margin-bottom: 1.5rem;
-  }
-  
-  form {
+}
+
+form {
     display: flex;
     flex-direction: column;
-  }
-  
-  form label {
+}
+
+form label {
     margin-bottom: 0.5rem;
-  }
-  
-  form input,
-  form textarea {
+}
+
+form input,
+form textarea {
     margin-bottom: 1rem;
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
-  
-  form button {
+}
+
+form button {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 4px;
     background-color: #333;
     color: #fff;
     cursor: pointer;
-  }
-  
-  form button:hover {
+}
+
+form button:hover {
     background-color: #555;
-  }
-  
-  button {
+}
+
+button {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 4px;
@@ -105,210 +100,212 @@ body {
     color: #fff;
     cursor: pointer;
     font-size: 1rem;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: #555;
-  }
-  
-  footer { 
+}
+
+footer {
     margin-top: auto; /* Push the footer to the bottom */
     text-align: center;
     padding: 1rem 0;
     background-color: #333;
     color: #fff;
     height: 150px;
-  }
-  
-  footer p {
+}
+
+footer p {
     font-size: 0.8rem; /* Decrease font size */
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     footer {
-      padding: 0.5rem 0;
-      height: auto;
+        padding: 0.5rem 0;
+        height: auto;
     }
     footer p {
-      font-size: 0.7rem; /* Adjust font size for smaller screens */
+        font-size: 0.7rem; /* Adjust font size for smaller screens */
     }
-  }
-  
-  @media (max-width: 480px) {
+    #subscribe-form label {
+        font-size: 0.7rem; /* Adjust label size for smaller screens */
+    }
+    #search-input {
+        width: 30%;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
     footer {
-      padding: 0.5rem;
-      height: auto;
+        padding: 0.5rem;
+        height: auto;
     }
     footer p {
-      font-size: 0.6rem; /* Adjust font size for smaller screens */
+        font-size: 0.6rem; /* Adjust font size for smaller screens */
     }
-  }
-  
-  @media (max-width: 200px) {
+    #subscribe-form label {
+        font-size: 0.8rem; /* Adjust label size for smaller screens */
+    }
+    #search-input {
+        width: 20%;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 200px) {
     h2 {
-      font-size: 1.75rem; /* Adjust font size for smaller screens */
+        font-size: 1.75rem; /* Adjust font size for smaller screens */
     }
-  
+
     header {
-      padding: 1rem;
+        padding: 1rem;
     }
-  
+
     nav ul {
-      justify-content: space-around; /* Distribute items evenly */
+        justify-content: space-around; /* Distribute items evenly */
     }
-  
+
     nav ul li {
-      margin: 0.2rem; /* Adjust margin for smaller screens */
+        margin: 0.2rem; /* Adjust margin for smaller screens */
     }
-  
+
     nav ul li a {
-      padding: 0.15rem 0.3rem; /* Adjust padding for smaller screens */
-      font-size: 0.8rem; /* Adjust font size for smaller screens */
+        padding: 0.15rem 0.3rem; /* Adjust padding for smaller screens */
+        font-size: 0.8rem; /* Adjust font size for smaller screens */
     }
-  
+
     section {
-      padding: 1rem;
-      margin: 1rem 0;
+        padding: 1rem;
+        margin: 1rem 0;
     }
-  
+
     form input,
     form textarea {
-      width: 100%;
+        width: 100%;
     }
-  
+
     #language-switch {
-      padding: 0.25rem 0.5rem;
-      font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.8rem;
     }
-  
+
     button {
-      padding: 0.4rem 0.8rem;
-      font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
     }
-  }
-  
-  @media (max-width: 250px) {
+}
+
+@media (max-width: 250px) {
     h2 {
-      font-size: 1.5rem; /* Adjust font size for smaller screens */
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
     }
-  
+
     header {
-      padding: 0.5rem;
+        padding: 0.5rem;
     }
-  
+
     nav ul {
-      flex-direction: column; /* Stack items vertically */
-      align-items: center;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
     }
-  
+
     nav ul li {
-      margin: 0.2rem 0.4rem;
+        margin: 0.2rem 0.4rem;
     }
-  
+
     nav ul li a {
-      padding: 0.15rem 0.3rem; /* Adjust padding for smaller screens */
-      font-size: 0.7rem; /* Adjust font size for smaller screens */
+        padding: 0.15rem 0.3rem; /* Adjust padding for smaller screens */
+        font-size: 0.7rem; /* Adjust font size for smaller screens */
     }
-  
+
     section {
-      padding: 0.5rem;
-      margin: 0.5rem 0;
+        padding: 0.5rem;
+        margin: 0.5rem 0;
     }
-  
+
     form input,
     form textarea {
-      padding: 0.25rem;
+        padding: 0.25rem;
     }
-  
+
     form button {
-      padding: 0.25rem 0.5rem;
+        padding: 0.25rem 0.5rem;
     }
-  
+
     button {
-      padding: 0.3rem 0.6rem;
-      font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
     }
-  }
-  
-  @media (max-width: 580px) {
+}
+
+@media (max-width: 580px) {
     #language-switch {
-      padding: 0.2rem 0.4rem;
-      font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+        font-size: 0.7rem;
     }
-  }
-  
-  #subscribe-form {
+}
+
+#subscribe-form {
     margin-top: 1px;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  #subscribe-form label {
+}
+
+#subscribe-form label {
     margin-bottom: 0.5rem;
     text-align: center;
     font-size: 1.5rem; /* Decrease label size */
-  }
-  
-  #subscribe-form input[type="email"] {
+}
+
+#subscribe-form input[type="email"] {
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 0.5rem;
-  }
-  
-  #subscribe-form button {
+}
+
+#subscribe-form button {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 4px;
     background-color: #555;
     color: #fff;
     cursor: pointer;
-  }
-  
-  #subscribe-form button:hover {
-    background-color: #777;
-  }
-  
+}
 
-  @media (max-width: 768px) {
-    #subscribe-form label {
-      font-size: 0.7rem; /* Adjust label size for smaller screens */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    #subscribe-form label {
-      font-size: 0.8rem; /* Adjust label size for smaller screens */
-    }
-  }
-  
-  h2 { position: relative;
+#subscribe-form button:hover {
+    background-color: #777;
+}
+
+h2 {
+    position: relative;
     bottom: 30px;
     text-align: center;
     color: white;
-    background-color: cornflowerblue;
+    background-color: rgb(61, 100, 172);
     margin: 0.5rem 0;
     font-size: 2rem; /* Base font size */
     border-radius: 15px; /* Add background radius */
-  }
-  
-  .highlight {
+}
+
+.highlight {
     background-color: yellow;
     font-weight: bold;
-  }
+}
 
-  body.dark-mode {
-    background-color: #121212;
+body.dark-mode {
+    background-color: #1F2937;
     color: #e0e0e0;
 }
 
 header.dark-mode {
-    background-color: #1f1f1f;
+    background-color: #1F2937;
 }
 
 nav ul.dark-mode {
-    background-color: #1f1f1f;
+    background-color: #1F2937;
 }
 
 nav ul li a.dark-mode {
@@ -316,12 +313,12 @@ nav ul li a.dark-mode {
 }
 
 section.dark-mode {
-    background-color: #1f1f1f;
+    background-color: #1F2937;
     color: #e0e0e0;
 }
 
 footer.dark-mode {
-    background-color: #1f1f1f;
+    background-color: #1F2937;
     color: #e0e0e0;
 }
 
@@ -365,154 +362,6 @@ button.dark-mode:hover {
     background-color: #777;
 }
 
-@media (max-width: 768px) {
-    body.dark-mode {
-        background-color: #121212;
-        color: #e0e0e0;
-    }
-
-    header.dark-mode {
-        background-color: #1f1f1f;
-    }
-
-    nav ul.dark-mode {
-        background-color: #1f1f1f;
-    }
-
-    nav ul li a.dark-mode {
-        color: #e0e0e0;
-    }
-
-    section.dark-mode {
-        background-color: #1f1f1f;
-        color: #e0e0e0;
-    }
-
-    footer.dark-mode {
-        background-color: #1f1f1f;
-        color: #e0e0e0;
-    }
-
-    form.dark-mode input,
-    form.dark-mode textarea {
-        background-color: #333;
-        color: #e0e0e0;
-        border: 1px solid #555;
-    }
-
-    form.dark-mode button {
-        background-color: #555;
-        color: #e0e0e0;
-    }
-
-    form.dark-mode button:hover {
-        background-color: #777;
-    }
-
-    button.dark-mode {
-        background-color: #555;
-        color: #e0e0e0;
-    }
-
-    button.dark-mode:hover {
-        background-color: #777;
-    }
-
-    #subscribe-form.dark-mode input[type="email"] {
-        background-color: #333;
-        color: #e0e0e0;
-        border: 1px solid #555;
-    }
-
-    #subscribe-form.dark-mode button {
-        background-color: #555;
-        color: #e0e0e0;
-    }
-
-    #subscribe-form.dark-mode button:hover {
-        background-color: #777;
-    }
-
-    #search-input {
-        width: 30%;
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    body.dark-mode {
-        background-color: #121212;
-        color: #e0e0e0;
-    }
-
-    header.dark-mode {
-        background-color: #1f1f1f;
-    }
-
-    nav ul.dark-mode {
-        background-color: #1f1f1f;
-    }
-
-    nav ul li a.dark-mode {
-        color: #e0e0e0;
-    }
-
-    section.dark-mode {
-        background-color: #1f1f1f;
-        color: #e0e0e0;
-    }
-
-    footer.dark-mode {
-        background-color: #1f1f1f;
-        color: #e0e0e0;
-    }
-
-    form.dark-mode input,
-    form.dark-mode textarea {
-        background-color: #333;
-        color: #e0e0e0;
-        border: 1px solid #555;
-    }
-
-    form.dark-mode button {
-        background-color: #555;
-        color: #e0e0e0;
-    }
-
-    form.dark-mode button:hover {
-        background-color: #777;
-    }
-
-    button.dark-mode {
-        background-color: #555;
-        color: #e0e0e0;
-    }
-
-    button.dark-mode:hover {
-        background-color: #777;
-    }
-
-    #subscribe-form.dark-mode input[type="email"] {
-        background-color: #333;
-        color: #e0e0e0;
-        border: 1px solid #555;
-    }
-
-    #subscribe-form.dark-mode button {
-        background-color: #555;
-        color: #e0e0e0;
-    }
-
-    #subscribe-form.dark-mode button:hover {
-        background-color: #777;
-    }
-
-    #search-input {
-        width: 20%;
-        font-size: 0.7rem;
-    }
-}
-
 .updates-text {
     display: none; /* Hide updates text */
 }
@@ -539,3 +388,680 @@ button.dark-mode:hover {
         width: 80%; /* Adjust width for smaller screens */
     }
 }
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes dot-blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.dot {
+    animation: dot-blink 1.5s infinite;
+}
+.dot:nth-child(2) {
+    animation-delay: 0.5s;
+}
+.dot:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@media (max-width: 768px) {
+    .updates-text {
+        font-size: 1.2rem;
+        right: 0.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .updates-text {
+        font-size: 0.6rem;
+        right: 0.5rem;
+    }
+}
+
+#dark-mode-toggle {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#dark-mode-toggle:hover {
+    background-color: #777;
+}
+
+@media (max-width: 768px) {
+    #dark-mode-toggle {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #dark-mode-toggle {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+    }
+}
+
+.popup, .popup.language-popup {
+    display: none;
+}
+
+.time-snapshot-title {
+    background-color: #123A71; /* Change background color */
+    color: #ffffff; /* Ensure text color is readable */
+    padding: 0.5rem; /* Add some padding */
+    border-radius: 5px; /* Add border radius */
+    width: 40%; /* Decrease width */
+    margin: 0 auto; /* Center the element */
+    text-align: center; /* Center the text */
+    display: block; /* Ensure the title is displayed */
+}
+
+@media (max-width: 768px) {
+    .time-snapshot-title {
+        width: 60%; /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .time-snapshot-title {
+        width: 80%; /* Adjust width for smaller screens */
+    }
+}
+
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.share-buttons a {
+    margin: 0.25rem; /* Adjust margin for better spacing */
+    text-decoration: none;
+    color: #fff;
+    padding: 0.3rem 0.4rem; /* Decrease padding */
+    border-radius: 4px;
+    background-color: #555;
+    transition: background-color 0.3s;
+    flex: 1 1 30%; /* Decrease width */
+    text-align: center; /* Center text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem; /* Decrease font size */
+}
+
+.share-buttons a:hover {
+    background-color: #777;
+}
+
+.share-buttons a.whatsapp {
+    background-color: #25d366;
+}
+
+.share-buttons a.sms {
+    background-color: #4CAF50;
+}
+
+.share-buttons a i {
+    margin-right: 0.3rem; /* Adjust icon margin */
+}
+
+@media (max-width: 480px) {
+    .share-buttons a {
+        flex: 1 1 10%; /* Make buttons full width on small screens */
+    }
+}
+
+#load-more {
+    background-color: #315665; /* Restore original background color */
+    color: white; /* Ensure text color is readable */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: transform 0.3s; /* Add a transition effect */
+}
+
+#load-more:hover {
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.search-popup {
+    display: none;
+    position: absolute; /* या fixed अगर scroll के साथ चिपकाना हो */
+    top: 100%; /* Searchbar के ठीक नीचे */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(24, 48, 64, 0.758);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 100%; /* Searchbar की width के बराबर */
+    max-width: 600px; /* अपनी जरूरत के हिसाब से */
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    color: #fff;
+    margin-top: 5px; /* Searchbar और popup के बीच थोड़ी जगह */
+}
+
+/* Parent container के लिए */
+.search-container {
+    position: relative;
+    width: 10%;
+    max-width: 800px; /* Searchbar की max-width के बराबर */
+    margin: 0 auto;
+}
+
+
+
+.search-popup::before {
+    content: '';
+    position: absolute;
+    top: 20rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(10px); /* Add blur effect */
+    z-index: -1; /* Ensure the blur effect is behind the content */
+    border-radius: 8px; /* Match the border radius */
+}
+
+.search-popup .close-btn {
+    display: block;
+    position: absolute; /* Change to absolute positioning */
+    top: 0; /* Stick to the top */
+    right: 7px; /* Stick to the right side corner */
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    background-color: rgb(90, 139, 163); /* Match the popup background */
+    border-radius: 10%;
+    padding: 0.3rem; /* Add some padding */
+    width: 30px; /* Decrease width */
+    font-size: 0.6rem; /* Decrease font size */
+}
+
+@media (min-width: 200px) {
+    .search-popup {
+        top: 168%; /* Ensure it stays below the search bar */
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 90%;
+    }
+}
+
+@media (min-width: 550px) {
+    .search-popup {
+        top: 178%; /* Ensure it stays below the search bar */
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 90%;
+    }
+}
+
+@media (min-width: 200px) {
+    .search-popup {
+        top: 168%; /* Ensure it stays below the search bar */
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 90%;
+    }
+}
+@media (min-width: 520px) {
+    .search-popup {
+        top: 175%; /* Ensure it stays below the search bar */
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 90%;
+    }
+}
+@media (min-width: 580px) {
+    .search-popup {
+        top: 178%; /* Ensure it stays below the search bar */
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 90%;
+    }
+}
+@media (min-width: 607px) {
+    .search-popup {
+        top: 180%; /* Ensure it stays below the search bar */
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 90%;
+    }
+}
+@media (max-width: 768px) {
+    .updates-text {
+        font-size: 1.2rem;
+        right: 0.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .updates-text {
+        font-size: 0.6rem;
+        right: 0.5rem;
+    }
+}
+@media (max-width: 600px) {
+    .updates-text {
+        font-size: 0.6rem;
+        right: 0.5rem;
+        margin-top: 100rem;
+    }
+}
+
+.highlight {
+    background-color: #ffeb3bd6; /* Change this to your desired color */
+    color: #000; /* Ensure text color is readable */
+}
+
+.calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    border: 2px solid #315665; /* Add border */
+    border-radius: 10px; /* Add border radius */
+    padding: 1rem; /* Add padding */
+    background-color: #f9f9f9; /* Add background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    position: relative; /* Add relative positioning */
+    overflow: hidden; /* Hide overflow */
+    width: 100%; /* Make calendar responsive */
+    max-width: 400px; /* Set maximum width */
+}
+
+.calendar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(10px); /* Add blur effect */
+    z-index: -1; /* Ensure the blur effect is behind the content */
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.calendar-header button {
+    background-color: #315665;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calendar-header button:hover {
+    background-color: #777;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.2rem; /* Decrease gap */
+    width: 100%;
+    max-width: 300px;
+}
+
+.calendar-day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem; /* Decrease padding */
+    background-color: #f0f0f0;
+    border-radius: 3px; /* Decrease border radius */
+    cursor: pointer;
+}
+
+.calendar-day:hover {
+    background-color: #ddd;
+}
+
+.calendar-day.selected {
+    background-color: #0a2df5a1;
+    color: white;
+}
+
+.calendar-day.current {
+    background-color: #315665; /* Highlight color for current date */
+    color: #ffffff;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.2rem; /* Decrease gap */
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8rem; /* Decrease font size */
+}
+
+.calendar-weekday {
+    padding: 0.3rem; /* Decrease padding */
+    background-color: #ddd;
+    border-radius: 3px; /* Decrease border radius */
+}
+
+@media (min-width: 830px) {
+    .calendar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .calendar {
+        margin-left: 2rem; /* Add margin to the left of the calendar */
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+
+    .calendar-header button {
+        padding: 0.4rem; /* Adjust padding */
+        font-size: 0.8rem; /* Adjust font size */
+    }
+
+    .calendar-day {
+        padding: 0.2rem; /* Adjust padding */
+        font-size: 0.8rem; /* Adjust font size */
+    }
+
+    .calendar-weekday {
+        padding: 0.2rem; /* Adjust padding */
+        font-size: 0.7rem; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar-header button {
+        padding: 0.3rem; /* Adjust padding */
+        font-size: 0.7rem; /* Adjust font size */
+    }
+
+    .calendar-day {
+        padding: 0.1rem; /* Adjust padding */
+        font-size: 0.7rem; /* Adjust font size */
+    }
+
+    .calendar-weekday {
+        padding: 0.1rem; /* Adjust padding */
+        font-size: 0.6rem; /* Adjust font size */
+    }
+}
+
+/* Dark mode styles */
+.dark-mode .calendar {
+    background-color: #1F2937;
+    border-color: #444;
+}
+
+.dark-mode .calendar-header button {
+    background-color: #1F2937;
+    color: #fff;
+}
+
+.dark-mode .calendar-header button:hover {
+    background-color: #666;
+}
+
+.dark-mode .calendar-day {
+    background-color: #1F2937;
+    color: #fff;
+}
+
+.dark-mode .calendar-day:hover {
+    background-color: #555;
+}
+
+.dark-mode .calendar-day.current {
+    background-color: #1a73e8;
+    color: #fff;
+}
+
+.dark-mode .calendar-weekday {
+    background-color: #1F2937;
+    color: #fff;
+}
+
+#menubar-icon {
+    position: absolute;
+    top: 7rem;
+    left: 0.7rem;
+
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+}
+
+@media (max-width: 1300px) {
+    #menubar-icon {
+        display: block; /* Show on smaller screens */
+    }
+}
+@media (min-width: 1300px) {
+    #menubar-icon {
+        display: block; /* Show on smaller screens */
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes calendarSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes calendarSlideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+#menubar-popup {
+    display: none;
+    position: absolute;
+    top: 9rem; /* Adjust to place near menubar icon */
+    left: 1rem; /* Adjust to place near menubar icon */
+    width: 10rem; /* Increase width */
+    height: 15rem; /* Increase height */
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent background */
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Background blur effect */
+    z-index: 1000;
+    padding: 0.5rem;
+    animation: slideOut 0.3s forwards; /* Default to slide out */
+}
+
+#menubar-popup.show {
+    display: block;
+    animation: slideIn 0.2s forwards; /* Slide in when shown */
+}
+
+#menubar-popup.hide {
+    animation: slideOut 0.1s forwards; /* Slide out when hidden */
+}
+
+#menubar-popup::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(10px); /* Add blur effect */
+    z-index: -1; /* Ensure the blur effect is behind the content */
+    border-radius: 8px; /* Match the border radius */
+}
+
+#menubar-popup ul {
+    list-style: none;
+    padding: 0;
+}
+
+#menubar-popup ul li {
+    text-align: left; /* Move items to the left side */
+    margin-bottom: 0.5rem;
+}
+
+#menubar-popup ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+#menubar-popup .back-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #000;
+}
+
+.calendar-popup {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-20px);
+}
+
+.calendar-popup.show {
+    display: block;
+    animation: calendarSlideIn 0.3s forwards;
+}
+
+.calendar-popup.hide {
+    animation: calendarSlideOut 0.3s forwards;
+}
+/* Remove the background blur effect */
+
+
+/* CSS */
+.lang-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .lang-switch:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  }
+  
+  .lang-switch:active {
+    transform: translateY(0);
+  }
+  
+  .lang-icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+  
+  .lang-text::after {
+    content: ' ▼';
+    font-size: 10px;
+    opacity: 0.7;
+  }
+  
+  /* For dark mode compatibility */
+  .dark-mode .lang-switch {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: #ffffff;
+  }
+
+ /* Add this style block to decrease the size of the language switch button */
+  #language-toggle {
+            font-size: 0.8rem; /* Decrease font size */
+            padding: 0.3rem 0.6rem; /* Adjust padding */
+            border-radius: 5px; /* Adjust border radius */
+        }
+  #language-toggle .lang-icon {
+            font-size: 1rem; /* Adjust icon size */
+        }
