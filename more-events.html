@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Notable Events</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        h2 {
+            font-size: 1.3rem; /* Decrease font size */
+        }
+        .dark-mode {
+            background-color: #1F2937;
+            color: #ffffff;
+        }
+        .back-arrow {
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            text-decoration: none;
+            color: white;
+            font-size: 10px;
+            padding: 5px 4px;
+            border: none;
+            border-radius: 25%;
+            transition: background-color 0.3s, color 0.3s;
+            position: absolute;
+            left: 9px;
+            top: 2rem;        }
+
+        .back-arrow svg {
+            margin-right: 8px;
+        }
+
+        .back-arrow:hover {
+            background-color: #fff; /* Change background color on hover */
+            color: #315665; /* Change text color on hover */
+        }
+
+        .dark-mode .back-arrow {
+            color: white; /* Change text color for dark mode */
+            }
+
+        .dark-mode .back-arrow:hover {
+            background-color: transparent; /* Change background color on hover for dark mode */
+            color: #fff; /* Change text color on hover for dark mode */
+        }
+        .load-more {
+            transition: transform 0.3s;
+        }
+        .load-more:hover {
+            transform: scale(1.05);
+        }
+
+        .dynamic-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .dynamic-card p {
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        .dark-mode .dynamic-card {
+            background: #213451a4;
+            color: #ffffff;
+        }
+        .dark-mode .dynamic-card p {
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="index.html" class="back-arrow">
+            &#x2190; Back
+        </a>
+    </header>
+
+    <section id="more-events">
+        <h2>More Historical Events</h2>
+        <!-- Add more historical events here -->
+        <div class="dynamic-card" id="1-2">
+        <p class="en"><b>Historical Events on January 2</b></p>
+        <p class="hi" style="display: none;">2 जनवरी के ऐतिहासिक घटनाक्रम</p>
+        <p class="en">●1885: Establishment of Ferguson College in Pune.</p>
+        <p class="hi" style="display: none;">●1885: पुणे में फर्ग्यूसन कॉलेज की स्थापना।</p>
+        <p class="en">●1936: Establishment of Madhya Pradesh High Court.</p>
+        <p class="hi" style="display: none;">●1936: मध्य प्रदेश उच्च न्यायालय की स्थापना।</p>
+        <p class="en">●1942: During World War II, the Japanese army captured Manila, the capital of the Philippines.</p>
+        <p class="hi" style="display: none;">●1942: द्वितीय विश्व युद्ध के दौरान, जापानी सेना ने फिलीपींस की राजधानी मनीला पर कब्जा कर लिया।</p>
+        <p class="en">●1951: Russia launched Luna-1 spacecraft towards the moon.</p>
+        <p class="hi" style="display: none;">●1951: रूस ने चंद्रमा की ओर लूना-1 अंतरिक्ष यान लॉन्च किया।</p>
+        <p class="en">●1954: India established its highest civilian awards, the Bharat Ratna and the Padma Vibhushan.</p>
+        <p class="hi" style="display: none;">●1954: भारत ने अपने सर्वोच्च नागरिक पुरस्कार, भारत रत्न और पद्म विभूषण की स्थापना की।</p>
+        <p class="en">●1975: Railway Minister Lalit Narayan Mishra had injured in a bomb blast in the Samastipur district of Bihar.</p>
+        <p class="hi" style="display: none;">●1975: बिहार के समस्तीपुर जिले में बम विस्फोट में रेल मंत्री ललित नारायण मिश्रा घायल हो गए थे।</p>
+        <p class="en">●1989: Safdar Hashmi, a Marxist street playwright, writer, director, poet, and lyricist, was fatally attacked during a street play in Jhandapur, Uttar Pradesh.</p>
+        <p class="hi" style="display: none;">●1989: सफदर हाशमी, एक मार्क्सवादी स्ट्रीट नाटककार, लेखक, निर्देशक, कवि और गीतकार, उत्तर प्रदेश के झंडापुर में एक स्ट्रीट प्ले के दौरान घातक हमला किया गया।</p>
+        <!-- Add more events as needed -->
+    </div>
+
+    <br/>
+    <div class="dynamic-card" id="1-3">
+                <p class="en"><b>Historical Events on January 3</b></p>
+                <p class="hi" style="display: none;">3 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1496: Leonardo da Vinci’s flight experiment failed.</p>
+                <p class="hi" style="display: none;">●1496: लियोनार्डो दा विंची का उड़ान प्रयोग विफल रहा।</p>
+                <p class="en">●1925: Benito Mussolini became a dictator of Italy.</p>
+                <p class="hi" style="display: none;">●1925: बेनिटो मुसोलिनी इटली के तानाशाह बने।</p>
+                <p class="en">●1929: Mahatma Gandhi met Lord Irwin.</p>
+                <p class="hi" style="display: none;">●1929: महात्मा गांधी ने लॉर्ड इरविन से मुलाकात की।</p>
+                <p class="en">●1943: Information about missing people broadcasted for the first time on television.</p>
+                <p class="hi" style="display: none;">●1943: लापता लोगों की जानकारी पहली बार टेलीविजन पर प्रसारित की गई।</p>
+                <p class="en">●1947: The first televised telecast of the proceedings of the US Parliament took place.</p>
+                <p class="hi" style="display: none;">●1947: अमेरिकी संसद की कार्यवाही का पहला टेलीविज़न प्रसारण हुआ।</p>
+                <p class="en">●1952: First national elections in independent India.</p>
+                <p class="hi" style="display: none;">●1952: स्वतंत्र भारत में पहले राष्ट्रीय चुनाव।</p>
+                <p class="en">●1957: Hamilton Electric launched the world’s first battery-powered wristwatch.</p>
+                <p class="hi" style="display: none;">●1957: हैमिल्टन इलेक्ट्रिक ने दुनिया की पहली बैटरी से चलने वाली कलाई घड़ी लॉन्च की।</p>
+                <p class="en">●1968: Launch of the country’s first meteorological rocket Maneka.</p>
+                <p class="hi" style="display: none;">●1968: देश के पहले मौसम विज्ञान रॉकेट मनेका का प्रक्षेपण।</p>
+                <p class="en">●1993: USA and Russia agreed to halve their nuclear weapons numbers.</p>
+                <p class="hi" style="display: none;">●1993: अमेरिका और रूस ने अपने परमाणु हथियारों की संख्या को आधा करने पर सहमति व्यक्त की।</p>
+                <p class="en">●2020: An American airstrike near Baghdad International Airport killed the Iranian General Qasem Soleimani.</p>
+                <p class="hi" style="display: none;">●2020: बगदाद अंतरराष्ट्रीय हवाई अड्डे के पास एक अमेरिकी हवाई हमले में ईरानी जनरल कासेम सोलेमानी मारे गए।</p>
+                </div>
+
+                <br/>
+                <div class="dynamic-card" id="1-4">
+                <p class="en"><b>Historical Events on January 4</b></p>
+                <p class="hi" style="display: none;">4 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1831: Birth of Savitribai Phule, India’s first female teacher and a prominent social reformer. She worked tirelessly for women's education and equality.</p>
+                <p class="hi" style="display: none;">●1831: सावित्रीबाई फुले का जन्म, भारत की पहली महिला शिक्षिका और एक प्रमुख सामाजिक सुधारक। उन्होंने महिलाओं की शिक्षा और समानता के लिए अथक प्रयास किया।</p>
+                <p class="en">●1911: During British rule, Delhi was declared the new capital of India, replacing Kolkata.</p>
+                <p class="hi" style="display: none;">●1911: ब्रिटिश शासन के दौरान, दिल्ली को भारत की नई राजधानी घोषित किया गया, जो कोलकाता की जगह ले रही थी।</p>
+                <p class="en">●1929: Mahatma Gandhi announced the Civil Disobedience Movement against British rule, giving new momentum to the freedom struggle.</p>
+                <p class="hi" style="display: none;">●1929: महात्मा गांधी ने ब्रिटिश शासन के खिलाफ सविनय अवज्ञा आंदोलन की घोषणा की, जिससे स्वतंत्रता संग्राम को नई गति मिली।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-5">
+                <p class="en"><b>Historical Events on January 5</b></p>
+                <p class="hi" style="display: none;">5 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1972: Arunachal Pradesh and Mizoram were declared Union Territories, enhancing their administrative significance.</p>
+                <p class="hi" style="display: none;">●1972: अरुणाचल प्रदेश और मिजोरम को केंद्र शासित प्रदेश घोषित किया गया, जिससे उनकी प्रशासनिक महत्वता बढ़ गई।</p>
+                <p class="en">●2014: For the first time, India celebrated "National Space Science Day" on the birth anniversary of ISRO pioneer Satish Dhawan.</p>
+                <p class="hi" style="display: none;">●2014: पहली बार, भारत ने इसरो के अग्रणी सतीश धवन की जयंती पर "राष्ट्रीय अंतरिक्ष विज्ञान दिवस" मनाया।</p>
+                
+                <p class="en"><b>Other Events on January 5</b></p>
+                <p class="hi" style="display: none;">5 जनवरी के अन्य घटनाक्रम</p>
+                <p class="en">●2015: India successfully launched the GSLV-D5 satellite with its advanced cryogenic engine, marking a significant milestone in space technology.</p>
+                <p class="hi" style="display: none;">●2015: भारत ने अपने उन्नत क्रायोजेनिक इंजन के साथ जीएसएलवी-डी5 उपग्रह को सफलतापूर्वक लॉन्च किया, जो अंतरिक्ष प्रौद्योगिकी में एक महत्वपूर्ण मील का पत्थर है।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-6">
+                <p class="en"><b>Historical Events on January 6</b></p>
+                <p class="hi" style="display: none;">6 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1907: The first All India Political Conference was held in Surat under the leadership of Bal Gangadhar Tilak. This marked a significant phase in India’s freedom struggle.</p>
+                <p class="hi" style="display: none;">●1907: बाल गंगाधर तिलक के नेतृत्व में सूरत में पहली अखिल भारतीय राजनीतिक सम्मेलन आयोजित किया गया। यह भारत के स्वतंत्रता संग्राम में एक महत्वपूर्ण चरण था।</p>
+                <p class="en">●1912: The British announced the transfer of the capital of British India from Calcutta (now Kolkata) to Delhi.</p>
+                <p class="hi" style="display: none;">●1912: ब्रिटिशों ने ब्रिटिश भारत की राजधानी को कलकत्ता (अब कोलकाता) से दिल्ली स्थानांतरित करने की घोषणा की।</p>
+                <p class="en">●1947: The Constituent Assembly of India adopted the National Flag of India, which was presented by Dr. Rajendra Prasad.</p>
+                <p class="hi" style="display: none;">●1947: भारत की संविधान सभा ने भारत के राष्ट्रीय ध्वज को अपनाया, जिसे डॉ. राजेंद्र प्रसाद ने प्रस्तुत किया।</p>
+                
+                <p class="en"><b>Other Events on January 6</b></p>
+                <p class="hi" style="display: none;">6 जनवरी के अन्य घटनाक्रम</p>
+                <p class="en">●2012: India announced its successful testing of Agni-IV, an advanced nuclear-capable ballistic missile, showcasing its defense capabilities.</p>
+                <p class="hi" style="display: none;">●2012: भारत ने अपनी उन्नत परमाणु-सक्षम बैलिस्टिक मिसाइल अग्नि-IV के सफल परीक्षण की घोषणा की, जो इसकी रक्षा क्षमताओं को प्रदर्शित करता है।</p>
+                <p class="en">●2021: The Indian government launched the first phase of the vaccination drive for COVID-19, one of the largest in the world.</p>
+                <p class="hi" style="display: none;">●2021: भारतीय सरकार ने COVID-19 के लिए टीकाकरण अभियान के पहले चरण की शुरुआत की, जो दुनिया में सबसे बड़े में से एक है।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-7">
+                <p class="en"><b>Events on 7 January in Indian History</b></p>
+                <p class="hi" style="display: none;">7 जनवरी के भारतीय इतिहास में घटनाएँ</p>
+                <p class="en">●1738: The Battle of Bhopal ended with a peace treaty signed between Peshwa Bajirao and Jai Singh II, marking the Maratha victory.</p>
+                <p class="hi" style="display: none;">●1738: भोपाल की लड़ाई पेशवा बाजीराव और जय सिंह द्वितीय के बीच एक शांति संधि के साथ समाप्त हुई, जो मराठा विजय को चिह्नित करती है।</p>
+                <p class="en">●1859: The trial of Bahadur Shah Zafar, the last Mughal Emperor, began. He was charged with treason for his role in the 1857 Revolt against British rule.</p>
+                <p class="hi" style="display: none;">●1859: अंतिम मुगल सम्राट बहादुर शाह जफर का मुकदमा शुरू हुआ। उन्हें ब्रिटिश शासन के खिलाफ 1857 के विद्रोह में उनकी भूमिका के लिए राजद्रोह का आरोप लगाया गया था।</p>
+                <p class="en">●1994: The Malhotra Committee proposed reforms in India's insurance sector, recommending privatization and foreign participation in Life Insurance Corporation (LIC) and General Insurance Corporation (GIC).</p>
+                <p class="hi" style="display: none;">●1994: मल्होत्रा समिति ने भारत के बीमा क्षेत्र में सुधारों का प्रस्ताव रखा, जीवन बीमा निगम (LIC) और जनरल इंश्योरेंस कॉरपोरेशन (GIC) में निजीकरण और विदेशी भागीदारी की सिफारिश की।</p>
+                <p class="en">●1927: The first ever Indian science congress was held in Calcutta (now Kolkata) to promote the development of science and technology in India.</p>
+                <p class="hi" style="display: none;">●1927: भारत में विज्ञान और प्रौद्योगिकी के विकास को बढ़ावा देने के लिए कलकत्ता (अब कोलकाता) में पहली बार भारतीय विज्ञान कांग्रेस का आयोजन किया गया था।</p>
+                <p class="en">●1949: The Constituent Assembly adopted the resolution to officially use the Hindi language in Devanagari script as the official language of India.</p>
+                <p class="hi" style="display: none;">●1949: संविधान सभा ने भारत की आधिकारिक भाषा के रूप में देवनागरी लिपि में हिंदी भाषा के आधिकारिक उपयोग के लिए प्रस्ताव को अपनाया।</p>
+                <p class="en">●1980: The first Indian National Auto Expo, a significant milestone for the Indian automobile industry, was held in New Delhi.</p>
+                <p class="hi" style="display: none;">●1980: भारतीय ऑटोमोबाइल उद्योग के लिए एक महत्वपूर्ण मील का पत्थर, पहला भारतीय राष्ट्रीय ऑटो एक्सपो, नई दिल्ली में आयोजित किया गया था।</p>
+                <p class="en">●2004: Prime Minister Atal Bihari Vajpayee inaugurated the Pravasi Bharatiya Divas (Non-Resident Indian Day) to honor the contributions of Indians living abroad.</p>
+                <p class="hi" style="display: none;">●2004: प्रधान मंत्री अटल बिहारी वाजपेयी ने विदेश में रहने वाले भारतीयों के योगदान का सम्मान करने के लिए प्रवासी भारतीय दिवस का उद्घाटन किया।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-8">
+                <p class="en"><b>Events on 8 January in Indian History</b></p>
+                <p class="hi" style="display: none;">8 जनवरी के भारतीय इतिहास में घटनाएँ</p>
+                <p class="en">●1803: The ship Lady Castlereagh was launched in Kolkata, marking an important event in the city's maritime history.</p>
+                <p class="hi" style="display: none;">●1803: कोलकाता में जहाज लेडी कैस्टलरेघ का शुभारंभ हुआ, जो शहर के समुद्री इतिहास में एक महत्वपूर्ण घटना है।</p>
+                <p class="en">●1026: Sultan Mahmud looted and destroyed the Somnath temple.</p>
+                <p class="hi" style="display: none;">●1026: सुल्तान महमूद ने सोमनाथ मंदिर को लूट लिया और नष्ट कर दिया।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-9">
+                <p class="en"><b>Historical Events On January 9</b></p>
+                <p class="hi" style="display: none;">9 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1915: Mahatma Gandhi returned to India from South Africa, marking the beginning of his active role in India's freedom struggle. This day is now celebrated as Pravasi Bharatiya Divas to honor the contributions of the Indian diaspora.</p>
+                <p class="hi" style="display: none;">●1915: महात्मा गांधी दक्षिण अफ्रीका से भारत लौटे, जो भारत के स्वतंत्रता संग्राम में उनकी सक्रिय भूमिका की शुरुआत थी। इस दिन को अब भारतीय प्रवासी दिवस के रूप में मनाया जाता है ताकि भारतीय प्रवासी के योगदान का सम्मान किया जा सके।</p>
+                <p class="en">●1922: Birth of Hargobind Khorana, a Nobel Prize-winning biochemist known for his work on the genetic code.</p>
+                <p class="hi" style="display: none;">●1922: हरगोविंद खुराना का जन्म, एक नोबेल पुरस्कार विजेता जैव रसायनज्ञ, जो उनके आनुवंशिक कोड पर काम के लिए जाने जाते हैं।</p>
+                <p class="en">●1927: Birth of Sundarlal Bahuguna, environmentalist and leader of the Chipko Movement.</p>
+                <p class="hi" style="display: none;">●1927: सुंदरलाल बहुगुणा का जन्म, पर्यावरणविद और चिपको आंदोलन के नेता।</p>
+                <p class="en">●1934: Birth of Mahendra Kapoor, a legendary Indian playback singer.</p>
+                <p class="hi" style="display: none;">●1934: महेंद्र कपूर का जन्म, एक महान भारतीय पार्श्व गायक।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-10">
+                <p class="en"><b>Historical Events On January 10</b></p>
+                <p class="hi" style="display: none;">10 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1616: Sir Thomas Roe Meets Jahangir. British diplomat Sir Thomas Roe met Mughal Emperor Jahangir in Ajmer, initiating stronger trade relations between Britain and India.</p>
+                <p class="hi" style="display: none;">●1616: सर थॉमस रो ने जहांगीर से मुलाकात की। ब्रिटिश राजनयिक सर थॉमस रो ने अजमेर में मुगल सम्राट जहांगीर से मुलाकात की, जिससे ब्रिटेन और भारत के बीच मजबूत व्यापार संबंध स्थापित हुए।</p>
+                <p class="en">●1839: First Indian Tea Export. The first consignment of Indian tea was shipped to the United Kingdom, marking the beginning of India's prominence in the global tea trade.</p>
+                <p class="hi" style="display: none;">●1839: पहला भारतीय चाय निर्यात। भारतीय चाय की पहली खेप यूनाइटेड किंगडम भेजी गई, जिससे वैश्विक चाय व्यापार में भारत की प्रमुखता की शुरुआत हुई।</p>
+                <p class="en">●1966: Tashkent Agreement. India and Pakistan signed the Tashkent Agreement to end the Indo-Pakistani War of 1965.</p>
+                <p class="hi" style="display: none;">●1966: ताशकंद समझौता। भारत और पाकिस्तान ने 1965 के भारत-पाकिस्तान युद्ध को समाप्त करने के लिए ताशकंद समझौते पर हस्ताक्षर किए।</p>
+                <p class="en">●1975: First World Hindi Conference. Held in Nagpur, the conference aimed to promote Hindi as a global language.</p>
+                <p class="hi" style="display: none;">●1975: पहला विश्व हिंदी सम्मेलन। नागपुर में आयोजित, सम्मेलन का उद्देश्य हिंदी को वैश्विक भाषा के रूप में बढ़ावा देना था।</p>
+                <p class="en">●2006: World Hindi Day Established. January 10 was officially declared World Hindi Day to promote the Hindi language worldwide.</p>
+                <p class="hi" style="display: none;">●2006: विश्व हिंदी दिवस स्थापित। हिंदी भाषा को विश्व स्तर पर बढ़ावा देने के लिए 10 जनवरी को आधिकारिक रूप से विश्व हिंदी दिवस घोषित किया गया।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-11">
+                <p class="en"><b>Historical Events on January 11</b></p>
+                <p class="hi" style="display: none;">11 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1613: Mughal emperor Jahangir granted permission to the East India Company to establish a factory in Surat.</p>
+                <p class="hi" style="display: none;">●1613: मुगल सम्राट जहांगीर ने ईस्ट इंडिया कंपनी को सूरत में एक कारखाना स्थापित करने की अनुमति दी।</p>
+                <p class="en">●1759: The first life insurance company was launched in Philadelphia, USA.</p>
+                <p class="hi" style="display: none;">●1759: फिलाडेल्फिया, यूएसए में पहली जीवन बीमा कंपनी शुरू की गई।</p>
+                <p class="en">●1787: William Herschel discovered Titania and Oberon, the moons of Uranus.</p>
+                <p class="hi" style="display: none;">●1787: विलियम हर्शल ने यूरेनस के चंद्रमा टाइटेनिया और ओबेरॉन की खोज की।</p>
+                <p class="en">●1922: Insulin was first used to treat diabetes.</p>
+                <p class="hi" style="display: none;">●1922: मधुमेह के इलाज के लिए पहली बार इंसुलिन का उपयोग किया गया।</p>
+                <p class="en">●1942: Japan occupied Kuala Lumpur, the capital of Malaysia.</p>
+                <p class="hi" style="display: none;">●1942: जापान ने मलेशिया की राजधानी कुआलालंपुर पर कब्जा कर लिया।</p>
+                <p class="en">●1966: Gulzarilal Nanda became the caretaker Prime Minister of India.</p>
+                <p class="hi" style="display: none;">●1966: गुलजारीलाल नंदा भारत के कार्यवाहक प्रधान मंत्री बने।</p>
+                <p class="en">●1972: East Pakistan was officially renamed Bangladesh, with Sheikh Mujibur Rahman as its first Prime Minister.</p>
+                <p class="hi" style="display: none;">●1972: पूर्वी पाकिस्तान का आधिकारिक रूप से नाम बदलकर बांग्लादेश कर दिया गया, और शेख मुजीबुर रहमान इसके पहले प्रधान मंत्री बने।</p>
+                <p class="en">●1999: The Indian government issued an ordinance repealing the Maximum Landholding Act.</p>
+                <p class="hi" style="display: none;">●1999: भारतीय सरकार ने अधिकतम भूमि धारण अधिनियम को निरस्त करने के लिए एक अध्यादेश जारी किया।</p>
+                <p class="en">●2000: The Chhattisgarh High Court was established.</p>
+                <p class="hi" style="display: none;">●2000: छत्तीसगढ़ उच्च न्यायालय की स्थापना की गई।</p>
+                <p class="en">●2001: S. P. Bharucha became the 30th Chief Justice of India.</p>
+                <p class="hi" style="display: none;">●2001: एस. पी. भरूचा भारत के 30वें मुख्य न्यायाधीश बने।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-12">
+                <p class="en"><b>Historical Events on January 12</b></p>
+                <p class="hi" style="display: none;">12 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">● National Youth Day (India)... Celebrated annually to honor the birth anniversary of Swami Vivekananda.</p>
+                <p class="hi" style="display: none;">● राष्ट्रीय युवा दिवस (भारत)... स्वामी विवेकानंद की जयंती के उपलक्ष्य में प्रतिवर्ष मनाया जाता है।</p>
+                <p class="en">●1705: Satara became the capital of the Maratha Empire.</p>
+                <p class="hi" style="display: none;">●1705: सतारा मराठा साम्राज्य की राजधानी बना।</p>
+                <p class="en">●1948: Mahatma Gandhi gave his last speech and started a hunger strike against communal violence after the Partition of India in 1947.</p>
+                <p class="hi" style="display: none;">●1948: महात्मा गांधी ने अपना अंतिम भाषण दिया और 1947 में भारत के विभाजन के बाद सांप्रदायिक हिंसा के खिलाफ भूख हड़ताल शुरू की।</p>
+                <p class="en">●2005: Establishment of the National Knowledge Commission in India.</p>
+                <p class="hi" style="display: none;">●2005: भारत में राष्ट्रीय ज्ञान आयोग की स्थापना।</p>
+                <p class="en">●2019: President Ram Nath Kovind cleared the Economic Weaker Section Reservation Bill (Articles 15(6) and 16(6)) to provide 10% reservations for economically weaker upper-caste individuals.</p>
+                <p class="hi" style="display: none;">●2019: राष्ट्रपति राम नाथ कोविंद ने आर्थिक रूप से कमजोर वर्ग आरक्षण विधेयक (अनुच्छेद 15(6) और 16(6)) को मंजूरी दी, जिससे आर्थिक रूप से कमजोर उच्च जाति के व्यक्तियों के लिए 10% आरक्षण प्रदान किया गया।</p>
+                <br/>
+                <p class="en"><b>Famous Birthdays & Birth Anniversaries</b></p>
+                <p class="hi" style="display: none;">प्रसिद्ध जन्मदिन और जयंती</p>
+                <p class="en">●1598: Jijabai Shahaji Bhosale, mother of Shivaji Maharaj and a key figure in the Maratha Empire.</p>
+                <p class="hi" style="display: none;">●1598: जीजाबाई शाहाजी भोसले, शिवाजी महाराज की माता और मराठा साम्राज्य की एक प्रमुख हस्ती।</p>
+                <p class="en">●1863: Swami Vivekananda, Indian Hindu monk and philosopher.</p>
+                <p class="hi" style="display: none;">●1863: स्वामी विवेकानंद, भारतीय हिंदू संन्यासी और दार्शनिक।</p>
+                <p class="en">●1869: Bhagwan Das, Indian Theosophist and public servant.</p>
+                <p class="hi" style="display: none;">●1869: भगवान दास, भारतीय थियोसोफिस्ट और सार्वजनिक सेवक।</p>
+                <p class="en">●1918: C. Ramachandra, renowned Indian film music composer.</p>
+                <p class="hi" style="display: none;">●1918: सी. रामचंद्र, प्रसिद्ध भारतीय फिल्म संगीतकार।</p>
+                <p class="en">●1921: Basant Kumar Birla, Indian industrialist and philanthropist.</p>
+                <p class="hi" style="display: none;">●1921: बसंत कुमार बिड़ला, भारतीय उद्योगपति और परोपकारी।</p>
+                <p class="en">●1972: Priyanka Gandhi, Indian politician and Congress Party leader.</p>
+                <p class="hi" style="display: none;">●1972: प्रियंका गांधी, भारतीय राजनीतिज्ञ और कांग्रेस पार्टी की नेता।</p>
+                <p class="en">●1976: Mahesh Kale, Indian classical vocalist.</p>
+                <p class="hi" style="display: none;">●1976: महेश काले, भारतीय शास्त्रीय गायक।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-13">
+                <p class="en"><b>Historical Events on January 13</b></p>
+                <p class="hi" style="display: none;">13 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1610: Galileo Galilei discovered Callisto, Jupiter’s fourth satellite.</p>
+                <p class="hi" style="display: none;">●1610: गैलीलियो गैलीली ने कैलिस्टो की खोज की, जो बृहस्पति का चौथा उपग्रह है।</p>
+                <p class="en">●1709: Mughal ruler Bahadur Shah I defeated his brother Kam Bakhsh in Hyderabad in a power struggle.</p>
+                <p class="hi" style="display: none;">●1709: मुगल शासक बहादुर शाह I ने हैदराबाद में सत्ता संघर्ष में अपने भाई काम बख्श को हराया।</p>
+                <p class="en">● 1709: The Marathas defeated the British in the Battle of Vadgaon.</p>
+                <p class="hi" style="display: none;">● 1709: मराठों ने वडगांव की लड़ाई में अंग्रेजों को हराया।</p>
+                <p class="en">●1910: The world’s first public radio broadcast began in New York.</p>
+                <p class="hi" style="display: none;">●1910: न्यूयॉर्क में दुनिया का पहला सार्वजनिक रेडियो प्रसारण शुरू हुआ।</p>
+                <p class="en">●1915: An earthquake in Avezzano, Italy, killed 29,800 people.</p>
+                <p class="hi" style="display: none;">●1915: इटली के एवेज़ानो में भूकंप से 29,800 लोग मारे गए।</p>
+                <p class="en">●1930: Mickey Mouse comics were first published.</p>
+                <p class="hi" style="display: none;">●1930: मिकी माउस कॉमिक्स पहली बार प्रकाशित हुए।</p>
+                <p class="en">●1964: 100 people were killed in anti-Muslim riots in Kolkata.</p>
+                <p class="hi" style="display: none;">●1964: कोलकाता में मुस्लिम विरोधी दंगों में 100 लोग मारे गए।</p>
+                <p class="en">●1994: An Indian Airlines A320 Airbus traveling from Bangalore to Madras, carrying 56 passengers and seven crew members, was hijacked.</p>
+                <p class="hi" style="display: none;">●1994: बैंगलोर से मद्रास जा रहे 56 यात्रियों और सात चालक दल के सदस्यों को ले जा रहे इंडियन एयरलाइंस के ए320 एयरबस का अपहरण कर लिया गया।</p>
+                <p class="en">●2007: K. G. Balakrishnan became the 37th Chief Justice of India.</p>
+                <p class="hi" style="display: none;">●2007: के. जी. बालकृष्णन भारत के 37वें मुख्य न्यायाधीश बने।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-14">
+                <p class="en"><b>Historical Events on January 14</b></p>
+                <p class="hi" style="display: none;">14 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">● Geography Day (India) & World Logic Day (UNESCO)</p>
+                <p class="hi" style="display: none;">● भूगोल दिवस (भारत) और विश्व तर्क दिवस (यूनेस्को)</p>
+                <p class="en">●1641: United East India Company conquered the city of Malacca.</p>
+                <p class="hi" style="display: none;">●1641: यूनाइटेड ईस्ट इंडिया कंपनी ने मलक्का शहर पर कब्जा कर लिया।</p>
+                <p class="en">●1758: Under an authority letter from the Emperor of England, the East India Company got the right to keep the money and property looted in any war against the company or emperor in India.</p>
+                <p class="hi" style="display: none;">●1758: इंग्लैंड के सम्राट के एक प्राधिकरण पत्र के तहत, ईस्ट इंडिया कंपनी को भारत में कंपनी या सम्राट के खिलाफ किसी भी युद्ध में लूटे गए धन और संपत्ति को रखने का अधिकार मिला।</p>
+                <p class="en">●1760: French General Lally handed over his colony Pondicherry (present-day Puducherry) to the British Captain Ayre Coot.</p>
+                <p class="hi" style="display: none;">●1760: फ्रांसीसी जनरल लाली ने अपनी कॉलोनी पांडिचेरी (वर्तमान में पुडुचेरी) को ब्रिटिश कप्तान आयर कूट को सौंप दिया।</p>
+                <p class="en">●1761: The Third Battle of Panipat between Marathas and Afghans.</p>
+                <p class="hi" style="display: none;">●1761: मराठों और अफगानों के बीच पानीपत की तीसरी लड़ाई।</p>
+                <p class="en">●1907: A disastrous earthquake in Kingston, the capital of the Caribbean country of Jamaica, killed more than 1,000 people.</p>
+                <p class="hi" style="display: none;">●1907: कैरेबियाई देश जमैका की राजधानी किंग्स्टन में विनाशकारी भूकंप से 1,000 से अधिक लोग मारे गए।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-15">
+                <p class="en"><b>Historical Events on January 15</b></p>
+                <p class="hi" style="display: none;">15 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1559: Queen Elizabeth I was crowned Queen of England at Westminster Abbey.</p>
+                <p class="hi" style="display: none;">●1559: क्वीन एलिजाबेथ I को वेस्टमिंस्टर एब्बे में इंग्लैंड की रानी का ताज पहनाया गया।</p>
+                <p class="en">●1761: The Third Battle of Panipat ended.</p>
+                <p class="hi" style="display: none;">●1761: पानीपत की तीसरी लड़ाई समाप्त हुई।</p>
+                <p class="en">●1784: Establishment of the Asiatic Society of Bengal.</p>
+                <p class="hi" style="display: none;">●1784: एशियाटिक सोसाइटी ऑफ बंगाल की स्थापना।</p>
+                <p class="en">●1861: Elisha G. Otis, the inventor, received the world’s first patent for a safe lift.</p>
+                <p class="hi" style="display: none;">●1861: आविष्कारक एलिशा जी. ओटिस को सुरक्षित लिफ्ट के लिए दुनिया का पहला पेटेंट मिला।</p>
+                <p class="en">●1889: The Pemberton Medicine Company started in Atlanta, Georgia, USA. This company is currently known as The Coca Cola Company.</p>
+                <p class="hi" style="display: none;">●1889: पेम्बर्टन मेडिसिन कंपनी अटलांटा, जॉर्जिया, यूएसए में शुरू हुई। यह कंपनी वर्तमान में द कोका कोला कंपनी के नाम से जानी जाती है।</p>
+                <p class="en">●1934: A massive earthquake in Bihar killed about 20,000 people.</p>
+                <p class="hi" style="display: none;">●1934: बिहार में एक बड़े भूकंप से लगभग 20,000 लोग मारे गए।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-16">
+                <p class="en"><b>Historical Events on January 16</b></p>
+                <p class="hi" style="display: none;">16 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1556: Philip II became the Emperor of Spain.</p>
+                <p class="hi" style="display: none;">●1556: फिलिप II स्पेन के सम्राट बने।</p>
+                <p class="en">●1681: Chhatrapati Sambhaji Raje crowned Chhatrapati.</p>
+                <p class="hi" style="display: none;">●1681: छत्रपति संभाजी राजे का राज्याभिषेक हुआ।</p>
+                <p class="en">●1760: The British capture Pondicherry from the French.</p>
+                <p class="hi" style="display: none;">●1760: ब्रिटिशों ने फ्रांसीसियों से पांडिचेरी पर कब्जा कर लिया।</p>
+                <p class="en">●1769: Planned horse racing organized for the first time in Accra, Calcutta (now Kolkata).</p>
+                <p class="hi" style="display: none;">●1769: अकरा, कलकत्ता (अब कोलकाता) में पहली बार नियोजित घुड़दौड़ का आयोजन किया गया।</p>
+                <p class="en">●1919: The 18th Amendment to the US Constitution was enacted, and a nationwide embargo was imposed.</p>
+                <p class="hi" style="display: none;">●1919: अमेरिकी संविधान में 18वां संशोधन लागू किया गया, और देशव्यापी प्रतिबंध लगाया गया।</p>
+                <p class="en">●1920: The League of Nations held its first council meeting in Paris.</p>
+                <p class="hi" style="display: none;">●1920: लीग ऑफ नेशंस ने पेरिस में अपनी पहली परिषद बैठक आयोजित की।</p>
+                <p class="en">●1941: Netaji Subhash Chandra Bose left the country.</p>
+                <p class="hi" style="display: none;">●1941: नेताजी सुभाष चंद्र बोस ने देश छोड़ दिया।</p>
+                <p class="en">●1979: The Shah of Iran fled to Egypt with his family.</p>
+                <p class="hi" style="display: none;">●1979: ईरान के शाह अपने परिवार के साथ मिस्र भाग गए।</p>
+                <p class="en">●1992: Extradition treaty between India and Britain was signed.</p>
+                <p class="hi" style="display: none;">●1992: भारत और ब्रिटेन के बीच प्रत्यर्पण संधि पर हस्ताक्षर किए गए।</p>
+                <p class="en">●1995: INS Vidyut, a home-made missile ship, was launched at Goa.</p>
+                <p class="hi" style="display: none;">●1995: आईएनएस विद्युत, एक स्वदेशी मिसाइल जहाज, गोवा में लॉन्च किया गया।</p>
+                <p class="en">●1996: Hubble Space Telescope scientists claim to have discovered more than 100 new galaxies in space.</p>
+                <p class="hi" style="display: none;">●1996: हबल स्पेस टेलीस्कोप के वैज्ञानिकों ने अंतरिक्ष में 100 से अधिक नई आकाशगंगाओं की खोज का दावा किया।</p>
+                <p class="en">●1999: Anil Sood of India became the Vice President of the World Bank.</p>
+                <p class="hi" style="display: none;">●1999: भारत के अनिल सूद विश्व बैंक के उपाध्यक्ष बने।</p>
+                <p class="en">●2000: The Chinese government recognized the two-year-old Tibetan boy as the patron of Buddha.</p>
+                <p class="hi" style="display: none;">●2000: चीनी सरकार ने दो वर्षीय तिब्बती लड़के को बुद्ध के संरक्षक के रूप में मान्यता दी।</p>
+                <p class="en">●2003: Kalpana Chawla, of Indian origin, embarked on a second space trip.</p>
+                <p class="hi" style="display: none;">●2003: भारतीय मूल की कल्पना चावला ने दूसरी अंतरिक्ष यात्रा शुरू की।</p>
+                <p class="en">●2006: Socialist leader Michelle Bachelet became the first female President of Chile.</p>
+                <p class="hi" style="display: none;">●2006: समाजवादी नेता मिशेल बाचेलेट चिली की पहली महिला राष्ट्रपति बनीं।</p>
+                <p class="en">●2008: Tata Motors unveiled the Nano, a Rs. 1 lakh People’s Car.</p>
+                <p class="hi" style="display: none;">●2008: टाटा मोटर्स ने नैनो, एक 1 लाख रुपये की पीपुल्स कार का अनावरण किया।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-17">
+                <p class="en"><b>Historical Events on January 17</b></p>
+                <p class="hi" style="display: none;">17 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1601: Mughal Emperor Akbar conquered Asirgarh Fort.</p>
+                <p class="hi" style="display: none;">●1601: मुगल सम्राट अकबर ने असीरगढ़ किले पर कब्जा कर लिया।</p>
+                <p class="en">●1773: Captain James Cook crossed the Antarctic Circle.</p>
+                <p class="hi" style="display: none;">●1773: कप्तान जेम्स कुक ने अंटार्कटिक सर्कल को पार किया।</p>
+                <p class="en">●1912: Robert Falcon Scott reached the South Pole.</p>
+                <p class="hi" style="display: none;">●1912: रॉबर्ट फाल्कन स्कॉट दक्षिणी ध्रुव पर पहुंचे।</p>
+                <p class="en">●1946: First meeting of the United Nations Security Council.</p>
+                <p class="hi" style="display: none;">●1946: संयुक्त राष्ट्र सुरक्षा परिषद की पहली बैठक।</p>
+                <p class="en">●1987: Tata Football Academy opened.</p>
+                <p class="hi" style="display: none;">●1987: टाटा फुटबॉल अकादमी का उद्घाटन हुआ।</p>
+                <p class="en">●1989: Colonel J.K. Bajaj became the first Indian to reach the North Pole.</p>
+                <p class="hi" style="display: none;">●1989: कर्नल जे.के. बजाज उत्तरी ध्रुव पर पहुंचने वाले पहले भारतीय बने।</p>
+                <p class="en">●1995: A 7.2 magnitude earthquake in Japan killed 5,372 people.</p>
+                <p class="hi" style="display: none;">●1995: जापान में 7.2 तीव्रता के भूकंप से 5,372 लोग मारे गए।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-18">
+                <p class="en"><b>Historical Events on January 18</b></p>
+                <p class="hi" style="display: none;">18 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1778: Captain James Cook became the first European to reach the Hawaiian Islands.</p>
+                <p class="hi" style="display: none;">●1778: कप्तान जेम्स कुक हवाई द्वीप समूह तक पहुंचने वाले पहले यूरोपीय बने।</p>
+                <p class="en">●1919: Establishment of Bentley Motors Limited.</p>
+                <p class="hi" style="display: none;">●1919: बेंटले मोटर्स लिमिटेड की स्थापना।</p>
+                <p class="en">●1951: The first lie detector machine was used in the Netherlands.</p>
+                <p class="hi" style="display: none;">●1951: नीदरलैंड में पहली बार झूठ पकड़ने वाली मशीन का उपयोग किया गया।</p>
+                <p class="en">●1959: Meera Ben (Madeline Slade), an aide of Mahatma Gandhi, left India.</p>
+                <p class="hi" style="display: none;">●1959: महात्मा गांधी की सहयोगी मीरा बेन (मेडेलीन स्लेड) ने भारत छोड़ दिया।</p>
+                <p class="en">●1964: Inauguration of the World Trade Center building in New York.</p>
+                <p class="hi" style="display: none;">●1964: न्यूयॉर्क में वर्ल्ड ट्रेड सेंटर भवन का उद्घाटन।</p>
+                <p class="en">●1997: Norway’s Borg Ausland crossed the Atlantic Ocean alone.</p>
+                <p class="hi" style="display: none;">●1997: नॉर्वे के बोरग ऑस्लैंड ने अकेले अटलांटिक महासागर को पार किया।</p>
+                <p class="en">●1997: Nafisa Joseph became Miss India.</p>
+                <p class="hi" style="display: none;">●1997: नफीसा जोसेफ मिस इंडिया बनीं।</p>
+                <p class="en">●1998: Madan Mohan Punchhi became the 28th Chief Justice of India.</p>
+                <p class="hi" style="display: none;">●1998: मदन मोहन पुंछी भारत के 28वें मुख्य न्यायाधीश बने।</p>
+                <p class="en">●1999: Nobel laureate economist Amartya Sen was awarded the Bharat Ratna, the highest civilian honor of India.</p>
+                <p class="hi" style="display: none;">●1999: नोबेल पुरस्कार विजेता अर्थशास्त्री अमर्त्य सेन को भारत के सर्वोच्च नागरिक सम्मान भारत रत्न से सम्मानित किया गया।</p>
+                <p class="en">●2002: The US agreed to provide state-of-the-art weapons to India.</p>
+                <p class="hi" style="display: none;">●2002: अमेरिका ने भारत को अत्याधुनिक हथियार उपलब्ध कराने पर सहमति व्यक्त की।</p>
+                <p class="en">●2005: The world’s largest passenger plane, the Airbus A380, was unveiled.</p>
+                <p class="hi" style="display: none;">●2005: दुनिया का सबसे बड़ा यात्री विमान, एयरबस ए380, का अनावरण किया गया।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-19">
+                <p class="en"><b>Historical Events on January 19</b></p>
+                <p class="hi" style="display: none;">19 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">● Maharana Pratap, the founder of Mewad and eminent personality, passed away.</p>
+                <p class="hi" style="display: none;">● मेवाड़ के संस्थापक और प्रमुख व्यक्तित्व महाराणा प्रताप का निधन।</p>
+                <p class="en">●1839: Aden was conquered by the British East India Company.</p>
+                <p class="hi" style="display: none;">● 1839: एडन पर ब्रिटिश ईस्ट इंडिया कंपनी ने कब्जा कर लिया।</p>
+                <p class="en">●1892: Chintaman Vinayak Joshi, a famous Marathi comedy writer, was born.</p>
+                <p class="hi" style="display: none;">● 1892: प्रसिद्ध मराठी हास्य लेखक चिंतामणि विनायक जोशी का जन्म हुआ।</p>
+                <p class="en">●1905: Maharshi Devendranath Tagore, a Bengali writer and thinker, passed away.</p>
+                <p class="hi" style="display: none;">● 1905: बंगाली लेखक और विचारक महर्षि देवेंद्रनाथ टैगोर का निधन।</p>
+                <p class="en">●1910: Vinayak Damodar Karnaki (Master Vinayak), a famous Marathi actor, director, and producer, was born.</p>
+                <p class="hi" style="display: none;">● 1910: प्रसिद्ध मराठी अभिनेता, निर्देशक और निर्माता विनायक दामोदर कर्णकी (मास्टर विनायक) का जन्म हुआ।</p>
+                <p class="en">●1919: Dharam Singh, a field hockey player for the Indian Team at the 1964 Olympics (Gold Winner), was born.</p>
+                <p class="hi" style="display: none;">● 1919: 1964 ओलंपिक (स्वर्ण विजेता) में भारतीय टीम के लिए फील्ड हॉकी खिलाड़ी धरम सिंह का जन्म हुआ।</p>
+                <p class="en">●1951: Amritlal Vithaldas Thakkar (Thakkarbappa), a social reformer of Gujarat and right hand of Gandhiji in socially segregated Harijans, passed away.</p>
+                <p class="hi" style="display: none;">● 1951: अमृतलाल विठ्ठलदास ठक्कर (ठक्करबप्पा), गुजरात के एक सामाजिक सुधारक और सामाजिक रूप से अलग-थलग हरिजनों में गांधीजी के दाहिने हाथ, का निधन।</p>
+                <p class="en">●1960: Ramchandra Gopal (Dadasaheb Torne), a famous film director, passed away.</p>
+                <p class="hi" style="display: none;">● 1960: प्रसिद्ध फिल्म निर्देशक रामचंद्र गोपाल (दादासाहेब तोरणे) का निधन।</p>
+                <p class="en">●1963: Kuladhor Chaliha, one of the pioneer Congress leaders of Assam, passed away.</p>
+                <p class="hi" style="display: none;">● 1963: असम के अग्रणी कांग्रेस नेताओं में से एक कुलाधर चालीहा का निधन।</p>
+                <p class="en">●1966: Indira Gandhi was elected leader of the Congress party to succeed the late Lal Bahadur Shastri as the third Prime Minister of India. She pledged to follow the path of Non-Alignment in world affairs.</p>
+                <p class="hi" style="display: none;">● 1966: इंदिरा गांधी को कांग्रेस पार्टी का नेता चुना गया, जो दिवंगत लाल बहादुर शास्त्री के बाद भारत की तीसरी प्रधानमंत्री बनीं। उन्होंने विश्व मामलों में गुटनिरपेक्षता के मार्ग का पालन करने की प्रतिज्ञा की।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-20">
+                <p class="en"><b>Historical Events on January 20</b></p>
+                <p class="hi" style="display: none;">20 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1817: Ram Mohun Roy started Hindu College in Calcutta with the help of Justice H. East and David Hare. This college was later renamed as the Presidency College.</p>
+                <p class="hi" style="display: none;">●1817: राम मोहन रॉय ने जस्टिस एच. ईस्ट और डेविड हेयर की मदद से कलकत्ता में हिंदू कॉलेज शुरू किया। इस कॉलेज का नाम बाद में प्रेसिडेंसी कॉलेज रखा गया।</p>
+                <p class="en">●1897: Gandhiji declines to prosecute assailants.</p>
+                <p class="hi" style="display: none;">●1897: गांधीजी ने हमलावरों पर मुकदमा चलाने से इनकार कर दिया।</p>
+                <p class="en">●1898: Krishnarao Ganeshpant Fulanbrikar (Master Krishnarao), a famous singer, actor, and music director, was born.</p>
+                <p class="hi" style="display: none;">●1898: प्रसिद्ध गायक, अभिनेता और संगीत निर्देशक कृष्णराव गणेशपंत फुलांब्रिकर (मास्टर कृष्णराव) का जन्म हुआ।</p>
+                <p class="en">●1931: 'Saroj Kumari', a feature film produced by Mahavir Photoplays and Theatres Ltd., Secunderabad, was prohibited onon the grounds that it was "sordid" and "revolting".</p>
+                <p class="hi" style="display: none;">●1931: महावीर फोटोप्ले और थिएटर्स लिमिटेड, सिकंदराबाद द्वारा निर्मित फीचर फिल्म 'सरोज कुमारी' कोको "घिनौना" और "घृणित" होने के आधार पर प्रतिबंधित कर दिया गया था।</p>
+                <p class="en">●1948: 1. A bomb exploded near Birla House during a prayer meeting of Gandhi. 2. A three-member UN Commission for investigation/mediation on Kashmir was formed. 3. K.M. Cariappa succeeded Lieutenant General D. Rissell as the Army Commander, Delhi and East Punjab, and was responsible for conducting the operation in Kashmir.</p>
+                <p class="hi" style="display: none;">●1948: 1. गांधी की प्रार्थना सभा के दौरान बिरला हाउस के पास एक बम विस्फोट हुआ। 2. कश्मीर पर जांच/मध्यस्थता के लिए तीन सदस्यीय संयुक्त राष्ट्र आयोग का गठन किया गया। 3. के.एम. करियप्पा ने लेफ्टिनेंट जनरल डी. रसेल की जगह दिल्ली और पूर्वी पंजाब के सेना कमांडर के रूप में कार्यभार संभाला और कश्मीर में ऑपरेशन करने के लिए जिम्मेदार थे।</p>
+                <p class="en">●1949: Junagarh formally merged with Saurashtra.</p>
+                <p class="hi" style="display: none;">●1949: जूनागढ़ का औपचारिक रूप से सौराष्ट्र में विलय हो गया।</p>
+                <p class="en">●1952: Vasant Patankar, a famous Marathi writer, was born.</p>
+                <p class="hi" style="display: none;">●1952: प्रसिद्ध मराठी लेखक वसंत पाटणकर का जन्म हुआ।</p>
+                <p class="en">●1957: The first Indian Atomic Reactor "Apsara" at Trombay, Mumbai, was dedicated to the nation.</p>
+                <p class="hi" style="display: none;">●1957: मुंबई के ट्रॉम्बे में पहला भारतीय परमाणु रिएक्टर "अप्सरा" राष्ट्र को समर्पित किया गया।</p>
+                <p class="en">●1972: Manipur, Meghalaya, and Tripura become states of the Indian Union. Arunachal Pradesh and Mizoram become Union Territories. Assam's North East Frontier Agency (NEFA) was renamed as Arunachal Pradesh.</p>
+                <p class="hi" style="display: none;">●1972: मणिपुर, मेघालय और त्रिपुरा भारतीय संघ के राज्य बने। अरुणाचल प्रदेश और मिजोरम केंद्र शासित प्रदेश बने। असम की उत्तर पूर्व सीमांत एजेंसी (एनईएफए) का नाम बदलकर अरुणाचल प्रदेश कर दिया गया।</p>
+                <p class="en">●1990: Dr. Raja Ramanna was sworn in as Minister of State for Defence.</p>
+                <p class="hi" style="display: none;">●1990: डॉ. राजा रामन्ना ने रक्षा राज्य मंत्री के रूप में शपथ ली।</p>
+                <p class="en">●1993: Karnataka ministry expanded to include 27 more members; S.M. Krishna was made Dy. CM.</p>
+                <p class="hi" style="display: none;">●1993: कर्नाटक मंत्रालय का विस्तार कर 27 और सदस्यों को शामिल किया गया; एस.एम. कृष्णा को उप मुख्यमंत्री बनाया गया।</p>
+                <p class="en">●1993: Captain Karamjeet Singh, the first Param Vir Chakra Awardee, passed away.</p>
+                <p class="hi" style="display: none;">●1993: पहले परमवीर चक्र पुरस्कार विजेता कैप्टन करमजीत सिंह का निधन।</p>
+                <p class="en">●1993: Bindeshwari Dube, former Chief Minister of Bihar, passed away.</p>
+                <p class="hi" style="display: none;">●1993: बिहार के पूर्व मुख्यमंत्री बिंदेश्वरी दुबे का निधन।</p>
+                <p class="en">●1995: Supreme Court ordered the closure of 84 industries in and around Taj Mahal in UP due to pollution.</p>
+                <p class="hi" style="display: none;">●1995: सुप्रीम कोर्ट ने प्रदूषण के कारण यूपी में ताजमहल के आसपास 84 उद्योगों को बंद करने का आदेश दिया।</p>
+                <p class="en">●1996: The Indian Army conducted United Nations Peacekeeping Operations in New Delhi from 20th to 26th January 1996, wherein delegates from UN HQ and 17 foreign countries of the Asia-Pacific region participated. The Under Secretary General, Mr. Kofi Annan, was the chief guest.</p>
+                <p class="hi" style="display: none;">●1996: भारतीय सेना ने 20 से 26 जनवरी 1996 तक नई दिल्ली में संयुक्त राष्ट्र शांति स्थापना अभियान का आयोजन किया, जिसमें संयुक्त राष्ट्र मुख्यालय और एशिया-प्रशांत क्षेत्र के 17 विदेशी देशों के प्रतिनिधियों ने भाग लिया। अंडर सेक्रेटरी जनरल श्री कोफी अन्नान मुख्य अतिथि थे।</p>
+                <p class="en">●1997: Indian Express launched its 18th edition from Belgaum.</p>
+                <p class="hi" style="display: none;">●1997: इंडियन एक्सप्रेस ने बेलगाम से अपना 18वां संस्करण लॉन्च किया।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-21">
+                <p class="en"><b>Historical Events on January 21</b></p>
+                <p class="hi" style="display: none;">21 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1972: Manipur and Meghalaya attained statehood in India.</p>
+                <p class="hi" style="display: none;">●1972: मणिपुर और मेघालय ने भारत में राज्य का दर्जा प्राप्त किया।</p>
+                <p class="en">●2008: India launched an Israeli spy satellite into polar orbit.</p>
+                <p class="hi" style="display: none;">●2008: भारत ने एक इजरायली जासूसी उपग्रह को ध्रुवीय कक्षा में लॉन्च किया।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-22">
+                <p class="en"><b>Historical Events on January 22</b></p>
+                <p class="hi" style="display: none;">22 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1901: After the death of Queen Victoria, Edward VII becomes the King of England.</p>
+                <p class="hi" style="display: none;">●1901: महारानी विक्टोरिया की मृत्यु के बाद, एडवर्ड VII इंग्लैंड के राजा बने।</p>
+                <p class="en">●1924: Ramsay MacDonald becomes the first Prime Minister of the Labour Party in Britain.</p>
+                <p class="hi" style="display: none;">●1924: रैमसे मैकडोनाल्ड ब्रिटेन में लेबर पार्टी के पहले प्रधानमंत्री बने।</p>
+                <p class="en">●1947: The Constitution Committee approves a resolution outlining the structure of the Indian Constitution.</p>
+                <p class="hi" style="display: none;">●1947: संविधान समिति ने भारतीय संविधान की संरचना को रेखांकित करने वाले एक प्रस्ताव को मंजूरी दी।</p>
+                <p class="en">●1971: Sarv Mittra Sikri becomes the 13th Chief Justice of India.</p>
+                <p class="hi" style="display: none;">●1971: सर्व मित्र सिकरी भारत के 13वें मुख्य न्यायाधीश बने।</p>
+                <p class="en">●2001: The missile carrier ship INS Mumbai is launched into the Indian Navy.</p>
+                <p class="hi" style="display: none;">●2001: मिसाइल वाहक जहाज आईएनएस मुंबई को भारतीय नौसेना में शामिल किया गया।</p>
+                <p class="en">●2009: The film Slumdog Millionaire is nominated for an Oscar.</p>
+                <p class="hi" style="display: none;">●2009: फिल्म स्लमडॉग मिलियनेयर को ऑस्कर के लिए नामांकित किया गया।</p>
+                <p class="en">●2015: The “Beti Bachao, Beti Padhao” scheme is launched by Prime Minister Narendra Modi in Panipat, Haryana.</p>
+                <p class="hi" style="display: none;">●2015: प्रधानमंत्री नरेंद्र मोदी द्वारा हरियाणा के पानीपत में "बेटी बचाओ, बेटी पढ़ाओ" योजना शुरू की गई।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-23">
+                <p class="en"><b>Historical Events on January 23</b></p>
+                <p class="hi" style="display: none;">23 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1897: Birth of Subhas Chandra Bose, a prominent leader in the Indian independence movement.</p>
+                <p class="hi" style="display: none;">●1897: सुभाष चंद्र बोस का जन्म, भारतीय स्वतंत्रता आंदोलन में एक प्रमुख नेता।</p>
+                <p class="en">●1926: Bal Thackeray, the founder of Shiv Sena, was born.</p>
+                <p class="hi" style="display: none;">●1926: बाल ठाकरे, शिवसेना के संस्थापक, का जन्म हुआ।</p>
+                <p class="en">●1965: India's first alloy steel plant was inaugurated in Durgapur.</p>
+                <p class="hi" style="display: none;">●1965: भारत का पहला मिश्र धातु इस्पात संयंत्र दुर्गापुर में उद्घाटन किया गया।</p>
+                <p class="en">●2007: India and Russia agreed to manufacture medium-sized versatile transport planes.</p>
+                <p class="hi" style="display: none;">●2007: भारत और रूस ने मध्यम आकार के बहुमुखी परिवहन विमानों के निर्माण पर सहमति व्यक्त की।</p>
+                <p class="en">●2009: Restrictions on smoking scenes in films and TV shows were lifted.</p>
+                <p class="hi" style="display: none;">●2009: फिल्मों और टीवी शो में धूम्रपान दृश्यों पर प्रतिबंध हटा दिया गया।</p>
+                <p class="en">●2004: The Indian government announced the Pravasi Bharatiya Samman Award to honor exceptional contributions by overseas Indians.</p>
+                <p class="hi" style="display: none;">●2004: भारतीय सरकार ने प्रवासी भारतीय सम्मान पुरस्कार की घोषणा की, जो प्रवासी भारतीयों के असाधारण योगदान का सम्मान करता है।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-24">
+                <p class="en"><b>Historical Events on January 24</b></p>
+                <p class="hi" style="display: none;">24 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1950: The first meeting of the Constituent Assembly was held to draft the Constitution of India.</p>
+                <p class="hi" style="display: none;">●1950: भारतीय संविधान का मसौदा तैयार करने के लिए संविधान सभा की पहली बैठक आयोजित की गई।</p>
+                <p class="en">●1979: India celebrated its first National Girl Child Day to promote the rights of the girl child.</p>
+                <p class="hi" style="display: none;">●1979: भारत ने बालिका अधिकारों को बढ़ावा देने के लिए अपना पहला राष्ट्रीय बालिका दिवस मनाया।</p>
+                <p class="en">●1992: India established diplomatic relations with Israel.</p>
+                <p class="hi" style="display: none;">●1992: भारत ने इज़राइल के साथ राजनयिक संबंध स्थापित किए।</p>
+                <p class="en">●1997: Lalu Prasad Yadav, then Chief Minister of Bihar, was indicted in the Fodder Scam.</p>
+                <p class="hi" style="display: none;">●1997: बिहार के तत्कालीन मुख्यमंत्री लालू प्रसाद यादव को चारा घोटाले में आरोपित किया गया।</p>
+                <p class="en">●2002: The city of Delhi observed a traffic-free day to promote environmental awareness.</p>
+                <p class="hi" style="display: none;">●2002: पर्यावरण जागरूकता को बढ़ावा देने के लिए दिल्ली शहर ने एक ट्रैफिक-फ्री दिवस मनाया।</p>
+                <p class="en">●2010: The first edition of the Jaipur Literature Festival was held.</p>
+                <p class="hi" style="display: none;">●2010: जयपुर साहित्य महोत्सव का पहला संस्करण आयोजित किया गया।</p>
+                <p class="en">●2012: India's Mars Orbiter Mission (Mangalyaan) was launched.</p>
+                <p class="hi" style="display: none;">●2012: भारत का मंगलयान मिशन (मंगलयान) लॉन्च किया गया।</p>
+                <p class="en">●2016: The Indian Space Research Organisation (ISRO) successfully launched 104 satellites in a single mission.</p>
+                <p class="hi" style="display: none;">●2016: भारतीय अंतरिक्ष अनुसंधान संगठन (इसरो) ने एक ही मिशन में 104 उपग्रहों को सफलतापूर्वक लॉन्च किया।</p>
+                <p class="en">●2019: The Supreme Court of India ruled that the Aadhaar card is mandatory for filing income tax returns and obtaining a Permanent Account Number (PAN).</p>
+                <p class="hi" style="display: none;">●2019: भारत के सर्वोच्च न्यायालय ने फैसला सुनाया कि आयकर रिटर्न दाखिल करने और स्थायी खाता संख्या (पैन) प्राप्त करने के लिए आधार कार्ड अनिवार्य है।</p>
+                <p class="en">●2021: India's COVID-19 vaccination drive began, marking a significant step in the fight against the pandemic.</p>
+                <p class="hi" style="display: none;">●2021: भारत का COVID-19 टीकाकरण अभियान शुरू हुआ, जो महामारी के खिलाफ लड़ाई में एक महत्वपूर्ण कदम है।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-25">
+                <p class="en"><b>Historical Events on January 25</b></p>
+                <p class="hi" style="display: none;">25 जनवरी के ऐतिहासिक घटनाक्रम</p>
+                <p class="en">●1955: India hosts the Asian Games for the first time in New Delhi.</p>
+                <p class="hi" style="display: none;">●1955: भारत ने पहली बार नई दिल्ली में एशियाई खेलों की मेजबानी की।</p>
+                <p class="en">●1962: India and Portugal formally agree on the annexation of Goa, Daman, and Diu.</p>
+                <p class="hi" style="display: none;">●1962: भारत और पुर्तगाल ने गोवा, दमन और दीव के विलय पर औपचारिक रूप से सहमति व्यक्त की।</p>
+                <p class="en">●1971: Himachal Pradesh becomes the 18th state of India.</p>
+                <p class="hi" style="display: none;">●1971: हिमाचल प्रदेश भारत का 18वां राज्य बना।</p>
+                <p class="en">●1975: Sheikh Mujibur Rahman becomes the President of Bangladesh.</p>
+                <p class="hi" style="display: none;">●1975: शेख मुजीबुर रहमान बांग्लादेश के राष्ट्रपति बने।</p>
+                <p class="en">●1980: India and the Soviet Union sign a trade agreement.</p>
+                <p class="hi" style="display: none;">●1980: भारत और सोवियत संघ ने एक व्यापार समझौते पर हस्ताक्षर किए।</p>
+                <p class="en">●1988: The first National Voters' Day is celebrated in India to encourage more young voters to take part in the political process.</p>
+                <p class="hi" style="display: none;">●1988: भारत में अधिक युवा मतदाताओं को राजनीतिक प्रक्रिया में भाग लेने के लिए प्रोत्साहित करने के लिए पहला राष्ट्रीय मतदाता दिवस मनाया गया।</p>
+                <p class="en">●2001: A powerful earthquake strikes Gujarat, causing widespread damage and loss of life.</p>
+                <p class="hi" style="display: none;">●2001: गुजरात में एक शक्तिशाली भूकंप आया, जिससे व्यापक क्षति और जानमाल का नुकसान हुआ।</p>
+                <p class="en">●2003: The Prime Minister of India inaugurates the Indian Ocean Naval Symposium (IONS) in New Delhi.</p>
+                <p class="hi" style="display: none;">●2003: भारत के प्रधान मंत्री ने नई दिल्ली में भारतीय महासागर नौसेना संगोष्ठी (IONS) का उद्घाटन किया।</p>
+                <p class="en">●2007: The Kala Ghoda Arts Festival, an annual cultural festival, begins in Mumbai.</p>
+                <p class="hi" style="display: none;">●2007: मुंबई में वार्षिक सांस्कृतिक उत्सव, काला घोड़ा कला महोत्सव, शुरू होता है।</p>
+                <p class="en">●2010: The Indian government announces the launch of the Unique Identification Authority of India (UIDAI) to issue Aadhaar cards.</p>
+                <p class="hi" style="display: none;">●2010: भारतीय सरकार ने आधार कार्ड जारी करने के लिए भारतीय विशिष्ट पहचान प्राधिकरण (UIDAI) के शुभारंभ की घोषणा की।</p>
+                <p class="en">●2012: India successfully tests its first indigenous long-range ballistic missile, Agni-V.</p>
+                <p class="hi" style="display: none;">●2012: भारत ने अपनी पहली स्वदेशी लंबी दूरी की बैलिस्टिक मिसाइल, अग्नि-V का सफल परीक्षण किया।</p>
+                <p class="en">●2018: India celebrates its 9th National Voters' Day to promote voter awareness and participation.</p>
+                <p class="hi" style="display: none;">●2018: मतदाता जागरूकता और भागीदारी को बढ़ावा देने के लिए भारत ने अपना 9वां राष्ट्रीय मतदाता दिवस मनाया।</p>
+                </div>
+                <br/>
+                <div class="dynamic-card" id="1-26">
+            
+            <p class="en"><b>Historical Events on January 26</b></p>
+            <p class="hi" style="display: none;">26 जनवरी के ऐतिहासिक घटनाक्रम</p>
+            <p class="en">●1950: India becomes a republic, and the Constitution of India comes into effect.</p>
+            <p class="hi" style="display: none;">●1950: भारत एक गणराज्य बन गया, और भारतीय संविधान लागू हुआ।</p>
+            <p class="en">●1965: Hindi is declared the official language of India.</p>
+            <p class="hi" style="display: none;">●1965: हिंदी को भारत की आधिकारिक भाषा घोषित किया गया।</p>
+            <p class="en">●1972: The first Republic Day parade is held at Rajpath, New Delhi.</p>
+            <p class="hi" style="display: none;">●1972: नई दिल्ली के राजपथ पर पहली गणतंत्र दिवस परेड आयोजित की गई।</p>
+            <p class="en">●2001: A devastating earthquake strikes Gujarat, causing widespread destruction and loss of life.</p>
+            <p class="hi" style="display: none;">●2001: गुजरात में एक विनाशकारी भूकंप आया, जिससे व्यापक विनाश और जानमाल का नुकसान हुआ।</p>
+            <p class="en">● 2015: US President Barack Obama becomes the first US President to attend India's Republic Day parade as the chief guest.</p>
+            <p class="hi" style="display: none;">●2015: अमेरिकी राष्ट्रपति बराक ओबामा भारत के गणतंत्र दिवस परेड में मुख्य अतिथि के रूप में शामिल होने वाले पहले अमेरिकी राष्ट्रपति बने।</p>
+            </div>
+            <br/>
+            <div class="dynamic-card" id="1-27">
+        <p class="en"><b>Indian Historical Events on 27th January</b></p>
+        <p class="hi" style="display: none;">27 जनवरी के भारतीय ऐतिहासिक घटनाक्रम</p>
+        <p class="en">● 1823: Raja Ram Mohan Roy Launches Mirat-ul-Akhbar: On this day, Raja Ram Mohan Roy, a pioneer of social reform and often called the "Father of the Indian Renaissance," introduced India’s first Persian newspaper, Mirat-ul-Akhbar. This publication became a powerful platform for spreading progressive ideas and advocating for social change in India.</p>
+        <p class="hi" style="display: none;">● 1823: राजा राम मोहन राय ने मिरात-उल-अखबार लॉन्च किया: इस दिन, सामाजिक सुधार के अग्रणी और अक्सर "भारतीय पुनर्जागरण के पिता" कहे जाने वाले राजा राम मोहन राय ने भारत का पहला फारसी समाचार पत्र, मिरात-उल-अखबार पेश किया। यह प्रकाशन भारत में प्रगतिशील विचारों के प्रसार और सामाजिक परिवर्तन की वकालत के लिए एक शक्तिशाली मंच बन गया।</p>
+        <p class="en">● 1888: Indian National Congress Holds Key Session in Allahabad: While the Indian National Congress (INC) was established in December 1885, 27th January 1888 marked a significant session in Allahabad. Prominent leaders like Dadabhai Naoroji and Gopal Krishna Gokhale used this platform to push for self-governance and civil rights, laying the groundwork for India’s independence movement.</p>
+        <p class="hi" style="display: none;">● 1888: भारतीय राष्ट्रीय कांग्रेस ने इलाहाबाद में महत्वपूर्ण सत्र आयोजित किया: जबकि भारतीय राष्ट्रीय कांग्रेस (INC) की स्थापना दिसंबर 1885 में हुई थी, 27 जनवरी 1888 ने इलाहाबाद में एक महत्वपूर्ण सत्र को चिह्नित किया। दादाभाई नौरोजी और गोपाल कृष्ण गोखले जैसे प्रमुख नेताओं ने इस मंच का उपयोग स्वशासन और नागरिक अधिकारों के लिए किया, जिससे भारत के स्वतंत्रता आंदोलन की नींव पड़ी।</p>
+        <p class="en">● 1948: India’s First Indigenous Aircraft, HT-2, Takes Flight: A landmark moment in India’s aviation history occurred on this day when the Hindustan Trainer 2 (HT-2), designed and developed by Hindustan Aeronautics Limited (HAL), successfully completed its maiden test flight. This achievement showcased India’s growing capabilities in aerospace technology.</p>
+        <p class="hi" style="display: none;">● 1948: भारत का पहला स्वदेशी विमान, HT-2, ने उड़ान भरी: इस दिन भारत के विमानन इतिहास में एक महत्वपूर्ण क्षण आया जब हिंदुस्तान एयरोनॉटिक्स लिमिटेड (HAL) द्वारा डिजाइन और विकसित हिंदुस्तान ट्रेनर 2 (HT-2) ने सफलतापूर्वक अपनी पहली परीक्षण उड़ान पूरी की। इस उपलब्धि ने एयरोस्पेस प्रौद्योगिकी में भारत की बढ़ती क्षमताओं को प्रदर्शित किया।</p>
+        <p class="en">● 1967: India and USSR Sign Space Research Agreement: On 27th January 1967, India and the Soviet Union signed a historic agreement to collaborate on space research. This partnership played a pivotal role in advancing India’s space program, eventually leading to the launch of Aryabhata, India’s first satellite.</p>
+        <p class="hi" style="display: none;">● 1967: भारत और यूएसएसआर ने अंतरिक्ष अनुसंधान समझौते पर हस्ताक्षर किए: 27 जनवरी 1967 को, भारत और सोवियत संघ ने अंतरिक्ष अनुसंधान पर सहयोग करने के लिए एक ऐतिहासिक समझौते पर हस्ताक्षर किए। इस साझेदारी ने भारत के अंतरिक्ष कार्यक्रम को आगे बढ़ाने में महत्वपूर्ण भूमिका निभाई, अंततः भारत के पहले उपग्रह आर्यभट्ट के प्रक्षेपण का मार्ग प्रशस्त किया।</p>
+        <p class="en">● 1974: Completion of Aryabhata Satellite: India’s first satellite, Aryabhata, named after the ancient Indian mathematician, was completed on this day. Launched on 19th April 1975 with Soviet assistance, it marked India’s entry into the realm of space exploration and set the stage for future achievements.</p>
+        <p class="hi" style="display: none;">● 1974: आर्यभट्ट उपग्रह का निर्माण: प्राचीन भारतीय गणितज्ञ के नाम पर भारत का पहला उपग्रह आर्यभट्ट इस दिन पूरा हुआ। 19 अप्रैल 1975 को सोवियत सहायता से लॉन्च किया गया, इसने अंतरिक्ष अन्वेषण के क्षेत्र में भारत के प्रवेश को चिह्नित किया और भविष्य की उपलब्धियों के लिए मंच तैयार किया।</p>
+        <p class="en">● 2003: Republic Day Tableau Controversy: A political controversy arose on 27th January 2003 when the Indian government rejected a Republic Day tableau proposal from Gujarat. This decision sparked widespread debates about federalism, freedom of expression, and the role of politics in cultural representation.</p>
+        <p class="hi" style="display: none;">● 2003: गणतंत्र दिवस झांकी विवाद: 27 जनवरी 2003 को एक राजनीतिक विवाद तब खड़ा हो गया जब भारतीय सरकार ने गुजरात से गणतंत्र दिवस की झांकी के प्रस्ताव को खारिज कर दिया। इस निर्णय ने संघवाद, अभिव्यक्ति की स्वतंत्रता और सांस्कृतिक प्रतिनिधित्व में राजनीति की भूमिका के बारे में व्यापक बहस छेड़ दी।</p>
+        <p class="en">● 2011: Kiran Bedi Retires as India’s First Woman IPS Officer: On this day, Kiran Bedi, India’s first female IPS officer, retired from service. Known for her groundbreaking career and contributions to policing, she became an icon of empowerment and inspired countless women to break barriers in male-dominated fields.</p>
+        <p class="hi" style="display: none;">● 2011: किरण बेदी ने भारत की पहली महिला आईपीएस अधिकारी के रूप में सेवानिवृत्ति ली: इस दिन, किरण बेदी, भारत की पहली महिला आईपीएस अधिकारी, सेवा से सेवानिवृत्त हुईं। अपने अग्रणी करियर और पुलिसिंग में योगदान के लिए जानी जाने वाली, वह सशक्तिकरण की प्रतीक बन गईं और अनगिनत महिलाओं को पुरुष-प्रधान क्षेत्रों में बाधाओं को तोड़ने के लिए प्रेरित किया।</p>
+        <p class="en">● 2020: Conclusion of India’s 71st Republic Day Celebrations: On 27th January 2020, India concluded its 71st Republic Day festivities with a grand parade in New Delhi. Brazilian President Jair Bolsonaro attended as the chief guest, symbolizing India’s strengthening ties with global nations and its growing influence on the world stage.</p>
+        <p class="hi" style="display: none;">● 2020: भारत के 71वें गणतंत्र दिवस समारोह का समापन: 27 जनवरी 2020 को, भारत ने नई दिल्ली में एक भव्य परेड के साथ अपने 71वें गणतंत्र दिवस समारोह का समापन किया। ब्राजील के राष्ट्रपति जायर बोल्सोनारो मुख्य अतिथि के रूप में शामिल हुए, जो वैश्विक राष्ट्रों के साथ भारत के मजबूत होते संबंधों और विश्व मंच पर इसके बढ़ते प्रभाव का प्रतीक है।</p>
+        </div>
+        <br/>
+        <div class="dynamic-card" id="1-28">
+        <p class="en"><b>28th January: Significant Events in Indian History</b></p>
+        <p class="hi" style="display: none;">28 जनवरी: भारतीय इतिहास में महत्वपूर्ण घटनाएँ</p>
+        <p class="en">●1933 – Death Anniversary of Chittaranjan Das. Chittaranjan Das, a prominent freedom fighter and leader of the Non-Cooperation Movement, passed away on 28th January 1933. Fondly called "Deshbandhu" (Friend of the Nation), he played a pivotal role in India’s struggle for independence.</p>
+        <p class="hi" style="display: none;">●1933 – चित्तरंजन दास की पुण्यतिथि। चित्तरंजन दास, एक प्रमुख स्वतंत्रता सेनानी और असहयोग आंदोलन के नेता, का 28 जनवरी 1933 को निधन हो गया। उन्हें "देशबंधु" (राष्ट्र का मित्र) कहा जाता था, उन्होंने भारत के स्वतंत्रता संग्राम में महत्वपूर्ण भूमिका निभाई।</p>
+        <p class="en">●1986 – National Institute of Nutrition (NIN) Established. The National Institute of Nutrition (NIN) in Hyderabad was inaugurated on this day. It remains a premier institution for research in nutrition science and public health in India.</p>
+        <p class="hi" style="display: none;">●1986 – राष्ट्रीय पोषण संस्थान (NIN) की स्थापना। हैदराबाद में राष्ट्रीय पोषण संस्थान (NIN) का उद्घाटन इस दिन हुआ था। यह भारत में पोषण विज्ञान और सार्वजनिक स्वास्थ्य में अनुसंधान के लिए एक प्रमुख संस्थान बना हुआ है।</p>
+        <p class="en">●2000 – INSAT-3B Satellite Successfully Launched. India launched the INSAT-3B communication satellite from French Guiana on 28th January 2000. This satellite revolutionized telecommunications, weather forecasting, and television broadcasting.</p>
+        <p class="hi" style="display: none;">●2000 – INSAT-3B उपग्रह सफलतापूर्वक लॉन्च किया गया। भारत ने 28 जनवरी 2000 को फ्रेंच गुयाना से INSAT-3B संचार उपग्रह लॉन्च किया। इस उपग्रह ने दूरसंचार, मौसम पूर्वानुमान और टेलीविजन प्रसारण में क्रांति ला दी।</p>
+        <p class="en">●2004 – Launch of Kisan Call Centre. The Government of India introduced the Kisan Call Centre (toll-free number 1551) on this day to provide technical support to farmers, marking a milestone in agricultural outreach.</p>
+        <p class="hi" style="display: none;">●2004 – किसान कॉल सेंटर का शुभारंभ। भारत सरकार ने किसानों को तकनीकी सहायता प्रदान करने के लिए इस दिन किसान कॉल सेंटर (टोल-फ्री नंबर 1551) की शुरुआत की, जो कृषि आउटरीच में एक मील का पत्थर है।</p>
+        <p class="en">●2013 – Final Approval for Mangalyaan (Mars Orbiter Mission). The Indian Space Research Organisation (ISRO) secured final approval on 28th January 2013 for the Mangalyaan mission, paving the way for India’s first interplanetary expedition to Mars.</p>
+        <p class="hi" style="display: none;">●2013 – मंगलयान (मंगल ऑर्बिटर मिशन) के लिए अंतिम स्वीकृति। भारतीय अंतरिक्ष अनुसंधान संगठन (ISRO) ने 28 जनवरी 2013 को मंगलयान मिशन के लिए अंतिम स्वीकृति प्राप्त की, जिससे मंगल ग्रह के लिए भारत के पहले अंतरग्रहीय अभियान का मार्ग प्रशस्त हुआ।</p>
+        <p class="en">●2021 – Farmers’ Republic Day Tractor Rally. On 28th January 2021, thousands of farmers held a historic peaceful tractor rally in Delhi as part of their protest against controversial farm laws, drawing global attention to their demands.</p>
+        <p class="hi" style="display: none;">●2021 – किसानों की गणतंत्र दिवस ट्रैक्टर रैली। 28 जनवरी 2021 को, हजारों किसानों ने विवादास्पद कृषि कानूनों के खिलाफ अपने विरोध के हिस्से के रूप में दिल्ली में एक ऐतिहासिक शांतिपूर्ण ट्रैक्टर रैली निकाली, जिससे उनकी मांगों पर वैश्विक ध्यान आकर्षित हुआ।</p>
+        </div>
+        <br/>
+        <div class="dynamic-card" id="1-29">
+        <p class="en"><b>Significant Events in Indian History on 29th January</b></p>
+        <p class="hi" style="display: none;">29 जनवरी: भारतीय इतिहास में महत्वपूर्ण घटनाएँ</p>
+        <p class="en">●1780: Launch of India’s First Newspaper. James Augustus Hickey published "Hickey's Bengal Gazette" in Calcutta on this day, marking the advent of print journalism in India.</p>
+        <p class="hi" style="display: none;">●1780: भारत का पहला समाचार पत्र का शुभारंभ। जेम्स ऑगस्टस हिकी ने इस दिन कलकत्ता में "हिकी का बंगाल गजट" प्रकाशित किया, जो भारत में प्रिंट पत्रकारिता की शुरुआत का प्रतीक है।</p>
+        <p class="en">●1939: Subhas Chandra Bose Elected as INC President. Subhas Chandra Bose, an eminent freedom fighter, was elected President of the Indian National Congress. His leadership greatly inspired the independence movement.</p>
+        <p class="hi" style="display: none;">●1939: सुभाष चंद्र बोस आईएनसी अध्यक्ष के रूप में चुने गए। सुभाष चंद्र बोस, एक प्रमुख स्वतंत्रता सेनानी, को भारतीय राष्ट्रीय कांग्रेस का अध्यक्ष चुना गया। उनके नेतृत्व ने स्वतंत्रता आंदोलन को बहुत प्रेरित किया।</p>
+        <p class="en">●1979: Mother Teresa Receives Bharat Ratna. Mother Teresa, the founder of the Missionaries of Charity, was awarded the Bharat Ratna, India’s highest civilian honor, for her exceptional humanitarian work.</p>
+        <p class="hi" style="display: none;">●1979: मदर टेरेसा को भारत रत्न मिला। मदर टेरेसा, मिशनरीज ऑफ चैरिटी की संस्थापक, को उनके असाधारण मानवीय कार्य के लिए भारत के सर्वोच्च नागरिक सम्मान भारत रत्न से सम्मानित किया गया।</p>
+        <p class="en">●1996: Sivaji Ganesan Awarded France’s Highest Civilian Honor. Renowned Tamil actor Sivaji Ganesan received the Chevalier of the Legion of Honour from France, recognizing his significant contributions to Indian cinema.</p>
+        <p class="hi" style="display: none;">●1996: शिवाजी गणेशन को फ्रांस का सर्वोच्च नागरिक सम्मान मिला। प्रसिद्ध तमिल अभिनेता शिवाजी गणेशन को भारतीय सिनेमा में उनके महत्वपूर्ण योगदान के लिए फ्रांस से लीजन ऑफ ऑनर के शेवेलियर से सम्मानित किया गया।</p>
+        <p class="en">●2003: Approval of ANUSAT Satellite. The Indian Space Research Organisation (ISRO) approved ANUSAT, India’s first satellite developed by a private institution (Anna University, Chennai), on this date.</p>
+        <p class="hi" style="display: none;">●2003: ANUSAT उपग्रह की स्वीकृति। भारतीय अंतरिक्ष अनुसंधान संगठन (ISRO) ने इस तारीख को एक निजी संस्थान (अन्ना विश्वविद्यालय, चेन्नई) द्वारा विकसित भारत के पहले उपग्रह ANUSAT को मंजूरी दी।</p>
+        <p class="en">●2014: INS Vikramaditya Commissioned. On 29th January 2014, India’s largest aircraft carrier, INS Vikramaditya, was officially inducted into the Indian Navy, enhancing the country’s maritime defense capabilities.</p>
+        <p class="hi" style="display: none;">●2014: आईएनएस विक्रमादित्य कमीशन। 29 जनवरी 2014 को, भारत के सबसे बड़े विमानवाहक पोत, आईएनएस विक्रमादित्य को आधिकारिक तौर पर भारतीय नौसेना में शामिल किया गया, जिससे देश की समुद्री रक्षा क्षमताओं में वृद्धि हुई।</p>
+        <p class="en">●2020: Honoring India’s First Transgender Judge, Joyita Mondal. Joyita Mondal, recognized as India’s first transgender judge, was honored for her significant contributions to social justice and LGBTQ+ rights, marking a notable step towards inclusivity.</p>
+        <p class="hi" style="display: none;">●2020: भारत की पहली ट्रांसजेंडर जज, जोयिता मंडल का सम्मान। जोयिता मंडल, जिन्हें भारत की पहली ट्रांसजेंडर जज के रूप में मान्यता प्राप्त है, को सामाजिक न्याय और LGBTQ+ अधिकारों में उनके महत्वपूर्ण योगदान के लिए सम्मानित किया गया, जो समावेशिता की दिशा में एक उल्लेखनीय कदम है।</p>
+        </div>
+        <br/>
+        <div class="dynamic-card" id="1-30">
+        <p class="en"><b>Significant Events in Indian History on 30th January</b></p>
+        <p class="hi" style="display: none;">30 जनवरी: भारतीय इतिहास में महत्वपूर्ण घटनाएँ</p>
+        <p class="en">●1948: Assassination of Mahatma Gandhi. On this day, Mahatma Gandhi, revered as the Father of the Nation, was tragically assassinated by Nathuram Godse in New Delhi. This date is commemorated as Martyrs' Day in India to honor Gandhi's legacy and his philosophy of non-violence.</p>
+        <p class="hi" style="display: none;">●1948: महात्मा गांधी की हत्या। इस दिन, महात्मा गांधी, जिन्हें राष्ट्रपिता के रूप में सम्मानित किया जाता है, का नई दिल्ली में नाथूराम गोडसे द्वारा दुखद हत्या कर दी गई थी। इस तिथि को गांधी की विरासत और उनके अहिंसा के दर्शन का सम्मान करने के लिए भारत में शहीद दिवस के रूप में मनाया जाता है।</p>
+        <p class="en">●1972: Release of POWs by Pakistan. After the 1971 Indo-Pak war, the Shimla Agreement was signed, leading to the release of 93,000 prisoners of war (POWs) by Pakistan on 30th January 1972, marking a pivotal moment in the relationship between the two countries.</p>
+        <p class="hi" style="display: none;">●1972: पाकिस्तान द्वारा युद्धबंदियों की रिहाई। 1971 के भारत-पाक युद्ध के बाद, शिमला समझौते पर हस्ताक्षर किए गए, जिसके परिणामस्वरूप 30 जनवरी 1972 को पाकिस्तान द्वारा 93,000 युद्धबंदियों (POWs) की रिहाई हुई, जो दोनों देशों के संबंधों में एक महत्वपूर्ण क्षण था।</p>
+        <p class="en">●1991: Inauguration of International Film Festival for Children. The first International Film Festival for Children was inaugurated in New Delhi on this date, providing a platform to promote children's cinema and young filmmakers globally.</p>
+        <p class="hi" style="display: none;">●1991: बच्चों के लिए अंतर्राष्ट्रीय फिल्म महोत्सव का उद्घाटन। इस तिथि को नई दिल्ली में बच्चों के लिए पहला अंतर्राष्ट्रीय फिल्म महोत्सव का उद्घाटन किया गया, जो बच्चों के सिनेमा और युवा फिल्म निर्माताओं को वैश्विक स्तर पर बढ़ावा देने के लिए एक मंच प्रदान करता है।</p>
+        <p class="en">●2007: Tata Steel Acquires Corus Group. Tata Steel completed the acquisition of the UK-based Corus Group on 30th January 2007 for $12 billion, establishing itself as one of the largest steel producers in the world and marking a significant milestone for Indian enterprises.</p>
+        <p class="hi" style="display: none;">●2007: टाटा स्टील ने कोरस ग्रुप का अधिग्रहण किया। टाटा स्टील ने 30 जनवरी 2007 को $12 बिलियन में यूके स्थित कोरस ग्रुप का अधिग्रहण पूरा किया, जिससे यह दुनिया के सबसे बड़े इस्पात उत्पादकों में से एक बन गया और भारतीय उद्यमों के लिए एक महत्वपूर्ण मील का पत्थर बन गया।</p>
+        <p class="en">●2013: Launch of Bharatiya Mahila Bank. India’s first all-women bank, Bharatiya Mahila Bank, was launched on this day to empower women financially and advance gender equality in the banking sector.</p>
+        <p class="hi" style="display: none;">●2013: भारतीय महिला बैंक का शुभारंभ। भारत का पहला महिला बैंक, भारतीय महिला बैंक, इस दिन महिलाओं को वित्तीय रूप से सशक्त बनाने और बैंकिंग क्षेत्र में लैंगिक समानता को बढ़ावा देने के लिए लॉन्च किया गया था।</p>
+        <p class="en">●2020: WHO Declares COVID-19 a Global Health Emergency. The World Health Organization (WHO) declared the COVID-19 outbreak a Public Health Emergency of International Concern (PHEIC) on 30th January 2020, a decision that had a profound impact on India and the entire world.</p>
+        <p class="hi" style="display: none;">●2020: डब्ल्यूएचओ ने COVID-19 को वैश्विक स्वास्थ्य आपातकाल घोषित किया। विश्व स्वास्थ्य संगठन (डब्ल्यूएचओ) ने 30 जनवरी 2020 को COVID-19 प्रकोप को अंतर्राष्ट्रीय चिंता का सार्वजनिक स्वास्थ्य आपातकाल (PHEIC) घोषित किया, जो भारत और पूरी दुनिया पर गहरा प्रभाव डालने वाला निर्णय था।</p>
+        </div>
+        <br/>
+        <div class="dynamic-card" id="1-31">
+        <p class="en"><b>Significant Events in Indian History on 31st January</b></p>
+        <p class="hi" style="display: none;">31 जनवरी: भारतीय इतिहास में महत्वपूर्ण घटनाएँ</p>
+        <p class="en">●1929: Birth of Meena Kumari. Legendary Bollywood actress Meena Kumari, often called the "Tragedy Queen," was born on 31st January 1929. She starred in iconic films like Pakeezah and Sahib Bibi Aur Ghulam.</p>
+        <p class="hi" style="display: none;">●1929: मीना कुमारी का जन्म। प्रसिद्ध बॉलीवुड अभिनेत्री मीना कुमारी, जिन्हें अक्सर "ट्रेजेडी क्वीन" कहा जाता है, का जन्म 31 जनवरी 1929 को हुआ था। उन्होंने पाकीज़ा और साहिब बीबी और ग़ुलाम जैसी प्रतिष्ठित फिल्मों में अभिनय किया।</p>
+        <p class="en">●1958: Establishment of the National Physical Laboratory (NPL). India’s premier research institute for measurement science, the National Physical Laboratory (NPL), was established in New Delhi on 31st January 1958. It plays a key role in setting national standards.</p>
+        <p class="hi" style="display: none;">●1958: राष्ट्रीय भौतिक प्रयोगशाला (NPL) की स्थापना। मापन विज्ञान के लिए भारत के प्रमुख अनुसंधान संस्थान, राष्ट्रीय भौतिक प्रयोगशाला (NPL), की स्थापना 31 जनवरी 1958 को नई दिल्ली में की गई थी। यह राष्ट्रीय मानकों को स्थापित करने में महत्वपूर्ण भूमिका निभाता है।</p>
+        <p class="en">●1972: INS Vikrant Decommissioned. India’s first aircraft carrier, INS Vikrant, was decommissioned on 31st January 1972 after serving the Indian Navy for over two decades. It played a crucial role in the 1971 Indo-Pak War.</p>
+        <p class="hi" style="display: none;">●1972: आईएनएस विक्रांत को सेवामुक्त किया गया। भारत के पहले विमानवाहक पोत, आईएनएस विक्रांत को 31 जनवरी 1972 को दो दशकों से अधिक समय तक भारतीय नौसेना की सेवा करने के बाद सेवामुक्त कर दिया गया। इसने 1971 के भारत-पाक युद्ध में महत्वपूर्ण भूमिका निभाई।</p>
+        <p class="en">●1990: McDonald’s Opens Its First Outlet in India. On 31st January 1990, McDonald’s opened its first outlet in India, marking the beginning of the fast-food giant’s journey in the country with localized menus.</p>
+        <p class="hi" style="display: none;">●1990: मैकडॉनल्ड्स ने भारत में अपना पहला आउटलेट खोला। 31 जनवरी 1990 को, मैकडॉनल्ड्स ने भारत में अपना पहला आउटलेट खोला, जिससे देश में फास्ट-फूड दिग्गज की यात्रा की शुरुआत हुई, जिसमें स्थानीयकृत मेनू थे।</p>
+        <p class="en">●2004: ISRO Launches EDUSAT. The Indian Space Research Organisation (ISRO) successfully launched EDUSAT, India’s first satellite dedicated to education, on 31st January 2004. It aimed to improve access to education in remote areas.</p>
+        <p class="hi" style="display: none;">●2004: इसरो ने EDUSAT लॉन्च किया। भारतीय अंतरिक्ष अनुसंधान संगठन (ISRO) ने 31 जनवरी 2004 को भारत का पहला शिक्षा समर्पित उपग्रह EDUSAT सफलतापूर्वक लॉन्च किया। इसका उद्देश्य दूरदराज के क्षेत्रों में शिक्षा की पहुंच में सुधार करना था।</p>
+        <p class="en">●2019: India’s First Agni-V Missile Test with MIRV Technology. On 31st January 2019, India successfully tested the Agni-V intercontinental ballistic missile equipped with Multiple Independently Targetable Re-entry Vehicle (MIRV) technology, enhancing its strategic defense capabilities.</p>
+        <p class="hi" style="display: none;">●2019: भारत का पहला अग्नि-V मिसाइल परीक्षण MIRV तकनीक के साथ। 31 जनवरी 2019 को, भारत ने कई स्वतंत्र रूप से लक्षित पुन: प्रवेश वाहन (MIRV) तकनीक से लैस अग्नि-V अंतरमहाद्वीपीय बैलिस्टिक मिसाइल का सफलतापूर्वक परीक्षण किया, जिससे इसकी रणनीतिक रक्षा क्षमताओं में वृद्धि हुई।</p>
+        <p class="en">●2021: Farmers’ Protest Gains Momentum. On 31st January 2021, the farmers’ protest against the controversial farm laws gained nationwide attention as thousands of farmers gathered at Delhi’s borders, demanding their repeal.</p>
+        <p class="hi" style="display: none;">●2021: किसानों का विरोध तेज हुआ। 31 जनवरी 2021 को, विवादास्पद कृषि कानूनों के खिलाफ किसानों के विरोध ने राष्ट्रव्यापी ध्यान आकर्षित किया क्योंकि हजारों किसान दिल्ली की सीमाओं पर एकत्र हुए और उनकी निरस्तीकरण की मांग की।</p>
+                <br/>
+                <a href="second.html" class="load-more" style="background-color: #315665; color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 1rem;">Load more...</a>
+    </section>
+    <footer>
+        <p>© 2025 Time Snapshot. All rights reserved.</p>
+    </footer>
+    <script>
+        window.addEventListener('load', function() {
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                document.querySelector('header').classList.add('dark-mode');
+                document.querySelector('nav ul').classList.add('dark-mode');
+                document.querySelectorAll('nav ul li a').forEach(function(link) {
+                    link.classList.add('dark-mode');
+                });
+                document.querySelectorAll('section').forEach(function(section) {
+                    section.classList.add('dark-mode');
+                });
+                document.querySelector('footer').classList.add('dark-mode');
+            }
+
+            const savedLanguage = localStorage.getItem('language');
+            if (savedLanguage) {
+                const englishParagraphs = document.querySelectorAll('p.en');
+                const hindiParagraphs = document.querySelectorAll('p.hi');
+                if (savedLanguage === 'hi') {
+                    englishParagraphs.forEach(p => p.style.display = 'none');
+                    hindiParagraphs.forEach(p => p.style.display = 'block');
+                } else {
+                    englishParagraphs.forEach(p => p.style.display = 'block');
+                    hindiParagraphs.forEach(p => p.style.display = 'none');
+                }
+            }
+        });
+
+        document.querySelector('nav ul li a[href="index.html"]').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = 'index.html';
+        });
+
+        document.getElementById('language-toggle').addEventListener('click', function() {
+            const englishParagraphs = document.querySelectorAll('p.en');
+            const hindiParagraphs = document.querySelectorAll('p.hi');
+            englishParagraphs.forEach(p => p.style.display = p.style.display === 'none' ? 'block' : 'none');
+            hindiParagraphs.forEach(p => p.style.display = p.style.display === 'none' ? 'block' : 'none');
+            // Save language preference to localStorage
+            const currentLanguage = englishParagraphs[0].style.display === 'none' ? 'hi' : 'en';
+            localStorage.setItem('language', currentLanguage);
+        });
+    </script>
+</body>
+</html>
