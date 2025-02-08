@@ -4,901 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notable Events</title>
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+        OneSignalDeferred.push(async function(OneSignal) {
+            await OneSignal.init({
+                appId: "25245e3f-d2a0-439d-b12b-7ded8a71433b",
+            });
+        });
+    </script>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Pacifico&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
-    
-        <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
+    
     <style>
-        .updates-text {
-            display: none; /* Hide updates text */
+        .dynamic-section {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 1rem auto;
         }
 
-        @keyframes fadeInOut {
-            0%, 100% {
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
+        .dynamic-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 1.7rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
-        @keyframes dot-blink {
-            0% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 0; }
+        .dynamic-card p {
+            color: #333;
+            transition: color 0.3s ease;
         }
 
-        .dot {
-            animation: dot-blink 1.5s infinite;
-        }
-        .dot:nth-child(2) {
-            animation-delay: 0.5s;
-        }
-        .dot:nth-child(3) {
-            animation-delay: 1s;
-        }
-
-        @media (max-width: 768px) {
-            .updates-text {
-                font-size: 1.2rem;
-                right: 0.5rem;
-            }
-        }
-
-        @media (max-width: 500px) {
-            .updates-text {
-                font-size: 0.6rem;
-                right: 0.5rem;
-            }
-        }
-
-        #dark-mode-toggle {
-            position: absolute;
-            top: 6.7rem;
-            right: 1.2rem;
-            padding: 0.3rem 0.6rem;
-            border: none;
-            border-radius: 4px;
-            background-color: #555;
-            color: #fff;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
-
-        #dark-mode-toggle:hover {
-            background-color: #777;
-        }
-
-        @media (max-width: 768px) {
-            #dark-mode-toggle {
-                font-size: 0.8rem;
-                padding: 0.25rem 0.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            #dark-mode-toggle {
-                font-size: 0.7rem;
-                padding: 0.2rem 0.4rem;
-            }
-        }
-
-        #language-switch {
-            position: absolute;
-            top: 14.3rem;
-            right: 2.5rem;
-            padding: 0.3rem 0.6rem;
-            border: none;
-            border-radius: 4px;
-            background-color: #315665; 
+        /* Dark Mode */
+        [data-theme="dark"] .dynamic-card {
+            background: #2d2d2d;
             color: #ffffff;
-            cursor: pointer;
-            font-size: 0.9rem;
         }
 
-        #language-switch:hover {
-            background-color: #315665;
+        .date-display {
+            font-size: 1rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
         }
 
-        @media (max-width: 768px) {
-            #language-switch {
-                font-size: 0.8rem;
-                padding: 0.25rem 0.5rem;
-            }
+        .dynamic-text {
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #333;
+            transition: color 0.3s ease;
         }
 
-        @media (max-width: 480px) {
-            #language-switch {
-                font-size: 0.5rem;
-                padding: 0.2rem 0.3rem;
-            }
+        [data-theme="dark"] .dynamic-text {
+            color: #f0f0f0;
         }
-
-        .popup {
-            position: absolute;
-            top: 7rem;
-            right: 3.5rem;
-            background-color: rgba(158, 27, 136, 0.768) ;
-            padding: 10px 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgb(180, 171, 171); /* Change color */
-            color: white;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            animation: slideIn 0.5s ease-out, grow 0.5s ease-out; /* Add animation */
+        .dark-mode .dynamic-card {
+            background: #213451a4;
+            color: #ffffff;
         }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .dark-mode .dynamic-card p {
+            color: #f0f0f0;
         }
-
-        @keyframes grow {
-            from {
-                transform: scale(0.8);
-            }
-            to {
-                transform: scale(1);
-            }
+        .dark-mode .dynamic-text {
+            color: #f0f0f0;
         }
-
-        .arrow {
-            display: inline-block;
-            margin-bottom: -5px;
-            font-size: 24px;
-            color: #ff0077cc; /* Change color */
-            position: absolute;
-            top: 50%;
-            right: -30px;
-            transform: translateY(-50%);
-        }
-
-        .arrow-container {
-            position: relative;
-        }
-
-        @media (max-width: 1300px) {
-            .popup {
-                top: 8rem;
-                right: 4rem;
-                padding: 7px 10px;
-                font-size: 0.9rem;
-            }
-
-            .arrow {
-                font-size: 40px;
-                right: -35px;
-            }
-        }
-
-
-
-
-        @media (max-width: 1000px) {
-            .popup {
-                top: 8rem;
-                right: 4rem;
-                padding: 7px 10px;
-                font-size: 0.9rem;
-            }
-
-            .arrow {
-                font-size: 40px;
-                right: -35px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .popup {
-                top: 8rem;
-                right: 3rem;
-                padding: 2px 6px;
-                font-size: 0.7rem;
-            }
-
-            .arrow {
-                font-size: 30px;
-                right: -25px;
-            }
-        }
-
-        .popup button {
-            margin-top: 10px;
-            padding: 3px 6px;
-            border: none;
-            border-radius: 4px;
-            background-color: #555;
-            color: #fff;
-            cursor: pointer;
-            font-size: 0.8rem;
-        }
-
-        .popup button:hover {
-            background-color: #777;
-        }
-
-        .popup.language-popup {
-            top: 16rem; /* Move pop-up downside */
-            right: 5.8rem;
-            background-color: rgba(27, 158, 136, 0.768);
-            box-shadow: 0 0 15px rgb(171, 180, 171);
-        }
-
-        .popup.language-popup .arrow {
-            font-size: 3rem;
-            right: -45px;
-            color: #00ffee;
-            top: 50%; /* Center the arrow vertically */
-        }
-
-        .popup.language-popup button {
-            margin-top: 10px;
-            padding: 2px 4px; /* Decrease padding */
-            border: none;
-            border-radius: 4px;
-            background-color: #1e653fe9;
-            color: #fff;
-            cursor: pointer;
-            font-size: 0.7rem; /* Decrease font size */
-        }
-        .popup.language-popup button:hover {
-            background-color: #1e653fe9;
-        }
-
-        @media (max-width: 768px) {
-            .popup.language-popup {
-                top: 15.8rem; /* Move pop-up downside */
-                right: 5.5rem;
-                padding: 5px 7px;
-                font-size: 0.9rem;
-            }
-
-            .popup.language-popup .arrow {
-                font-size: 30px;
-                right: -27px;
-                top: 50%; /* Center the arrow vertically */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .popup.language-popup {
-                top: 15.4rem; /* Move pop-up downside */
-                right: 4.9rem;
-                padding: 2px 5px;
-                font-size: 0.7rem;
-            }
-
-            .popup.language-popup .arrow {
-                font-size: 25px;
-                top: 50%; /* Center the arrow vertically */
-                right: -21px;
-            }
-        }
-
-        #dark-mode-popup, #language-popup {
-            display: none; /* Ensure pop-ups are hidden initially */
-        }
-        .daily-events-title {
-            background-color: #123A71; /* Change background color */
-            color: #ffffff; /* Ensure text color is readable */
-            padding: 0.5rem; /* Add some padding */
-            border-radius: 5px; /* Add border radius */
-            width: 40%; /* Decrease width */
-            margin: 0 auto; /* Center the element */
-            text-align: center; /* Center the text */
-            display: block; /* Ensure the title is displayed */
-        }
-
-        @media (max-width: 768px) {
-            .daily-events-title {
-                width: 60%; /* Adjust width for smaller screens */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .daily-events-title {
-                width: 80%; /* Adjust width for smaller screens */
-            }
-        }
-
-        .share-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 1rem;
-            flex-wrap: wrap; /* Allow wrapping */
-        }
-
-        .share-buttons a {
-            margin: 0.25rem; /* Adjust margin for better spacing */
-            text-decoration: none;
-            color: #fff;
-            padding: 0.3rem 0.4rem; /* Decrease padding */
-            border-radius: 4px;
-            background-color: #555;
-            transition: background-color 0.3s;
-            flex: 1 1 30%; /* Decrease width */
-            text-align: center; /* Center text */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem; /* Decrease font size */
-        }
-
-        .share-buttons a:hover {
-            background-color: #777;
-        }
-
-        .share-buttons a.whatsapp {
-            background-color: #25d366;
-        }
-
-        .share-buttons a.sms {
-            background-color: #4CAF50;
-        }
-
-        .share-buttons a i {
-            margin-right: 0.3rem; /* Adjust icon margin */
-        }
-
-        @media (max-width: 480px) {
-            .share-buttons a {
-                flex: 1 1 10%; /* Make buttons full width on small screens */
-            }
+        .dark-mode header,
+        .dark-mode nav ul li a,
+        .dark-mode section,
+        .dark-mode footer,
+        .dark-mode form input,
+        .dark-mode form textarea,
+        .dark-mode form button,
+        .dark-mode button,
+        .dark-mode #subscribe-form input[type="email"],
+        .dark-mode #subscribe-form button {
+            background-color: #21345138;
+            color: #ffffff;
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
         <h1>Notable Events</h1>
-        <h2 class="daily-events-title">DAILY EVENTS</h2> <!-- Ensure the title is displayed -->
+        <h2 class="time-snapshot-title">TIME SNAPSHOT</h2> <!-- Ensure the title is displayed -->
+        <span id="menubar-icon">&#9776;</span> <!-- Add menubar icon -->
+        <div id="menubar-popup">
+            <span class="back-button">&larr;</span> <!-- Replace "Back" with arrow -->
+            <ul>
+                <li><a href="index.html">Home</a></li> <!-- Add Home -->
+                <li><a href="#" id="calendar-link">Calendar</a></li> <!-- Add Calendar -->
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="help.html">Help</a></li> <!-- Add Help -->
+            </ul>
+            <!-- Updated HTML with animation elements -->
+<button id="dark-mode-toggle" class="dark-mode-toggle">
+    <div class="toggle-container">
+        <i class="fas fa-moon"></i>
+    
+    </div>
+</button> <!-- Move dark mode toggle here -->
+            <!-- HTML -->
+<button id="language-toggle" class="lang-switch">
+    <span class="lang-icon">🌐</span>
+    <span class="lang-text">English</span>
+  </button> <!-- Add language switch button -->
+        </div>
         <nav>
             <ul>
                 <li><a href="about.html">About</a></li>
-                <li><a href="#" id="projects-link">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="help.html">Help</a></li> <!-- Update Help link -->
             </ul>
         </nav>
-        <button id="language-switch">Switch to Hindi</button>
-        <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
-        <button id="onesignal-bell-container">
-            <i class="fas fa-bell"></i> <!-- फ़ॉन्ट ऐवेसम इंस्टॉल करें -->
-        </button>
     </header>
-    <div class="popup" id="dark-mode-popup">
-        <div class="arrow-container">
-            <span class="arrow">&#x2934;</span>
+
+    
+        <div class="dynamic-card">
+            <div class="dynamic-text">
+                <p>"Welcome to TIME SNAPSHOT. Here, you will find historical events that happened on this day."</p>
+            </div>
+            <div class="date-display" id="current-date-section">
+                Today's Date: <span id="current-date"></span>
+                <p id="current-date-paragraph">Click here to see today's events</p>
+            </div>
         </div>
-        <span>Dark Mode</span>
-        <button id="close-popup" style="margin-top: 10px; padding: 2px 8px; border: none; border-radius: 4px; background-color: rgba(72, 10, 23, 0.648); color: #fff; cursor: pointer;">Got it!</button>
-    </div>
-    <div class="popup language-popup" id="language-popup">
-        <div class="arrow-container">
-            <span class="arrow">&#x2934;</span>
-        </div>
-        <span>Language Switch</span>
-        <button id="close-language-popup" style="margin-top: 10px; padding: 2px 4px; border: none; border-radius: 4px; background-color: #1e653fe9; color: #fff; cursor: pointer; font-size: 0.7rem;">Got it!</button>
-    </div>
+    
     <section id="YOU KNOW">
-        <h2>YOU KNOW</h2>
+        <h2>EVENTS</h2>
         <div style="margin-top: -25px; width: 100%; display: flex; justify-content: flex-start; align-items: center;">
             <input type="text" id="search-input" placeholder="Search events..." style="padding: 0.5rem; width: 40%; height: 0.4rem; max-width: 300px;">
-        </div>
-        <div id="current-date"></div>
-        
+        </div> 
         <div id="events">
+            <div class="dynamic-card" id="1-1">
             <p class="en"><b>Historical Events on January 1</b></p>
             <p class="hi" style="display: none;">1 जनवरी के ऐतिहासिक घटनाक्रम</p>
-            <p class="en">● 1st January 1880: ‘Money order’ system started in the country.</p>
-            <p class="hi" style="display: none;">● 1 जनवरी 1880: देश में 'मनी ऑर्डर' प्रणाली शुरू हुई।</p>
-            <p class="en">● 1st January 1756: The Nicobar Islands were annexed by Denmark and renamed New Denmark.</p>
-            <p class="hi" style="display: none;">● 1 जनवरी 1756: निकोबार द्वीप समूह को डेनमार्क द्वारा कब्जा कर लिया गया और नया डेनमार्क नाम दिया गया।</p>
-            <p class="en">● 1st January 1808: Slave imports were banned in the United States.</p>
-            <p class="hi" style="display: none;">● 1 जनवरी 1808: संयुक्त राज्य अमेरिका में दास आयात पर प्रतिबंध लगा दिया गया।</p>
-            <p class="en">● 1st January 1818: The battle of Bhima Koregaon – 2nd Bombay Native Infantry Battalion, led by F. F. Stanton, defeated 28,000 Peshwa troops at Bhima Koregaon, with only 834 soldiers.</p>
-            <p class="hi" style="display: none;">● 1 जनवरी 1818: भीमा कोरेगांव की लड़ाई - एफ. एफ. स्टैंटन के नेतृत्व में 2nd बॉम्बे नेटिव इन्फैंट्री बटालियन ने केवल 834 सैनिकों के साथ भीमा कोरेगांव में 28,000 पेशवा सैनिकों को हराया।</p>
-            <p class="en">● 1st January 1848: Mahatma Jyotirao Phule and Savitribai Phule started the first girls’ school at Bhide Wada, Pune.</p>
-            <p class="hi" style="display: none;">● 1 जनवरी 1848: महात्मा ज्योतिराव फुले और सावित्रीबाई फुले ने पुणे के भिडे वाडा में पहला लड़कियों का स्कूल शुरू किया।</p>
-            <p class="en">● 1st January 1862: The Indian Penal Code came into existence.</p>
-            <p class="hi" style="display: none;">● 1 जनवरी 1862: भारतीय दंड संहिता अस्तित्व में आई।</p>
-            <p class="en">● 1st January 1877: Queen Victoria of England became the Empress of India.</p>
-            <p class="hi" style="display: none;">● 1 जनवरी 1877: इंग्लैंड की रानी विक्टोरिया भारत की महारानी बनीं।</p>
-            <p class="en">● 1st January 1903: In Great Delhi Darbar, marked the coronation of King Edward VII as Emperor of India.</p>
-            <p class="hi" style="display: none;">● 1 जनवरी 1903: ग्रेट दिल्ली दरबार में, किंग एडवर्ड VII का भारत के सम्राट के रूप में राज्याभिषेक हुआ।</p>
+            <p class="en">●1880: ‘Money order’ system started in the country.</p>
+            <p class="hi" style="display: none;">●1880: देश में 'मनी ऑर्डर' प्रणाली शुरू हुई।</p>
+            <p class="en">●1808: Slave imports were banned in the United States.</p>
+            <p class="hi" style="display: none;">●1808: संयुक्त राज्य अमेरिका में दास आयात पर प्रतिबंध लगा दिया गया।</p>
+            <p class="en">●1818: The battle of Bhima Koregaon – 2nd Bombay Native Infantry Battalion, led by F. F. Stanton, defeated 28,000 Peshwa troops at Bhima Koregaon, with only 834 soldiers.</p>
+            <p class="hi" style="display: none;">●1818: भीमा कोरेगांव की लड़ाई - एफ. एफ. स्टैंटन के नेतृत्व में 2nd बॉम्बे नेटिव इन्फैंट्री बटालियन ने केवल 834 सैनिकों के साथ भीमा कोरेगांव में 28,000 पेशवा सैनिकों को हराया।</p>
+            <p class="en">●1848: Mahatma Jyotirao Phule and Savitribai Phule started the first girls’ school at Bhide Wada, Pune.</p>
+            <p class="hi" style="display: none;">●1848: महात्मा ज्योतिराव फुले और सावित्रीबाई फुले ने पुणे के भिडे वाडा में पहला लड़कियों का स्कूल शुरू किया।</p>
+            <p class="en">●1862: The Indian Penal Code came into existence.</p>
+            <p class="hi" style="display: none;">●1862: भारतीय दंड संहिता अस्तित्व में आई।</p>
+            <p class="en">●1877: Queen Victoria of England became the Empress of India.</p>
+            <p class="hi" style="display: none;">●1877: इंग्लैंड की रानी विक्टोरिया भारत की महारानी बनीं।</p>
+            <p class="en">●1903: In Great Delhi Darbar, marked the coronation of King Edward VII as Emperor of India.</p>
+            <p class="hi" style="display: none;">●1903: ग्रेट दिल्ली दरबार में, किंग एडवर्ड VII का भारत के सम्राट के रूप में राज्याभिषेक हुआ।</p>
             <!-- Add more historical events as needed -->
-            <div id="more-events" style="display: none;">
-                <hr>
-                <p class="en"><b>Historical Events on January 2</b></p>
-                <p class="hi" style="display: none;">2 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 2nd Jan 1885: Establishment of Ferguson College in Pune.</p>
-                <p class="hi" style="display: none;">● 2 जनवरी 1885: पुणे में फर्ग्यूसन कॉलेज की स्थापना।</p>
-                <p class="en">● 2nd Jan 1936: Establishment of Madhya Pradesh High Court.</p>
-                <p class="hi" style="display: none;">● 2 जनवरी 1936: मध्य प्रदेश उच्च न्यायालय की स्थापना।</p>
-                <p class="en">● 2nd Jan 1942: During World War II, the Japanese army captured Manila, the capital of the Philippines.</p>
-                <p class="hi" style="display: none;">● 2 जनवरी 1942: द्वितीय विश्व युद्ध के दौरान, जापानी सेना ने फिलीपींस की राजधानी मनीला पर कब्जा कर लिया।</p>
-                <p class="en">● 2nd Jan 1951: Russia launched Luna-1 spacecraft towards the moon.</p>
-                <p class="hi" style="display: none;">● 2 जनवरी 1951: रूस ने चंद्रमा की ओर लूना-1 अंतरिक्ष यान लॉन्च किया।</p>
-                <p class="en">● 2nd Jan 1954: India established its highest civilian awards, the Bharat Ratna and the Padma Vibhushan.</p>
-                <p class="hi" style="display: none;">● 2 जनवरी 1954: भारत ने अपने सर्वोच्च नागरिक पुरस्कार, भारत रत्न और पद्म विभूषण की स्थापना की।</p>
-                <p class="en">● 2nd Jan 1975: Railway Minister Lalit Narayan Mishra had injured in a bomb blast in the Samastipur district of Bihar.</p>
-                <p class="hi" style="display: none;">● 2 जनवरी 1975: बिहार के समस्तीपुर जिले में बम विस्फोट में रेल मंत्री ललित नारायण मिश्रा घायल हो गए थे।</p>
-                <p class="en">● 2nd Jan 1989: Safdar Hashmi, a Marxist street playwright, writer, director, poet, and lyricist, was fatally attacked during a street play in Jhandapur, Uttar Pradesh.</p>
-                <p class="hi" style="display: none;">● 2 जनवरी 1989: सफदर हाशमी, एक मार्क्सवादी स्ट्रीट नाटककार, लेखक, निर्देशक, कवि और गीतकार, उत्तर प्रदेश के झंडापुर में एक स्ट्रीट प्ले के दौरान घातक हमला किया गया।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 3</b></p>
-                <p class="hi" style="display: none;">3 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 3rd Jan 1496: Leonardo da Vinci’s flight experiment failed.</p>
-                <p class="hi" style="display: none;">● 3 जनवरी 1496: लियोनार्डो दा विंची का उड़ान प्रयोग विफल रहा।</p>
-                <p class="en">● 3rd Jan 1925: Benito Mussolini became a dictator of Italy.</p>
-                <p class="hi" style="display: none;">● 3 जनवरी 1925: बेनिटो मुसोलिनी इटली के तानाशाह बने।</p>
-                <p class="en">● 3rd Jan 1929: Mahatma Gandhi met Lord Irwin.</p>
-                <p class="hi" style="display: none;">● 3 जनवरी 1929: महात्मा गांधी ने लॉर्ड इरविन से मुलाकात की।</p>
-                <p class="en">● 3rd Jan 1943: Information about missing people broadcasted for the first time on television.</p>
-                <p class="hi" style="display: none;">● 3 जनवरी 1943: लापता लोगों की जानकारी पहली बार टेलीविजन पर प्रसारित की गई।</p>
-                <p class="en">● 3rd Jan 1947: The first televised telecast of the proceedings of the US Parliament took place.</p>
-                <p class="hi" style="display: none;">● 3 जनवरी 1947: अमेरिकी संसद की कार्यवाही का पहला टेलीविज़न प्रसारण हुआ।</p>
-                <p class="en">● 3rd Jan 1952: First national elections in independent India.</p>
-                <p class="hi" style="display: none;">● 3 जनवरी 1952: स्वतंत्र भारत में पहले राष्ट्रीय चुनाव।</p>
-                <p class="en">● 3rd Jan 1957: Hamilton Electric launched the world’s first battery-powered wristwatch.</p>
-                <p class="hi" style="display: none;">● 3 जनवरी 1957: हैमिल्टन इलेक्ट्रिक ने दुनिया की पहली बैटरी से चलने वाली कलाई घड़ी लॉन्च की।</p>
-                <p class="en">● 3rd Jan 1968: Launch of the country’s first meteorological rocket Maneka.</p>
-                <p class="hi" style="display: none;">● 3 जनवरी 1968: देश के पहले मौसम विज्ञान रॉकेट मनेका का प्रक्षेपण।</p>
-                <p class="en">● 3rd Jan 1993: USA and Russia agreed to halve their nuclear weapons numbers.</p>
-                <p class="hi" style="display: none;">● 3 जनवरी 1993: अमेरिका और रूस ने अपने परमाणु हथियारों की संख्या को आधा करने पर सहमति व्यक्त की।</p>
-                <p class="en">● 3rd Jan 2020: An American airstrike near Baghdad International Airport killed the Iranian General Qasem Soleimani.</p>
-                <p class="hi" style="display: none;">● 3 जनवरी 2020: बगदाद अंतरराष्ट्रीय हवाई अड्डे के पास एक अमेरिकी हवाई हमले में ईरानी जनरल कासेम सोलेमानी मारे गए।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 4</b></p>
-                <p class="hi" style="display: none;">4 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 4th January 1831: Birth of Savitribai Phule, India’s first female teacher and a prominent social reformer. She worked tirelessly for women's education and equality.</p>
-                <p class="hi" style="display: none;">● 4 जनवरी 1831: सावित्रीबाई फुले का जन्म, भारत की पहली महिला शिक्षिका और एक प्रमुख सामाजिक सुधारक। उन्होंने महिलाओं की शिक्षा और समानता के लिए अथक प्रयास किया।</p>
-                <p class="en">● 4th January 1911: During British rule, Delhi was declared the new capital of India, replacing Kolkata.</p>
-                <p class="hi" style="display: none;">● 4 जनवरी 1911: ब्रिटिश शासन के दौरान, दिल्ली को भारत की नई राजधानी घोषित किया गया, जो कोलकाता की जगह ले रही थी।</p>
-                <p class="en">● 4th January 1929: Mahatma Gandhi announced the Civil Disobedience Movement against British rule, giving new momentum to the freedom struggle.</p>
-                <p class="hi" style="display: none;">● 4 जनवरी 1929: महात्मा गांधी ने ब्रिटिश शासन के खिलाफ सविनय अवज्ञा आंदोलन की घोषणा की, जिससे स्वतंत्रता संग्राम को नई गति मिली।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 5</b></p>
-                <p class="hi" style="display: none;">5 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 5th January 1972: Arunachal Pradesh and Mizoram were declared Union Territories, enhancing their administrative significance.</p>
-                <p class="hi" style="display: none;">● 5 जनवरी 1972: अरुणाचल प्रदेश और मिजोरम को केंद्र शासित प्रदेश घोषित किया गया, जिससे उनकी प्रशासनिक महत्वता बढ़ गई।</p>
-                <p class="en">● 5th January 2014: For the first time, India celebrated "National Space Science Day" on the birth anniversary of ISRO pioneer Satish Dhawan.</p>
-                <p class="hi" style="display: none;">● 5 जनवरी 2014: पहली बार, भारत ने इसरो के अग्रणी सतीश धवन की जयंती पर "राष्ट्रीय अंतरिक्ष विज्ञान दिवस" मनाया।</p>
-                
-                <p class="en"><b>Other Events on January 5</b></p>
-                <p class="hi" style="display: none;">5 जनवरी के अन्य घटनाक्रम</p>
-                <p class="en">● 5th January 2015: India successfully launched the GSLV-D5 satellite with its advanced cryogenic engine, marking a significant milestone in space technology.</p>
-                <p class="hi" style="display: none;">● 5 जनवरी 2015: भारत ने अपने उन्नत क्रायोजेनिक इंजन के साथ जीएसएलवी-डी5 उपग्रह को सफलतापूर्वक लॉन्च किया, जो अंतरिक्ष प्रौद्योगिकी में एक महत्वपूर्ण मील का पत्थर है।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 6</b></p>
-                <p class="hi" style="display: none;">6 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 6th January 1907: The first All India Political Conference was held in Surat under the leadership of Bal Gangadhar Tilak. This marked a significant phase in India’s freedom struggle.</p>
-                <p class="hi" style="display: none;">● 6 जनवरी 1907: बाल गंगाधर तिलक के नेतृत्व में सूरत में पहली अखिल भारतीय राजनीतिक सम्मेलन आयोजित किया गया। यह भारत के स्वतंत्रता संग्राम में एक महत्वपूर्ण चरण था।</p>
-                <p class="en">● 6th January 1912: The British announced the transfer of the capital of British India from Calcutta (now Kolkata) to Delhi.</p>
-                <p class="hi" style="display: none;">● 6 जनवरी 1912: ब्रिटिशों ने ब्रिटिश भारत की राजधानी को कलकत्ता (अब कोलकाता) से दिल्ली स्थानांतरित करने की घोषणा की।</p>
-                <p class="en">● 6th January 1947: The Constituent Assembly of India adopted the National Flag of India, which was presented by Dr. Rajendra Prasad.</p>
-                <p class="hi" style="display: none;">● 6 जनवरी 1947: भारत की संविधान सभा ने भारत के राष्ट्रीय ध्वज को अपनाया, जिसे डॉ. राजेंद्र प्रसाद ने प्रस्तुत किया।</p>
-                
-                <p class="en"><b>Other Events on January 6</b></p>
-                <p class="hi" style="display: none;">6 जनवरी के अन्य घटनाक्रम</p>
-                <p class="en">● 6th January 2012: India announced its successful testing of Agni-IV, an advanced nuclear-capable ballistic missile, showcasing its defense capabilities.</p>
-                <p class="hi" style="display: none;">● 6 जनवरी 2012: भारत ने अपनी उन्नत परमाणु-सक्षम बैलिस्टिक मिसाइल अग्नि-IV के सफल परीक्षण की घोषणा की, जो इसकी रक्षा क्षमताओं को प्रदर्शित करता है।</p>
-                <p class="en">● 6th January 2021: The Indian government launched the first phase of the vaccination drive for COVID-19, one of the largest in the world.</p>
-                <p class="hi" style="display: none;">● 6 जनवरी 2021: भारतीय सरकार ने COVID-19 के लिए टीकाकरण अभियान के पहले चरण की शुरुआत की, जो दुनिया में सबसे बड़े में से एक है।</p>
-                <hr>
-                <p class="en"><b>Events on 7 January in Indian History</b></p>
-                <p class="hi" style="display: none;">7 जनवरी के भारतीय इतिहास में घटनाएँ</p>
-                <p class="en">● 7th January 1738 - The Battle of Bhopal ended with a peace treaty signed between Peshwa Bajirao and Jai Singh II, marking the Maratha victory.</p>
-                <p class="hi" style="display: none;">● 7 जनवरी 1738 - भोपाल की लड़ाई पेशवा बाजीराव और जय सिंह द्वितीय के बीच एक शांति संधि के साथ समाप्त हुई, जो मराठा विजय को चिह्नित करती है।</p>
-                <p class="en">● 7th January 1859 - The trial of Bahadur Shah Zafar, the last Mughal Emperor, began. He was charged with treason for his role in the 1857 Revolt against British rule.</p>
-                <p class="hi" style="display: none;">● 7 जनवरी 1859 - अंतिम मुगल सम्राट बहादुर शाह जफर का मुकदमा शुरू हुआ। उन्हें ब्रिटिश शासन के खिलाफ 1857 के विद्रोह में उनकी भूमिका के लिए राजद्रोह का आरोप लगाया गया था।</p>
-                <p class="en">● 7th January 1994 - The Malhotra Committee proposed reforms in India's insurance sector, recommending privatization and foreign participation in Life Insurance Corporation (LIC) and General Insurance Corporation (GIC).</p>
-                <p class="hi" style="display: none;">● 7 जनवरी 1994 - मल्होत्रा समिति ने भारत के बीमा क्षेत्र में सुधारों का प्रस्ताव रखा, जीवन बीमा निगम (LIC) और जनरल इंश्योरेंस कॉरपोरेशन (GIC) में निजीकरण और विदेशी भागीदारी की सिफारिश की।</p>
-                <p class="en">● 7th January 1927 - The first ever Indian science congress was held in Calcutta (now Kolkata) to promote the development of science and technology in India.</p>
-                <p class="hi" style="display: none;">● 7 जनवरी 1927 - भारत में विज्ञान और प्रौद्योगिकी के विकास को बढ़ावा देने के लिए कलकत्ता (अब कोलकाता) में पहली बार भारतीय विज्ञान कांग्रेस का आयोजन किया गया था।</p>
-                <p class="en">● 7th January 1949 - The Constituent Assembly adopted the resolution to officially use the Hindi language in Devanagari script as the official language of India.</p>
-                <p class="hi" style="display: none;">● 7 जनवरी 1949 - संविधान सभा ने भारत की आधिकारिक भाषा के रूप में देवनागरी लिपि में हिंदी भाषा के आधिकारिक उपयोग के लिए प्रस्ताव को अपनाया।</p>
-                <p class="en">● 7th January 1980 - The first Indian National Auto Expo, a significant milestone for the Indian automobile industry, was held in New Delhi.</p>
-                <p class="hi" style="display: none;">● 7 जनवरी 1980 - भारतीय ऑटोमोबाइल उद्योग के लिए एक महत्वपूर्ण मील का पत्थर, पहला भारतीय राष्ट्रीय ऑटो एक्सपो, नई दिल्ली में आयोजित किया गया था।</p>
-                <p class="en">● 7th January 2004 - Prime Minister Atal Bihari Vajpayee inaugurated the Pravasi Bharatiya Divas (Non-Resident Indian Day) to honor the contributions of Indians living abroad.</p>
-                <p class="hi" style="display: none;">● 7 जनवरी 2004 - प्रधान मंत्री अटल बिहारी वाजपेयी ने विदेश में रहने वाले भारतीयों के योगदान का सम्मान करने के लिए प्रवासी भारतीय दिवस का उद्घाटन किया।</p>
-                <hr>
-                <p class="en"><b>Events on 8 January in Indian History</b></p>
-                <p class="hi" style="display: none;">8 जनवरी के भारतीय इतिहास में घटनाएँ</p>
-                <p class="en">● 8th January 1803: The ship Lady Castlereagh was launched in Kolkata, marking an important event in the city's maritime history.</p>
-                <p class="hi" style="display: none;">● 8 जनवरी 1803: कोलकाता में जहाज लेडी कैस्टलरेघ का शुभारंभ हुआ, जो शहर के समुद्री इतिहास में एक महत्वपूर्ण घटना है।</p>
-                <p class="en">● 8th January 1026: Sultan Mahmud looted and destroyed the Somnath temple.</p>
-                <p class="hi" style="display: none;">● 8 जनवरी 1026: सुल्तान महमूद ने सोमनाथ मंदिर को लूट लिया और नष्ट कर दिया।</p>
-                <hr>
-                <p class="en"><b>Historical Events On January 9</b></p>
-                <p class="hi" style="display: none;">9 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 9th January 1915: Mahatma Gandhi returned to India from South Africa, marking the beginning of his active role in India's freedom struggle. This day is now celebrated as Pravasi Bharatiya Divas to honor the contributions of the Indian diaspora.</p>
-                <p class="hi" style="display: none;">● 9 जनवरी 1915: महात्मा गांधी दक्षिण अफ्रीका से भारत लौटे, जो भारत के स्वतंत्रता संग्राम में उनकी सक्रिय भूमिका की शुरुआत थी। इस दिन को अब भारतीय प्रवासी दिवस के रूप में मनाया जाता है ताकि भारतीय प्रवासी के योगदान का सम्मान किया जा सके।</p>
-                <p class="en">● 9th January 1922: Birth of Hargobind Khorana, a Nobel Prize-winning biochemist known for his work on the genetic code.</p>
-                <p class="hi" style="display: none;">● 9 जनवरी 1922: हरगोविंद खुराना का जन्म, एक नोबेल पुरस्कार विजेता जैव रसायनज्ञ, जो उनके आनुवंशिक कोड पर काम के लिए जाने जाते हैं।</p>
-                <p class="en">● 9th January 1927: Birth of Sundarlal Bahuguna, environmentalist and leader of the Chipko Movement.</p>
-                <p class="hi" style="display: none;">● 9 जनवरी 1927: सुंदरलाल बहुगुणा का जन्म, पर्यावरणविद और चिपको आंदोलन के नेता।</p>
-                <p class="en">● 9th January 1934: Birth of Mahendra Kapoor, a legendary Indian playback singer.</p>
-                <p class="hi" style="display: none;">● 9 जनवरी 1934: महेंद्र कपूर का जन्म, एक महान भारतीय पार्श्व गायक।</p>
-                <hr>
-                <p class="en"><b>Historical Events On January 10</b></p>
-                <p class="hi" style="display: none;">10 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 10th January 1616: Sir Thomas Roe Meets Jahangir. British diplomat Sir Thomas Roe met Mughal Emperor Jahangir in Ajmer, initiating stronger trade relations between Britain and India.</p>
-                <p class="hi" style="display: none;">● 10 जनवरी 1616: सर थॉमस रो ने जहांगीर से मुलाकात की। ब्रिटिश राजनयिक सर थॉमस रो ने अजमेर में मुगल सम्राट जहांगीर से मुलाकात की, जिससे ब्रिटेन और भारत के बीच मजबूत व्यापार संबंध स्थापित हुए।</p>
-                <p class="en">● 10th January 1839: First Indian Tea Export. The first consignment of Indian tea was shipped to the United Kingdom, marking the beginning of India's prominence in the global tea trade.</p>
-                <p class="hi" style="display: none;">● 10 जनवरी 1839: पहला भारतीय चाय निर्यात। भारतीय चाय की पहली खेप यूनाइटेड किंगडम भेजी गई, जिससे वैश्विक चाय व्यापार में भारत की प्रमुखता की शुरुआत हुई।</p>
-                <p class="en">● 10th January 1966: Tashkent Agreement. India and Pakistan signed the Tashkent Agreement to end the Indo-Pakistani War of 1965.</p>
-                <p class="hi" style="display: none;">● 10 जनवरी 1966: ताशकंद समझौता। भारत और पाकिस्तान ने 1965 के भारत-पाकिस्तान युद्ध को समाप्त करने के लिए ताशकंद समझौते पर हस्ताक्षर किए।</p>
-                <p class="en">● 10th January 1975: First World Hindi Conference. Held in Nagpur, the conference aimed to promote Hindi as a global language.</p>
-                <p class="hi" style="display: none;">● 10 जनवरी 1975: पहला विश्व हिंदी सम्मेलन। नागपुर में आयोजित, सम्मेलन का उद्देश्य हिंदी को वैश्विक भाषा के रूप में बढ़ावा देना था।</p>
-                <p class="en">● 10th January 2006: World Hindi Day Established. January 10 was officially declared World Hindi Day to promote the Hindi language worldwide.</p>
-                <p class="hi" style="display: none;">● 10 जनवरी 2006: विश्व हिंदी दिवस स्थापित। हिंदी भाषा को विश्व स्तर पर बढ़ावा देने के लिए 10 जनवरी को आधिकारिक रूप से विश्व हिंदी दिवस घोषित किया गया।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 11</b></p>
-                <p class="hi" style="display: none;">11 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 11th January 1613: Mughal emperor Jahangir granted permission to the East India Company to establish a factory in Surat.</p>
-                <p class="hi" style="display: none;">● 11 जनवरी 1613: मुगल सम्राट जहांगीर ने ईस्ट इंडिया कंपनी को सूरत में एक कारखाना स्थापित करने की अनुमति दी।</p>
-                <p class="en">● 11th January 1759: The first life insurance company was launched in Philadelphia, USA.</p>
-                <p class="hi" style="display: none;">● 11 जनवरी 1759: फिलाडेल्फिया, यूएसए में पहली जीवन बीमा कंपनी शुरू की गई।</p>
-                <p class="en">● 11th January 1787: William Herschel discovered Titania and Oberon, the moons of Uranus.</p>
-                <p class="hi" style="display: none;">● 11 जनवरी 1787: विलियम हर्शल ने यूरेनस के चंद्रमा टाइटेनिया और ओबेरॉन की खोज की।</p>
-                <p class="en">● 11th January 1922: Insulin was first used to treat diabetes.</p>
-                <p class="hi" style="display: none;">● 11 जनवरी 1922: मधुमेह के इलाज के लिए पहली बार इंसुलिन का उपयोग किया गया।</p>
-                <p class="en">● 11th January 1942: Japan occupied Kuala Lumpur, the capital of Malaysia.</p>
-                <p class="hi" style="display: none;">● 11 जनवरी 1942: जापान ने मलेशिया की राजधानी कुआलालंपुर पर कब्जा कर लिया।</p>
-                <p class="en">● 11th January 1966: Gulzarilal Nanda became the caretaker Prime Minister of India.</p>
-                <p class="hi" style="display: none;">● 11 जनवरी 1966: गुलजारीलाल नंदा भारत के कार्यवाहक प्रधान मंत्री बने।</p>
-                <p class="en">● 11th January 1972: East Pakistan was officially renamed Bangladesh, with Sheikh Mujibur Rahman as its first Prime Minister.</p>
-                <p class="hi" style="display: none;">● 11 जनवरी 1972: पूर्वी पाकिस्तान का आधिकारिक रूप से नाम बदलकर बांग्लादेश कर दिया गया, और शेख मुजीबुर रहमान इसके पहले प्रधान मंत्री बने।</p>
-                <p class="en">● 11th January 1999: The Indian government issued an ordinance repealing the Maximum Landholding Act.</p>
-                <p class="hi" style="display: none;">● 11 जनवरी 1999: भारतीय सरकार ने अधिकतम भूमि धारण अधिनियम को निरस्त करने के लिए एक अध्यादेश जारी किया।</p>
-                <p class="en">● 11th January 2000: The Chhattisgarh High Court was established.</p>
-                <p class="hi" style="display: none;">● 11 जनवरी 2000: छत्तीसगढ़ उच्च न्यायालय की स्थापना की गई।</p>
-                <p class="en">● 11th January 2001: S. P. Bharucha became the 30th Chief Justice of India.</p>
-                <p class="hi" style="display: none;">● 11 जनवरी 2001: एस. पी. भरूचा भारत के 30वें मुख्य न्यायाधीश बने।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 12</b></p>
-                <p class="hi" style="display: none;">12 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 12th January: National Youth Day (India)... Celebrated annually to honor the birth anniversary of Swami Vivekananda.</p>
-                <p class="hi" style="display: none;">● 12 जनवरी: राष्ट्रीय युवा दिवस (भारत)... स्वामी विवेकानंद की जयंती के उपलक्ष्य में प्रतिवर्ष मनाया जाता है।</p>
-                <p class="en">● 12th January 1705: Satara became the capital of the Maratha Empire.</p>
-                <p class="hi" style="display: none;">● 12 जनवरी 1705: सतारा मराठा साम्राज्य की राजधानी बना।</p>
-                <p class="en">● 12th January 1948: Mahatma Gandhi gave his last speech and started a hunger strike against communal violence after the Partition of India in 1947.</p>
-                <p class="hi" style="display: none;">● 12 जनवरी 1948: महात्मा गांधी ने अपना अंतिम भाषण दिया और 1947 में भारत के विभाजन के बाद सांप्रदायिक हिंसा के खिलाफ भूख हड़ताल शुरू की।</p>
-                <p class="en">● 12th January 2005: Establishment of the National Knowledge Commission in India.</p>
-                <p class="hi" style="display: none;">● 12 जनवरी 2005: भारत में राष्ट्रीय ज्ञान आयोग की स्थापना।</p>
-                <p class="en">● 12th January 2019: President Ram Nath Kovind cleared the Economic Weaker Section Reservation Bill (Articles 15(6) and 16(6)) to provide 10% reservations for economically weaker upper-caste individuals.</p>
-                <p class="hi" style="display: none;">● 12 जनवरी 2019: राष्ट्रपति राम नाथ कोविंद ने आर्थिक रूप से कमजोर वर्ग आरक्षण विधेयक (अनुच्छेद 15(6) और 16(6)) को मंजूरी दी, जिससे आर्थिक रूप से कमजोर उच्च जाति के व्यक्तियों के लिए 10% आरक्षण प्रदान किया गया।</p>
-                <hr>
-                <p class="en"><b>Famous Birthdays & Birth Anniversaries</b></p>
-                <p class="hi" style="display: none;">प्रसिद्ध जन्मदिन और जयंती</p>
-                <p class="en">● 12th January 1598: Jijabai Shahaji Bhosale, mother of Shivaji Maharaj and a key figure in the Maratha Empire.</p>
-                <p class="hi" style="display: none;">● 12 जनवरी 1598: जीजाबाई शाहाजी भोसले, शिवाजी महाराज की माता और मराठा साम्राज्य की एक प्रमुख हस्ती।</p>
-                <p class="en">● 12th January 1863: Swami Vivekananda, Indian Hindu monk and philosopher.</p>
-                <p class="hi" style="display: none;">● 12 जनवरी 1863: स्वामी विवेकानंद, भारतीय हिंदू संन्यासी और दार्शनिक।</p>
-                <p class="en">● 12th January 1869: Bhagwan Das, Indian Theosophist and public servant.</p>
-                <p class="hi" style="display: none;">● 12 जनवरी 1869: भगवान दास, भारतीय थियोसोफिस्ट और सार्वजनिक सेवक।</p>
-                <p class="en">● 12th January 1918: C. Ramachandra, renowned Indian film music composer.</p>
-                <p class="hi" style="display: none;">● 12 जनवरी 1918: सी. रामचंद्र, प्रसिद्ध भारतीय फिल्म संगीतकार।</p>
-                <p class="en">● 12th January 1921: Basant Kumar Birla, Indian industrialist and philanthropist.</p>
-                <p class="hi" style="display: none;">● 12 जनवरी 1921: बसंत कुमार बिड़ला, भारतीय उद्योगपति और परोपकारी।</p>
-                <p class="en">● 12th January 1972: Priyanka Gandhi, Indian politician and Congress Party leader.</p>
-                <p class="hi" style="display: none;">● 12 जनवरी 1972: प्रियंका गांधी, भारतीय राजनीतिज्ञ और कांग्रेस पार्टी की नेता।</p>
-                <p class="en">● 12th January 1976: Mahesh Kale, Indian classical vocalist.</p>
-                <p class="hi" style="display: none;">● 12 जनवरी 1976: महेश काले, भारतीय शास्त्रीय गायक।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 13</b></p>
-                <p class="hi" style="display: none;">13 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 13th January 1610: Galileo Galilei discovered Callisto, Jupiter’s fourth satellite.</p>
-                <p class="hi" style="display: none;">● 13 जनवरी 1610: गैलीलियो गैलीली ने कैलिस्टो की खोज की, जो बृहस्पति का चौथा उपग्रह है।</p>
-                <p class="en">● 13th January 1709: Mughal ruler Bahadur Shah I defeated his brother Kam Bakhsh in Hyderabad in a power struggle.</p>
-                <p class="hi" style="display: none;">● 13 जनवरी 1709: मुगल शासक बहादुर शाह I ने हैदराबाद में सत्ता संघर्ष में अपने भाई काम बख्श को हराया।</p>
-                <p class="en">● 1709: The Marathas defeated the British in the Battle of Vadgaon.</p>
-                <p class="hi" style="display: none;">● 1709: मराठों ने वडगांव की लड़ाई में अंग्रेजों को हराया।</p>
-                <p class="en">● 13th January 1910: The world’s first public radio broadcast began in New York.</p>
-                <p class="hi" style="display: none;">● 13 जनवरी 1910: न्यूयॉर्क में दुनिया का पहला सार्वजनिक रेडियो प्रसारण शुरू हुआ।</p>
-                <p class="en">● 13th January 1915: An earthquake in Avezzano, Italy, killed 29,800 people.</p>
-                <p class="hi" style="display: none;">● 13 जनवरी 1915: इटली के एवेज़ानो में भूकंप से 29,800 लोग मारे गए।</p>
-                <p class="en">● 13th January 1930: Mickey Mouse comics were first published.</p>
-                <p class="hi" style="display: none;">● 13 जनवरी 1930: मिकी माउस कॉमिक्स पहली बार प्रकाशित हुए।</p>
-                <p class="en">● 13th January 1964: 100 people were killed in anti-Muslim riots in Kolkata.</p>
-                <p class="hi" style="display: none;">● 13 जनवरी 1964: कोलकाता में मुस्लिम विरोधी दंगों में 100 लोग मारे गए।</p>
-                <p class="en">● 13th January 1994: An Indian Airlines A320 Airbus traveling from Bangalore to Madras, carrying 56 passengers and seven crew members, was hijacked.</p>
-                <p class="hi" style="display: none;">● 13 जनवरी 1994: बैंगलोर से मद्रास जा रहे 56 यात्रियों और सात चालक दल के सदस्यों को ले जा रहे इंडियन एयरलाइंस के ए320 एयरबस का अपहरण कर लिया गया।</p>
-                <p class="en">● 13th January 1995: Belarus became the 24th member country of NATO.</p>
-                <p class="hi" style="display: none;">● 13 जनवरी 1995: बेलारूस नाटो का 24वां सदस्य देश बना।</p>
-                <p class="en">● 13th January 2007: K. G. Balakrishnan became the 37th Chief Justice of India.</p>
-                <p class="hi" style="display: none;">● 13 जनवरी 2007: के. जी. बालकृष्णन भारत के 37वें मुख्य न्यायाधीश बने।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 14</b></p>
-                <p class="hi" style="display: none;">14 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 14th January: Geography Day (India) & World Logic Day (UNESCO)</p>
-                <p class="hi" style="display: none;">● 14 जनवरी: भूगोल दिवस (भारत) और विश्व तर्क दिवस (यूनेस्को)</p>
-                <p class="en">● 14th January 1641: United East India Company conquered the city of Malacca.</p>
-                <p class="hi" style="display: none;">● 14 जनवरी 1641: यूनाइटेड ईस्ट इंडिया कंपनी ने मलक्का शहर पर कब्जा कर लिया।</p>
-                <p class="en">● 14th January 1758: Under an authority letter from the Emperor of England, the East India Company got the right to keep the money and property looted in any war against the company or emperor in India.</p>
-                <p class="hi" style="display: none;">● 14 जनवरी 1758: इंग्लैंड के सम्राट के एक प्राधिकरण पत्र के तहत, ईस्ट इंडिया कंपनी को भारत में कंपनी या सम्राट के खिलाफ किसी भी युद्ध में लूटे गए धन और संपत्ति को रखने का अधिकार मिला।</p>
-                <p class="en">● 14th January 1760: French General Lally handed over his colony Pondicherry (present-day Puducherry) to the British Captain Ayre Coot.</p>
-                <p class="hi" style="display: none;">● 14 जनवरी 1760: फ्रांसीसी जनरल लाली ने अपनी कॉलोनी पांडिचेरी (वर्तमान में पुडुचेरी) को ब्रिटिश कप्तान आयर कूट को सौंप दिया।</p>
-                <p class="en">● 14th January 1761: The Third Battle of Panipat between Marathas and Afghans.</p>
-                <p class="hi" style="display: none;">● 14 जनवरी 1761: मराठों और अफगानों के बीच पानीपत की तीसरी लड़ाई।</p>
-                <p class="en">● 14th January 1907: A disastrous earthquake in Kingston, the capital of the Caribbean country of Jamaica, killed more than 1,000 people.</p>
-                <p class="hi" style="display: none;">● 14 जनवरी 1907: कैरेबियाई देश जमैका की राजधानी किंग्स्टन में विनाशकारी भूकंप से 1,000 से अधिक लोग मारे गए।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 15</b></p>
-                <p class="hi" style="display: none;">15 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 15th January 1559: Queen Elizabeth I was crowned Queen of England at Westminster Abbey.</p>
-                <p class="hi" style="display: none;">● 15 जनवरी 1559: क्वीन एलिजाबेथ I को वेस्टमिंस्टर एब्बे में इंग्लैंड की रानी का ताज पहनाया गया।</p>
-                <p class="en">● 15th January 1761: The Third Battle of Panipat ended.</p>
-                <p class="hi" style="display: none;">● 15 जनवरी 1761: पानीपत की तीसरी लड़ाई समाप्त हुई।</p>
-                <p class="en">● 15th January 1784: Establishment of the Asiatic Society of Bengal.</p>
-                <p class="hi" style="display: none;">● 15 जनवरी 1784: एशियाटिक सोसाइटी ऑफ बंगाल की स्थापना।</p>
-                <p class="en">● 15th January 1861: Elisha G. Otis, the inventor, received the world’s first patent for a safe lift.</p>
-                <p class="hi" style="display: none;">● 15 जनवरी 1861: आविष्कारक एलिशा जी. ओटिस को सुरक्षित लिफ्ट के लिए दुनिया का पहला पेटेंट मिला।</p>
-                <p class="en">● 15th January 1889: The Pemberton Medicine Company started in Atlanta, Georgia, USA. This company is currently known as The Coca Cola Company.</p>
-                <p class="hi" style="display: none;">● 15 जनवरी 1889: पेम्बर्टन मेडिसिन कंपनी अटलांटा, जॉर्जिया, यूएसए में शुरू हुई। यह कंपनी वर्तमान में द कोका कोला कंपनी के नाम से जानी जाती है।</p>
-                <p class="en">● 15th January 1934: A massive earthquake in Bihar killed about 20,000 people.</p>
-                <p class="hi" style="display: none;">● 15 जनवरी 1934: बिहार में एक बड़े भूकंप से लगभग 20,000 लोग मारे गए।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 16</b></p>
-                <p class="hi" style="display: none;">16 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 16th January 1556: Philip II became the Emperor of Spain.</p>
-                <p class="hi" style="display: none;">● 16 जनवरी 1556: फिलिप II स्पेन के सम्राट बने।</p>
-                <p class="en">● 16th January 1681: Chhatrapati Sambhaji Raje crowned Chhatrapati.</p>
-                <p class="hi" style="display: none;">● 16 जनवरी 1681: छत्रपति संभाजी राजे का राज्याभिषेक हुआ।</p>
-                <p class="en">● 16th January 1760: The British capture Pondicherry from the French.</p>
-                <p class="hi" style="display: none;">● 16 जनवरी 1760: ब्रिटिशों ने फ्रांसीसियों से पांडिचेरी पर कब्जा कर लिया।</p>
-                <p class="en">● 16th January 1769: Planned horse racing organized for the first time in Accra, Calcutta (now Kolkata).</p>
-                <p class="hi" style="display: none;">● 16 जनवरी 1769: अकरा, कलकत्ता (अब कोलकाता) में पहली बार नियोजित घुड़दौड़ का आयोजन किया गया।</p>
-                <p class="en">● 16th January 1919: The 18th Amendment to the US Constitution was enacted, and a nationwide embargo was imposed.</p>
-                <p class="hi" style="display: none;">● 16 जनवरी 1919: अमेरिकी संविधान में 18वां संशोधन लागू किया गया, और देशव्यापी प्रतिबंध लगाया गया।</p>
-                <p class="en">● 16th January 1920: The League of Nations held its first council meeting in Paris.</p>
-                <p class="hi" style="display: none;">● 16 जनवरी 1920: लीग ऑफ नेशंस ने पेरिस में अपनी पहली परिषद बैठक आयोजित की।</p>
-                <p class="en">● 16th January 1941: Netaji Subhash Chandra Bose left the country.</p>
-                <p class="hi" style="display: none;">● 16 जनवरी 1941: नेताजी सुभाष चंद्र बोस ने देश छोड़ दिया।</p>
-                <p class="en">● 16th January 1979: The Shah of Iran fled to Egypt with his family.</p>
-                <p class="hi" style="display: none;">● 16 जनवरी 1979: ईरान के शाह अपने परिवार के साथ मिस्र भाग गए।</p>
-                <p class="en">● 16th January 1992: Extradition treaty between India and Britain was signed.</p>
-                <p class="hi" style="display: none;">● 16 जनवरी 1992: भारत और ब्रिटेन के बीच प्रत्यर्पण संधि पर हस्ताक्षर किए गए।</p>
-                <p class="en">● 16th January 1995: INS Vidyut, a home-made missile ship, was launched at Goa.</p>
-                <p class="hi" style="display: none;">● 16 जनवरी 1995: आईएनएस विद्युत, एक स्वदेशी मिसाइल जहाज, गोवा में लॉन्च किया गया।</p>
-                <p class="en">● 16th January 1996: Hubble Space Telescope scientists claim to have discovered more than 100 new galaxies in space.</p>
-                <p class="hi" style="display: none;">● 16 जनवरी 1996: हबल स्पेस टेलीस्कोप के वैज्ञानिकों ने अंतरिक्ष में 100 से अधिक नई आकाशगंगाओं की खोज का दावा किया।</p>
-                <p class="en">● 16th January 1999: Anil Sood of India became the Vice President of the World Bank.</p>
-                <p class="hi" style="display: none;">● 16 जनवरी 1999: भारत के अनिल सूद विश्व बैंक के उपाध्यक्ष बने।</p>
-                <p class="en">● 16th January 2000: The Chinese government recognized the two-year-old Tibetan boy as the patron of Buddha.</p>
-                <p class="hi" style="display: none;">● 16 जनवरी 2000: चीनी सरकार ने दो वर्षीय तिब्बती लड़के को बुद्ध के संरक्षक के रूप में मान्यता दी।</p>
-                <p class="en">● 16th January 2003: Kalpana Chawla, of Indian origin, embarked on a second space trip.</p>
-                <p class="hi" style="display: none;">● 16 जनवरी 2003: भारतीय मूल की कल्पना चावला ने दूसरी अंतरिक्ष यात्रा शुरू की।</p>
-                <p class="en">● 16th January 2006: Socialist leader Michelle Bachelet became the first female President of Chile.</p>
-                <p class="hi" style="display: none;">● 16 जनवरी 2006: समाजवादी नेता मिशेल बाचेलेट चिली की पहली महिला राष्ट्रपति बनीं।</p>
-                <p class="en">● 16th January 2008: Tata Motors unveiled the Nano, a Rs. 1 lakh People’s Car.</p>
-                <p class="hi" style="display: none;">● 16 जनवरी 2008: टाटा मोटर्स ने नैनो, एक 1 लाख रुपये की पीपुल्स कार का अनावरण किया।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 17</b></p>
-                <p class="hi" style="display: none;">17 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 17th January 1601: Mughal Emperor Akbar conquered Asirgarh Fort.</p>
-                <p class="hi" style="display: none;">● 17 जनवरी 1601: मुगल सम्राट अकबर ने असीरगढ़ किले पर कब्जा कर लिया।</p>
-                <p class="en">● 17th January 1757: Germany declared war against Prussia.</p>
-                <p class="hi" style="display: none;">● 17 जनवरी 1757: जर्मनी ने प्रशिया के खिलाफ युद्ध की घोषणा की।</p>
-                <p class="en">● 17th January 1773: Captain James Cook crossed the Antarctic Circle.</p>
-                <p class="hi" style="display: none;">● 17 जनवरी 1773: कप्तान जेम्स कुक ने अंटार्कटिक सर्कल को पार किया।</p>
-                <p class="en">● 17th January 1912: Robert Falcon Scott reached the South Pole.</p>
-                <p class="hi" style="display: none;">● 17 जनवरी 1912: रॉबर्ट फाल्कन स्कॉट दक्षिणी ध्रुव पर पहुंचे।</p>
-                <p class="en">● 17th January 1946: First meeting of the United Nations Security Council.</p>
-                <p class="hi" style="display: none;">● 17 जनवरी 1946: संयुक्त राष्ट्र सुरक्षा परिषद की पहली बैठक।</p>
-                <p class="en">● 17th January 1987: Tata Football Academy opened.</p>
-                <p class="hi" style="display: none;">● 17 जनवरी 1987: टाटा फुटबॉल अकादमी का उद्घाटन हुआ।</p>
-                <p class="en">● 17th January 1989: Colonel J.K. Bajaj became the first Indian to reach the North Pole.</p>
-                <p class="hi" style="display: none;">● 17 जनवरी 1989: कर्नल जे.के. बजाज उत्तरी ध्रुव पर पहुंचने वाले पहले भारतीय बने।</p>
-                <p class="en">● 17th January 1995: A 7.2 magnitude earthquake in Japan killed 5,372 people.</p>
-                <p class="hi" style="display: none;">● 17 जनवरी 1995: जापान में 7.2 तीव्रता के भूकंप से 5,372 लोग मारे गए।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 18</b></p>
-                <p class="hi" style="display: none;">18 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 18th January 1778: Captain James Cook became the first European to reach the Hawaiian Islands.</p>
-                <p class="hi" style="display: none;">● 18 जनवरी 1778: कप्तान जेम्स कुक हवाई द्वीप समूह तक पहुंचने वाले पहले यूरोपीय बने।</p>
-                <p class="en">● 18th January 1919: Establishment of Bentley Motors Limited.</p>
-                <p class="hi" style="display: none;">● 18 जनवरी 1919: बेंटले मोटर्स लिमिटेड की स्थापना।</p>
-                <p class="en">● 18th January 1951: The first lie detector machine was used in the Netherlands.</p>
-                <p class="hi" style="display: none;">● 18 जनवरी 1951: नीदरलैंड में पहली बार झूठ पकड़ने वाली मशीन का उपयोग किया गया।</p>
-                <p class="en">● 18th January 1959: Meera Ben (Madeline Slade), an aide of Mahatma Gandhi, left India.</p>
-                <p class="hi" style="display: none;">● 18 जनवरी 1959: महात्मा गांधी की सहयोगी मीरा बेन (मेडेलीन स्लेड) ने भारत छोड़ दिया।</p>
-                <p class="en">● 18th January 1964: Inauguration of the World Trade Center building in New York.</p>
-                <p class="hi" style="display: none;">● 18 जनवरी 1964: न्यूयॉर्क में वर्ल्ड ट्रेड सेंटर भवन का उद्घाटन।</p>
-                <p class="en">● 18th January 1997: Norway’s Borg Ausland crossed the Atlantic Ocean alone.</p>
-                <p class="hi" style="display: none;">● 18 जनवरी 1997: नॉर्वे के बोरग ऑस्लैंड ने अकेले अटलांटिक महासागर को पार किया।</p>
-                <p class="en">● 18th January 1997: Nafisa Joseph became Miss India.</p>
-                <p class="hi" style="display: none;">● 18 जनवरी 1997: नफीसा जोसेफ मिस इंडिया बनीं।</p>
-                <p class="en">● 18th January 1998: Madan Mohan Punchhi became the 28th Chief Justice of India.</p>
-                <p class="hi" style="display: none;">● 18 जनवरी 1998: मदन मोहन पुंछी भारत के 28वें मुख्य न्यायाधीश बने।</p>
-                <p class="en">● 18th January 1999: Nobel laureate economist Amartya Sen was awarded the Bharat Ratna, the highest civilian honor of India.</p>
-                <p class="hi" style="display: none;">● 18 जनवरी 1999: नोबेल पुरस्कार विजेता अर्थशास्त्री अमर्त्य सेन को भारत के सर्वोच्च नागरिक सम्मान भारत रत्न से सम्मानित किया गया।</p>
-                <p class="en">● 18th January 2002: The US agreed to provide state-of-the-art weapons to India.</p>
-                <p class="hi" style="display: none;">● 18 जनवरी 2002: अमेरिका ने भारत को अत्याधुनिक हथियार उपलब्ध कराने पर सहमति व्यक्त की।</p>
-                <p class="en">● 18th January 2005: The world’s largest passenger plane, the Airbus A380, was unveiled.</p>
-                <p class="hi" style="display: none;">● 18 जनवरी 2005: दुनिया का सबसे बड़ा यात्री विमान, एयरबस ए380, का अनावरण किया गया।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 19</b></p>
-                <p class="hi" style="display: none;">19 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● Maharana Pratap, the founder of Mewad and eminent personality, passed away.</p>
-                <p class="hi" style="display: none;">● मेवाड़ के संस्थापक और प्रमुख व्यक्तित्व महाराणा प्रताप का निधन।</p>
-                <p class="en">● 19th January 1839: Aden was conquered by the British East India Company.</p>
-                <p class="hi" style="display: none;">● 19 जनवरी 1839: एडन पर ब्रिटिश ईस्ट इंडिया कंपनी ने कब्जा कर लिया।</p>
-                <p class="en">● 19th January 1892: Chintaman Vinayak Joshi, a famous Marathi comedy writer, was born.</p>
-                <p class="hi" style="display: none;">● 19 जनवरी 1892: प्रसिद्ध मराठी हास्य लेखक चिंतामणि विनायक जोशी का जन्म हुआ।</p>
-                <p class="en">● 19th January 1905: Maharshi Devendranath Tagore, a Bengali writer and thinker, passed away.</p>
-                <p class="hi" style="display: none;">● 19 जनवरी 1905: बंगाली लेखक और विचारक महर्षि देवेंद्रनाथ टैगोर का निधन।</p>
-                <p class="en">● 19th January 1907: Mohammad Ali Mirza was crowned as the "Shah of Iran" in a grand function held at the Royal Palace, Tehran. This coronation was performed on the precious throne "Takht-e-Taus," which was made by Emperor Shah Jahan, and was taken away from India during the invasion of Nadir Shah in 1738 AD.</p>
-                <p class="hi" style="display: none;">● 19 जनवरी 1907: मोहम्मद अली मिर्जा को तेहरान के रॉयल पैलेस में आयोजित एक भव्य समारोह में "ईरान के शाह" के रूप में ताज पहनाया गया। यह राज्याभिषेक कीमती सिंहासन "तख्त-ए-ताउस" पर किया गया था, जिसे सम्राट शाहजहाँ ने बनवाया था, और 1738 ईस्वी में नादिर शाह के आक्रमण के दौरान भारत से ले जाया गया था।</p>
-                <p class="en">● 19th January 1910: Vinayak Damodar Karnaki (Master Vinayak), a famous Marathi actor, director, and producer, was born.</p>
-                <p class="hi" style="display: none;">● 19 जनवरी 1910: प्रसिद्ध मराठी अभिनेता, निर्देशक और निर्माता विनायक दामोदर कर्णकी (मास्टर विनायक) का जन्म हुआ।</p>
-                <p class="en">● 19th January 1919: Dharam Singh, a field hockey player for the Indian Team at the 1964 Olympics (Gold Winner), was born.</p>
-                <p class="hi" style="display: none;">● 19 जनवरी 1919: 1964 ओलंपिक (स्वर्ण विजेता) में भारतीय टीम के लिए फील्ड हॉकी खिलाड़ी धरम सिंह का जन्म हुआ।</p>
-                <p class="en">● 19th January 1951: Amritlal Vithaldas Thakkar (Thakkarbappa), a social reformer of Gujarat and right hand of Gandhiji in socially segregated Harijans, passed away.</p>
-                <p class="hi" style="display: none;">● 19 जनवरी 1951: अमृतलाल विठ्ठलदास ठक्कर (ठक्करबप्पा), गुजरात के एक सामाजिक सुधारक और सामाजिक रूप से अलग-थलग हरिजनों में गांधीजी के दाहिने हाथ, का निधन।</p>
-                <p class="en">● 19th January 1960: Ramchandra Gopal (Dadasaheb Torne), a famous film director, passed away.</p>
-                <p class="hi" style="display: none;">● 19 जनवरी 1960: प्रसिद्ध फिल्म निर्देशक रामचंद्र गोपाल (दादासाहेब तोरणे) का निधन।</p>
-                <p class="en">● 19th January 1963: Kuladhor Chaliha, one of the pioneer Congress leaders of Assam, passed away.</p>
-                <p class="hi" style="display: none;">● 19 जनवरी 1963: असम के अग्रणी कांग्रेस नेताओं में से एक कुलाधर चालीहा का निधन।</p>
-                <p class="en">● 19th January 1966: Indira Gandhi was elected leader of the Congress party to succeed the late Lal Bahadur Shastri as the third Prime Minister of India. She pledged to follow the path of Non-Alignment in world affairs.</p>
-                <p class="hi" style="display: none;">● 19 जनवरी 1966: इंदिरा गांधी को कांग्रेस पार्टी का नेता चुना गया, जो दिवंगत लाल बहादुर शास्त्री के बाद भारत की तीसरी प्रधानमंत्री बनीं। उन्होंने विश्व मामलों में गुटनिरपेक्षता के मार्ग का पालन करने की प्रतिज्ञा की।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 20</b></p>
-                <p class="hi" style="display: none;">20 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 20th January 1817: Ram Mohun Roy started Hindu College in Calcutta with the help of Justice H. East and David Hare. This college was later renamed as the Presidency College.</p>
-                <p class="hi" style="display: none;">● 20 जनवरी 1817: राम मोहन रॉय ने जस्टिस एच. ईस्ट और डेविड हेयर की मदद से कलकत्ता में हिंदू कॉलेज शुरू किया। इस कॉलेज का नाम बाद में प्रेसिडेंसी कॉलेज रखा गया।</p>
-                <p class="en">● 20th January 1897: Gandhiji declines to prosecute assailants.</p>
-                <p class="hi" style="display: none;">● 20 जनवरी 1897: गांधीजी ने हमलावरों पर मुकदमा चलाने से इनकार कर दिया।</p>
-                <p class="en">● 20th January 1898: Krishnarao Ganeshpant Fulanbrikar (Master Krishnarao), a famous singer, actor, and music director, was born.</p>
-                <p class="hi" style="display: none;">● 20 जनवरी 1898: प्रसिद्ध गायक, अभिनेता और संगीत निर्देशक कृष्णराव गणेशपंत फुलांब्रिकर (मास्टर कृष्णराव) का जन्म हुआ।</p>
-                <p class="en">● 20th January 1931: 'Saroj Kumari', a feature film produced by Mahavir Photoplays and Theatres Ltd., Secunderabad, was prohibited on 20th January on the grounds that it was "sordid" and "revolting".</p>
-                <p class="hi" style="display: none;">● 20 जनवरी 1931: महावीर फोटोप्ले और थिएटर्स लिमिटेड, सिकंदराबाद द्वारा निर्मित फीचर फिल्म 'सरोज कुमारी' को 20 जनवरी को "घिनौना" और "घृणित" होने के आधार पर प्रतिबंधित कर दिया गया था।</p>
-                <p class="en">● 20th January 1948: 1. A bomb exploded near Birla House during a prayer meeting of Gandhi. 2. A three-member UN Commission for investigation/mediation on Kashmir was formed. 3. K.M. Cariappa succeeded Lieutenant General D. Rissell as the Army Commander, Delhi and East Punjab, and was responsible for conducting the operation in Kashmir.</p>
-                <p class="hi" style="display: none;">● 20 जनवरी 1948: 1. गांधी की प्रार्थना सभा के दौरान बिरला हाउस के पास एक बम विस्फोट हुआ। 2. कश्मीर पर जांच/मध्यस्थता के लिए तीन सदस्यीय संयुक्त राष्ट्र आयोग का गठन किया गया। 3. के.एम. करियप्पा ने लेफ्टिनेंट जनरल डी. रसेल की जगह दिल्ली और पूर्वी पंजाब के सेना कमांडर के रूप में कार्यभार संभाला और कश्मीर में ऑपरेशन करने के लिए जिम्मेदार थे।</p>
-                <p class="en">● 20th January 1949: Junagarh formally merged with Saurashtra.</p>
-                <p class="hi" style="display: none;">● 20 जनवरी 1949: जूनागढ़ का औपचारिक रूप से सौराष्ट्र में विलय हो गया।</p>
-                <p class="en">● 20th January 1952: Vasant Patankar, a famous Marathi writer, was born.</p>
-                <p class="hi" style="display: none;">● 20 जनवरी 1952: प्रसिद्ध मराठी लेखक वसंत पाटणकर का जन्म हुआ।</p>
-                <p class="en">● 20th January 1957: The first Indian Atomic Reactor "Apsara" at Trombay, Mumbai, was dedicated to the nation.</p>
-                <p class="hi" style="display: none;">● 20 जनवरी 1957: मुंबई के ट्रॉम्बे में पहला भारतीय परमाणु रिएक्टर "अप्सरा" राष्ट्र को समर्पित किया गया।</p>
-                <p class="en">● 20th January 1972: Manipur, Meghalaya, and Tripura become states of the Indian Union. Arunachal Pradesh and Mizoram become Union Territories. Assam's North East Frontier Agency (NEFA) was renamed as Arunachal Pradesh.</p>
-                <p class="hi" style="display: none;">● 20 जनवरी 1972: मणिपुर, मेघालय और त्रिपुरा भारतीय संघ के राज्य बने। अरुणाचल प्रदेश और मिजोरम केंद्र शासित प्रदेश बने। असम की उत्तर पूर्व सीमांत एजेंसी (एनईएफए) का नाम बदलकर अरुणाचल प्रदेश कर दिया गया।</p>
-                <p class="en">● 20th January 1990: Dr. Raja Ramanna was sworn in as Minister of State for Defence.</p>
-                <p class="hi" style="display: none;">● 20 जनवरी 1990: डॉ. राजा रामन्ना ने रक्षा राज्य मंत्री के रूप में शपथ ली।</p>
-                <p class="en">● 20th January 1993: Karnataka ministry expanded to include 27 more members; S.M. Krishna was made Dy. CM.</p>
-                <p class="hi" style="display: none;">● 20 जनवरी 1993: कर्नाटक मंत्रालय का विस्तार कर 27 और सदस्यों को शामिल किया गया; एस.एम. कृष्णा को उप मुख्यमंत्री बनाया गया।</p>
-                <p class="en">● 20th January 1993: Captain Karamjeet Singh, the first Param Vir Chakra Awardee, passed away.</p>
-                <p class="hi" style="display: none;">● 20 जनवरी 1993: पहले परमवीर चक्र पुरस्कार विजेता कैप्टन करमजीत सिंह का निधन।</p>
-                <p class="en">● 20th January 1993: Bindeshwari Dube, former Chief Minister of Bihar, passed away.</p>
-                <p class="hi" style="display: none;">● 20 जनवरी 1993: बिहार के पूर्व मुख्यमंत्री बिंदेश्वरी दुबे का निधन।</p>
-                <p class="en">● 20th January 1995: Supreme Court ordered the closure of 84 industries in and around Taj Mahal in UP due to pollution.</p>
-                <p class="hi" style="display: none;">● 20 जनवरी 1995: सुप्रीम कोर्ट ने प्रदूषण के कारण यूपी में ताजमहल के आसपास 84 उद्योगों को बंद करने का आदेश दिया।</p>
-                <p class="en">● 20th January 1996: The Indian Army conducted United Nations Peacekeeping Operations in New Delhi from 20th to 26th January 1996, wherein delegates from UN HQ and 17 foreign countries of the Asia-Pacific region participated. The Under Secretary General, Mr. Kofi Annan, was the chief guest.</p>
-                <p class="hi" style="display: none;">● 20 जनवरी 1996: भारतीय सेना ने 20 से 26 जनवरी 1996 तक नई दिल्ली में संयुक्त राष्ट्र शांति स्थापना अभियान का आयोजन किया, जिसमें संयुक्त राष्ट्र मुख्यालय और एशिया-प्रशांत क्षेत्र के 17 विदेशी देशों के प्रतिनिधियों ने भाग लिया। अंडर सेक्रेटरी जनरल श्री कोफी अन्नान मुख्य अतिथि थे।</p>
-                <p class="en">● 20th January 1997: Indian Express launched its 18th edition from Belgaum.</p>
-                <p class="hi" style="display: none;">● 20 जनवरी 1997: इंडियन एक्सप्रेस ने बेलगाम से अपना 18वां संस्करण लॉन्च किया।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 21</b></p>
-                <p class="hi" style="display: none;">21 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 21st January 1805: Holkar and Jat forces defeated the British at Bharatpur.</p>
-                <p class="hi" style="display: none;">● 21 जनवरी 1805: होलकर और जाट बलों ने भरतपुर में अंग्रेजों को हराया।</p>
-                <p class="en">● 21st January 1972: Manipur and Meghalaya attained statehood in India.</p>
-                <p class="hi" style="display: none;">● 21 जनवरी 1972: मणिपुर और मेघालय ने भारत में राज्य का दर्जा प्राप्त किया।</p>
-                <p class="en">● 21st January 2000: India successfully tested its state-of-the-art anti-tank missile system, Fire & Forge.</p>
-                <p class="hi" style="display: none;">● 21 जनवरी 2000: भारत ने अपने अत्याधुनिक एंटी-टैंक मिसाइल सिस्टम, फायर एंड फोर्ज का सफल परीक्षण किया।</p>
-                <p class="en">● 21st January 2008: India launched an Israeli spy satellite into polar orbit.</p>
-                <p class="hi" style="display: none;">● 21 जनवरी 2008: भारत ने एक इजरायली जासूसी उपग्रह को ध्रुवीय कक्षा में लॉन्च किया।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 22</b></p>
-                <p class="hi" style="display: none;">22 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 22nd January 1901: After the death of Queen Victoria, Edward VII becomes the King of England.</p>
-                <p class="hi" style="display: none;">● 22 जनवरी 1901: महारानी विक्टोरिया की मृत्यु के बाद, एडवर्ड VII इंग्लैंड के राजा बने।</p>
-                <p class="en">● 22nd January 1924: Ramsay MacDonald becomes the first Prime Minister of the Labour Party in Britain.</p>
-                <p class="hi" style="display: none;">● 22 जनवरी 1924: रैमसे मैकडोनाल्ड ब्रिटेन में लेबर पार्टी के पहले प्रधानमंत्री बने।</p>
-                <p class="en">● 22nd January 1947: The Constitution Committee approves a resolution outlining the structure of the Indian Constitution.</p>
-                <p class="hi" style="display: none;">● 22 जनवरी 1947: संविधान समिति ने भारतीय संविधान की संरचना को रेखांकित करने वाले एक प्रस्ताव को मंजूरी दी।</p>
-                <p class="en">● 22nd January 1963: The National Library for the Blind is established in Dehradun, India.</p>
-                <p class="hi" style="display: none;">● 22 जनवरी 1963: भारत के देहरादून में नेशनल लाइब्रेरी फॉर द ब्लाइंड की स्थापना की गई।</p>
-                <p class="en">● 22nd January 1971: Sarv Mittra Sikri becomes the 13th Chief Justice of India.</p>
-                <p class="hi" style="display: none;">● 22 जनवरी 1971: सर्व मित्र सिकरी भारत के 13वें मुख्य न्यायाधीश बने।</p>
-                <p class="en">● 22nd January 2001: The missile carrier ship INS Mumbai is launched into the Indian Navy.</p>
-                <p class="hi" style="display: none;">● 22 जनवरी 2001: मिसाइल वाहक जहाज आईएनएस मुंबई को भारतीय नौसेना में शामिल किया गया।</p>
-                <p class="en">● 22nd January 2009: The film Slumdog Millionaire is nominated for an Oscar.</p>
-                <p class="hi" style="display: none;">● 22 जनवरी 2009: फिल्म स्लमडॉग मिलियनेयर को ऑस्कर के लिए नामांकित किया गया।</p>
-                <p class="en">● 22nd January 2015: The “Beti Bachao, Beti Padhao” scheme is launched by Prime Minister Narendra Modi in Panipat, Haryana.</p>
-                <p class="hi" style="display: none;">● 22 जनवरी 2015: प्रधानमंत्री नरेंद्र मोदी द्वारा हरियाणा के पानीपत में "बेटी बचाओ, बेटी पढ़ाओ" योजना शुरू की गई।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 23</b></p>
-                <p class="hi" style="display: none;">23 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 23rd January 1897: Birth of Subhas Chandra Bose, a prominent leader in the Indian independence movement.</p>
-                <p class="hi" style="display: none;">● 23 जनवरी 1897: सुभाष चंद्र बोस का जन्म, भारतीय स्वतंत्रता आंदोलन में एक प्रमुख नेता।</p>
-                <p class="en">● 23rd January 1926: Bal Thackeray, the founder of Shiv Sena, was born.</p>
-                <p class="hi" style="display: none;">● 23 जनवरी 1926: बाल ठाकरे, शिवसेना के संस्थापक, का जन्म हुआ।</p>
-                <p class="en">● 23rd January 1965: India's first alloy steel plant was inaugurated in Durgapur.</p>
-                <p class="hi" style="display: none;">● 23 जनवरी 1965: भारत का पहला मिश्र धातु इस्पात संयंत्र दुर्गापुर में उद्घाटन किया गया।</p>
-                <p class="en">● 23rd January 1973: The Supreme Court of India ruled in the Kesavananda Bharati case, establishing the basic structure doctrine of the Constitution.</p>
-                <p class="hi" style="display: none;">● 23 जनवरी 1973: भारत के सर्वोच्च न्यायालय ने केशवानंद भारती मामले में फैसला सुनाया, जिसमें संविधान के मूल ढांचे के सिद्धांत की स्थापना की गई।</p>
-                <p class="en">● 23rd January 2007: India and Russia agreed to manufacture medium-sized versatile transport planes.</p>
-                <p class="hi" style="display: none;">● 23 जनवरी 2007: भारत और रूस ने मध्यम आकार के बहुमुखी परिवहन विमानों के निर्माण पर सहमति व्यक्त की।</p>
-                <p class="en">● 23rd January 2009: Restrictions on smoking scenes in films and TV shows were lifted.</p>
-                <p class="hi" style="display: none;">● 23 जनवरी 2009: फिल्मों और टीवी शो में धूम्रपान दृश्यों पर प्रतिबंध हटा दिया गया।</p>
-                <p class="en">● 23rd January 2004: The Indian government announced the Pravasi Bharatiya Samman Award to honor exceptional contributions by overseas Indians.</p>
-                <p class="hi" style="display: none;">● 23 जनवरी 2004: भारतीय सरकार ने प्रवासी भारतीय सम्मान पुरस्कार की घोषणा की, जो प्रवासी भारतीयों के असाधारण योगदान का सम्मान करता है।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 24</b></p>
-                <p class="hi" style="display: none;">24 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 24th January 1950: The first meeting of the Constituent Assembly was held to draft the Constitution of India.</p>
-                <p class="hi" style="display: none;">● 24 जनवरी 1950: भारतीय संविधान का मसौदा तैयार करने के लिए संविधान सभा की पहली बैठक आयोजित की गई।</p>
-                <p class="en">● 24th January 1979: India celebrated its first National Girl Child Day to promote the rights of the girl child.</p>
-                <p class="hi" style="display: none;">● 24 जनवरी 1979: भारत ने बालिका अधिकारों को बढ़ावा देने के लिए अपना पहला राष्ट्रीय बालिका दिवस मनाया।</p>
-                <p class="en">● 24th January 1992: India established diplomatic relations with Israel.</p>
-                <p class="hi" style="display: none;">● 24 जनवरी 1992: भारत ने इज़राइल के साथ राजनयिक संबंध स्थापित किए।</p>
-                <p class="en">● 24th January 1997: Lalu Prasad Yadav, then Chief Minister of Bihar, was indicted in the Fodder Scam.</p>
-                <p class="hi" style="display: none;">● 24 जनवरी 1997: बिहार के तत्कालीन मुख्यमंत्री लालू प्रसाद यादव को चारा घोटाले में आरोपित किया गया।</p>
-                <p class="en">● 24th January 2002: The city of Delhi observed a traffic-free day to promote environmental awareness.</p>
-                <p class="hi" style="display: none;">● 24 जनवरी 2002: पर्यावरण जागरूकता को बढ़ावा देने के लिए दिल्ली शहर ने एक ट्रैफिक-फ्री दिवस मनाया।</p>
-                <p class="en">● 24th January 2010: The first edition of the Jaipur Literature Festival was held.</p>
-                <p class="hi" style="display: none;">● 24 जनवरी 2010: जयपुर साहित्य महोत्सव का पहला संस्करण आयोजित किया गया।</p>
-                <p class="en">● 24th January 2012: India's Mars Orbiter Mission (Mangalyaan) was launched.</p>
-                <p class="hi" style="display: none;">● 24 जनवरी 2012: भारत का मंगलयान मिशन (मंगलयान) लॉन्च किया गया।</p>
-                <p class="en">● 24th January 2016: The Indian Space Research Organisation (ISRO) successfully launched 104 satellites in a single mission.</p>
-                <p class="hi" style="display: none;">● 24 जनवरी 2016: भारतीय अंतरिक्ष अनुसंधान संगठन (इसरो) ने एक ही मिशन में 104 उपग्रहों को सफलतापूर्वक लॉन्च किया।</p>
-                <p class="en">● 24th January 2019: The Supreme Court of India ruled that the Aadhaar card is mandatory for filing income tax returns and obtaining a Permanent Account Number (PAN).</p>
-                <p class="hi" style="display: none;">● 24 जनवरी 2019: भारत के सर्वोच्च न्यायालय ने फैसला सुनाया कि आयकर रिटर्न दाखिल करने और स्थायी खाता संख्या (पैन) प्राप्त करने के लिए आधार कार्ड अनिवार्य है।</p>
-                <p class="en">● 24th January 2021: India's COVID-19 vaccination drive began, marking a significant step in the fight against the pandemic.</p>
-                <p class="hi" style="display: none;">● 24 जनवरी 2021: भारत का COVID-19 टीकाकरण अभियान शुरू हुआ, जो महामारी के खिलाफ लड़ाई में एक महत्वपूर्ण कदम है।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 25</b></p>
-                <p class="hi" style="display: none;">25 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 25th January 1955: India hosts the Asian Games for the first time in New Delhi.</p>
-                <p class="hi" style="display: none;">● 25 जनवरी 1955: भारत ने पहली बार नई दिल्ली में एशियाई खेलों की मेजबानी की।</p>
-                <p class="en">● 25th January 1962: India and Portugal formally agree on the annexation of Goa, Daman, and Diu.</p>
-                <p class="hi" style="display: none;">● 25 जनवरी 1962: भारत और पुर्तगाल ने गोवा, दमन और दीव के विलय पर औपचारिक रूप से सहमति व्यक्त की।</p>
-                <p class="en">● 25th January 1971: Himachal Pradesh becomes the 18th state of India.</p>
-                <p class="hi" style="display: none;">● 25 जनवरी 1971: हिमाचल प्रदेश भारत का 18वां राज्य बना।</p>
-                <p class="en">● 25th January 1975: Sheikh Mujibur Rahman becomes the President of Bangladesh.</p>
-                <p class="hi" style="display: none;">● 25 जनवरी 1975: शेख मुजीबुर रहमान बांग्लादेश के राष्ट्रपति बने।</p>
-                <p class="en">● 25th January 1980: India and the Soviet Union sign a trade agreement.</p>
-                <p class="hi" style="display: none;">● 25 जनवरी 1980: भारत और सोवियत संघ ने एक व्यापार समझौते पर हस्ताक्षर किए।</p>
-                <p class="en">● 25th January 1988: The first National Voters' Day is celebrated in India to encourage more young voters to take part in the political process.</p>
-                <p class="hi" style="display: none;">● 25 जनवरी 1988: भारत में अधिक युवा मतदाताओं को राजनीतिक प्रक्रिया में भाग लेने के लिए प्रोत्साहित करने के लिए पहला राष्ट्रीय मतदाता दिवस मनाया गया।</p>
-                <p class="en">● 25th January 2001: A powerful earthquake strikes Gujarat, causing widespread damage and loss of life.</p>
-                <p class="hi" style="display: none;">● 25 जनवरी 2001: गुजरात में एक शक्तिशाली भूकंप आया, जिससे व्यापक क्षति और जानमाल का नुकसान हुआ।</p>
-                <p class="en">● 25th January 2003: The Prime Minister of India inaugurates the Indian Ocean Naval Symposium (IONS) in New Delhi.</p>
-                <p class="hi" style="display: none;">● 25 जनवरी 2003: भारत के प्रधान मंत्री ने नई दिल्ली में भारतीय महासागर नौसेना संगोष्ठी (IONS) का उद्घाटन किया।</p>
-                <p class="en">● 25th January 2007: The Kala Ghoda Arts Festival, an annual cultural festival, begins in Mumbai.</p>
-                <p class="hi" style="display: none;">● 25 जनवरी 2007: मुंबई में वार्षिक सांस्कृतिक उत्सव, काला घोड़ा कला महोत्सव, शुरू होता है।</p>
-                <p class="en">● 25th January 2010: The Indian government announces the launch of the Unique Identification Authority of India (UIDAI) to issue Aadhaar cards.</p>
-                <p class="hi" style="display: none;">● 25 जनवरी 2010: भारतीय सरकार ने आधार कार्ड जारी करने के लिए भारतीय विशिष्ट पहचान प्राधिकरण (UIDAI) के शुभारंभ की घोषणा की।</p>
-                <p class="en">● 25th January 2012: India successfully tests its first indigenous long-range ballistic missile, Agni-V.</p>
-                <p class="hi" style="display: none;">● 25 जनवरी 2012: भारत ने अपनी पहली स्वदेशी लंबी दूरी की बैलिस्टिक मिसाइल, अग्नि-V का सफल परीक्षण किया।</p>
-                <p class="en">● 25th January 2018: India celebrates its 9th National Voters' Day to promote voter awareness and participation.</p>
-                <p class="hi" style="display: none;">● 25 जनवरी 2018: मतदाता जागरूकता और भागीदारी को बढ़ावा देने के लिए भारत ने अपना 9वां राष्ट्रीय मतदाता दिवस मनाया।</p>
-                <hr>
-                <p class="en"><b>Historical Events on January 26</b></p>
-                <p class="hi" style="display: none;">26 जनवरी के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● 26th January 1950: India becomes a republic, and the Constitution of India comes into effect.</p>
-                <p class="hi" style="display: none;">● 26 जनवरी 1950: भारत एक गणराज्य बन गया, और भारतीय संविधान लागू हुआ।</p>
-                <p class="en">● 26th January 1965: Hindi is declared the official language of India.</p>
-                <p class="hi" style="display: none;">● 26 जनवरी 1965: हिंदी को भारत की आधिकारिक भाषा घोषित किया गया।</p>
-                <p class="en">● 26th January 1972: The first Republic Day parade is held at Rajpath, New Delhi.</p>
-                <p class="hi" style="display: none;">● 26 जनवरी 1972: नई दिल्ली के राजपथ पर पहली गणतंत्र दिवस परेड आयोजित की गई।</p>
-                <p class="en">● 26th January 2001: A devastating earthquake strikes Gujarat, causing widespread destruction and loss of life.</p>
-                <p class="hi" style="display: none;">● 26 जनवरी 2001: गुजरात में एक विनाशकारी भूकंप आया, जिससे व्यापक विनाश और जानमाल का नुकसान हुआ।</p>
-                <p class="en">● 26th January 2015: US President Barack Obama becomes the first US President to attend India's Republic Day parade as the chief guest.</p>
-                <p class="hi" style="display: none;">● 26 जनवरी 2015: अमेरिकी राष्ट्रपति बराक ओबामा भारत के गणतंत्र दिवस परेड में मुख्य अतिथि के रूप में शामिल होने वाले पहले अमेरिकी राष्ट्रपति बने।</p>
-                <hr>
-            </div>
-            <button id="load-more">Load more...</button>
+            
+            
         </div>
+
+        <a href="more-events.html" id="load-more" style="background-color: #315665; color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 1rem;">Load more...</a>
         <div class="share-buttons">
             <a href="sms:?&body=Check%20out%20this%20event!%20https://example.com" class="sms">
                 <i class="fas fa-sms"></i> Share via Text Message
@@ -908,257 +172,463 @@
             </a>
         </div>
     </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>soon.</p>
+    <!-- Add a container for search results popup -->
+    <div id="search-popup" class="search-popup">
+        <span class="close-btn" onclick="document.getElementById('search-popup').style.display='none'">CLOSE</span>
+    </div>
+    <div id="calendar-popup" class="calendar-popup">
+        <div class="calendar">
+            <div class="calendar-header">
+                <button id="prev-month">&lt;</button>
+                <div id="current-month">January 2023</div>
+                <button id="next-month">&gt;</button>
+                <span class="close-btn" onclick="document.getElementById('calendar-popup').classList.remove('show'); document.getElementById('calendar-popup').classList.add('hide'); setTimeout(() => document.getElementById('calendar-popup').style.display = 'none', 300);">×</span>
+            </div>
+            <div class="calendar-weekdays">
+                <div class="calendar-weekday">Sun</div>
+                <div class="calendar-weekday">Mon</div>
+                <div class="calendar-weekday">Tue</div>
+                <div class="calendar-weekday">Wed</div>
+                <div class="calendar-weekday">Thu</div>
+                <div class="calendar-weekday">Fri</div>
+                <div class="calendar-weekday">Sat</div>
+            </div>
+            <div class="calendar-days">
+                <!-- Calendar days will be dynamically generated -->
+            </div>
         </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>soon.</p>
-        </div>
-        <p id="no-projects" style="display: none;">There are currently no projects available.</p>
-        <!-- Add more projects as needed -->
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+    </div>
     <footer>
-        <form id="subscribe-form">
-            <label for="subscribe-email">Subscribe for updates:</label>
-            <input type="email" id="subscribe-email" name="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
-        </form>
-        <p>© 2025 Notable Events. All rights reserved.</p>
+        <p>© 2025 Time Snapshot. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
     <script>
+        // Prevent page reload when navigating between pages
+        document.querySelectorAll('nav ul li a').forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').replace('.html', '');
+                if (targetId === 'about' || targetId === 'contact' || targetId === 'help') {
+                    window.location.href = this.getAttribute('href'); // Navigate to the page
+                } else {
+                    document.querySelectorAll('section').forEach(function(section) {
+                        section.style.display = 'none';
+                    });
+                    document.getElementById(targetId).style.display = 'block';
+                }
+            });
+        });
+
+        // Show the default section
+        document.getElementById('YOU KNOW').style.display = 'block';
+
         let darkModePopupShown = false;
-        let languagePopupShown = false;
 
         document.getElementById('load-more').addEventListener('click', function() {
-            var moreEvents = document.getElementById('more-events');
-            if (moreEvents.style.display === 'none') {
-                moreEvents.style.display = 'block';
-                this.textContent = 'Show less';
-            } else {
-                moreEvents.style.display = 'none';
-                this.textContent = 'Load more...';
-            }
+            window.location.href = 'more-events.html';
         });
 
-        document.getElementById('projects-link').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.getElementById('no-projects').style.display = 'block';
-        });
-
-        document.getElementById('search-input').addEventListener('input', function() {
+        document.getElementById('search-input').addEventListener('input', async function() {
             var filter = this.value.toLowerCase();
+            var searchPopup = document.getElementById('search-popup');
+            searchPopup.innerHTML = '<span class="close-btn" onclick="document.getElementById(\'search-popup\').style.display=\'none\'">CLOSE</span>'; // Clear previous search results and add close button
+            searchPopup.style.display = filter ? 'block' : 'none'; // Show or hide the popup
+
             var events = document.querySelectorAll('#events p.en, #events p.hi');
+            var hasResults = false;
             events.forEach(function(event) {
                 var text = event.textContent.toLowerCase();
                 if (text.includes(filter)) {
-                    event.style.display = '';
                     var regex = new RegExp(`(${filter})`, 'gi');
-                    event.innerHTML = event.textContent.replace(regex, '<span class="highlight">$1</span>');
-                } else {
-                    event.style.display = 'none';
-                    event.innerHTML = event.textContent; // Remove previous highlights
+                    var highlightedText = event.textContent.replace(regex, '<span class="highlight">$1</span>');
+                    var clonedEvent = event.cloneNode(true);
+                    clonedEvent.innerHTML = highlightedText;
+                    searchPopup.appendChild(clonedEvent);
+                    hasResults = true;
                 }
             });
+
+            // Fetch and display events from more-events.html
+            if (filter) {
+                const response = await fetch('more-events.html');
+                const text = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+                const moreEvents = doc.querySelectorAll('#more-events p.en, #more-events p.hi');
+                moreEvents.forEach(function(event) {
+                    var text = event.textContent.toLowerCase();
+                    if (text.includes(filter)) {
+                        var regex = new RegExp(`(${filter})`, 'gi');
+                        var highlightedText = event.textContent.replace(regex, '<span class="highlight">$1</span>');
+                        var clonedEvent = event.cloneNode(true);
+                        clonedEvent.innerHTML = highlightedText;
+                        searchPopup.appendChild(clonedEvent);
+                        hasResults = true;
+                    }
+                });
+            }
+
+            if (!hasResults) {
+                var noItemsMessage = document.createElement('p');
+                noItemsMessage.textContent = 'The search results were not found';
+                searchPopup.appendChild(noItemsMessage);
+            }
+        });
+
+        // Hide search popup when clicking outside of it
+        document.addEventListener('click', function(event) {
+            var searchPopup = document.getElementById('search-popup');
+            var searchInput = document.getElementById('search-input');
+            if (!searchPopup.contains(event.target) && !searchInput.contains(event.target)) {
+                searchPopup.style.display = 'none';
+            }
         });
 
         document.getElementById('dark-mode-toggle').addEventListener('click', function() {
             document.body.classList.toggle('dark-mode');
-            document.querySelector('header').classList.toggle('dark-mode');
-            document.querySelector('nav ul').classList.toggle('dark-mode');
-            document.querySelectorAll('nav ul li a').forEach(function(link) {
-                link.classList.toggle('dark-mode');
-            });
-            document.querySelectorAll('section').forEach(function(section) {
-                section.classList.toggle('dark-mode');
-            });
-            document.querySelector('footer').classList.toggle('dark-mode');
-            document.querySelectorAll('form input, form textarea').forEach(function(input) {
-                input.classList.toggle('dark-mode');
-            });
-            document.querySelectorAll('form button').forEach(function(button) {
-                button.classList.toggle('dark-mode');
-            });
-            document.querySelectorAll('button').forEach(function(button) {
-                button.classList.toggle('dark-mode');
-            });
-            document.querySelector('#subscribe-form input[type="email"]').classList.toggle('dark-mode');
-            document.querySelector('#subscribe-form button').classList.toggle('dark-mode');
-            // document.querySelector('.updates-text').classList.toggle('dark-mode');
-            if (!darkModePopupShown) {
-                document.getElementById('dark-mode-popup').style.display = 'block';
-                darkModePopupShown = true;
+            // Save dark mode state to localStorage
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
             }
-            document.getElementById('language-popup').style.display = 'none';
         });
 
-        document.getElementById('language-switch').addEventListener('click', function() {
-            var elements = document.querySelectorAll('.en, .hi');
-            elements.forEach(function(element) {
-                if (element.classList.contains('en')) {
-                    element.style.display = element.style.display === 'none' ? '' : 'none';
-                } else if (element.classList.contains('hi')) {
-                    element.style.display = element.style.display === 'none' ? '' : 'none';
+        // Load dark mode state from localStorage
+        window.addEventListener('load', function() {
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+            }
+        });
+
+        
+        document.querySelectorAll('.share-buttons a').forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const url = window.location.href;
+                const text = "Check out this event!";
+                if (this.classList.contains('sms')) {
+                    window.location.href = `sms:?&body=${encodeURIComponent(text + ' ' + url)}`;
+                } else if (this.classList.contains('whatsapp')) {
+                    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text + ' ' + url)}`, '_blank');
                 }
             });
-            if (document.getElementById('dark-mode-popup').style.display === 'none' && !languagePopupShown) {
-                document.getElementById('language-popup').style.display = 'block';
-                languagePopupShown = true;
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const calendarDays = document.querySelector('.calendar-days');
+            const currentMonth = document.getElementById('current-month');
+            const prevMonthBtn = document.getElementById('prev-month');
+            const nextMonthBtn = document.getElementById('next-month');
+
+            const today = new Date();
+            let date = new Date();
+            let year = date.getFullYear();
+            let month = date.getMonth();
+
+            function renderCalendar() {
+                calendarDays.innerHTML = '';
+                const firstDayOfMonth = new Date(year, month, 1).getDay();
+                const lastDateOfMonth = new Date(year, month + 1, 0).getDate();
+                const lastDayOfLastMonth = new Date(year, month, 0).getDate();
+
+                currentMonth.textContent = date.toLocaleDateString('default', { month: 'long', year: 'numeric' });
+
+                for (let i = firstDayOfMonth; i > 0; i--) {
+                    const day = document.createElement('div');
+                    day.classList.add('calendar-day');
+                    day.textContent = lastDayOfLastMonth - i + 1;
+                    day.style.opacity = '0.5';
+                    calendarDays.appendChild(day);
+                }
+
+                for (let i = 1; i <= lastDateOfMonth; i++) {
+                    const day = document.createElement('div');
+                    day.classList.add('calendar-day');
+                    day.textContent = i;
+                    if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+                        day.classList.add('current');
+                    }
+                    day.addEventListener('click', async function() {
+                        const targetId = `${month + 1}-${i}`;
+                        let targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        } else {
+                            const pages = ['more-events.html', 'second.html'];
+                            for (const page of pages) {
+                                const response = await fetch(page);
+                                const text = await response.text();
+                                const parser = new DOMParser();
+                                const doc = parser.parseFromString(text, 'text/html');
+                                targetElement = doc.getElementById(targetId);
+                                if (targetElement) {
+                                    window.location.href = `${page}#${targetId}`;
+                                    return;
+                                }
+                            }
+                            alert('No events found for this date.');
+                        }
+                    });
+                    calendarDays.appendChild(day);
+                }
+            }
+
+            prevMonthBtn.addEventListener('click', () => {
+                month--;
+                if (month < 0) {
+                    month = 11;
+                    year--;
+                }
+                date = new Date(year, month);
+                renderCalendar();
+            });
+
+            nextMonthBtn.addEventListener('click', () => {
+                month++;
+                if (month > 11) {
+                    month = 0;
+                    year++;
+                }
+                date = new Date(year, month);
+                renderCalendar();
+            });
+
+            renderCalendar();
+        });
+
+        document.getElementById('menubar-icon').addEventListener('click', function() {
+            const popup = document.getElementById('menubar-popup');
+            if (popup.classList.contains('show')) {
+                document.getElementById('calendar-popup').classList.remove('show');
+                document.getElementById('calendar-popup').classList.add('hide');
+                setTimeout(() => {
+                    document.getElementById('calendar-popup').style.display = 'none';
+                    popup.classList.remove('show');
+                    popup.classList.add('hide');
+                    setTimeout(() => popup.style.display = 'none', 300); // Hide after animation
+                }, 300); // Close calendar before hiding menubar
+            } else {
+                popup.classList.remove('hide');
+                popup.classList.add('show');
+                popup.style.display = 'block'; // Show immediately
             }
         });
 
-        document.getElementById('close-popup').addEventListener('click', function() {
-            document.getElementById('dark-mode-popup').style.display = 'none';
-            if (!languagePopupShown) {
-                document.getElementById('language-popup').style.display = 'block';
-                languagePopupShown = true;
+        document.addEventListener('click', function(event) {
+            const menubarIcon = document.getElementById('menubar-icon');
+            const menubarPopup = document.getElementById('menubar-popup');
+            const calendarPopup = document.getElementById('calendar-popup');
+            if (!menubarIcon.contains(event.target) && !menubarPopup.contains(event.target) && !calendarPopup.contains(event.target)) {
+                document.getElementById('calendar-popup').classList.remove('show');
+                document.getElementById('calendar-popup').classList.add('hide');
+                setTimeout(() => {
+                    calendarPopup.style.display = 'none';
+                    menubarPopup.classList.remove('show');
+                    menubarPopup.classList.add('hide');
+                    setTimeout(() => menubarPopup.style.display = 'none', 300);
+                }, 300); // Close calendar before hiding menubar
             }
         });
 
-        document.getElementById('close-language-popup').addEventListener('click', function() {
-            document.getElementById('language-popup').style.display = 'none';
+        // Add event listener for the "Back" button
+        document.querySelector('#menubar-popup .back-button').addEventListener('click', function() {
+            const popup = document.getElementById('menubar-popup');
+            document.getElementById('calendar-popup').classList.remove('show');
+            document.getElementById('calendar-popup').classList.add('hide');
+            setTimeout(() => {
+                document.getElementById('calendar-popup').style.display = 'none';
+                popup.classList.remove('show');
+                popup.classList.add('hide');
+                setTimeout(() => popup.style.display = 'none', 300);
+            }, 300); // Close calendar before hiding menubar
         });
 
-        // Ensure pop-ups are shown one by one
-        document.getElementById('dark-mode-toggle').addEventListener('click', function() {
-            if (document.getElementById('language-popup').style.display === 'block') {
-                document.getElementById('language-popup').style.display = 'none';
-            }
-            if (!darkModePopupShown) {
-                document.getElementById('dark-mode-popup').style.display = 'block';
-                darkModePopupShown = true;
-            }
+        document.getElementById('calendar-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            const calendarPopup = document.getElementById('calendar-popup');
+            calendarPopup.classList.remove('hide');
+            calendarPopup.classList.add('show');
+            calendarPopup.style.display = 'block';
         });
 
-        document.getElementById('language-switch').addEventListener('click', function() {
-            if (document.getElementById('dark-mode-popup').style.display === 'block') {
-                document.getElementById('dark-mode-popup').style.display = 'none';
-            }
-            if (!languagePopupShown) {
-                document.getElementById('language-popup').style.display = 'block';
-                languagePopupShown = true;
-            }
-        });
-
-        // Show pop-ups only once after user enters the website
-        window.addEventListener('load', function() {
-            if (!darkModePopupShown) {
-                document.getElementById('dark-mode-popup').style.display = 'block';
-                darkModePopupShown = true;
-            }
-        });
-
-        document.getElementById('close-popup').addEventListener('click', function() {
-            document.getElementById('dark-mode-popup').style.display = 'none';
-            if (!languagePopupShown) {
-                document.getElementById('language-popup').style.display = 'block';
-                languagePopupShown = true;
-            }
-        });
-
-        function togglePopup(openId, closeId) {
-            document.getElementById(closeId).style.display = 'none';
-            let popup = document.getElementById(openId);
-            popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
-        }
-
-        function closePopup(popupId) {
-            document.getElementById(popupId).style.display = 'none';
-        }
-
-        // Ensure pop-ups are shown one by one
-        document.getElementById('dark-mode-toggle').addEventListener('click', function() {
-            if (document.getElementById('language-popup').style.display === 'block') {
-                document.getElementById('language-popup').style.display = 'none';
-            }
-            if (!darkModePopupShown) {
-                document.getElementById('dark-mode-popup').style.display = 'block';
-                darkModePopupShown = true;
-            }
-        });
-
-        document.getElementById('language-switch').addEventListener('click', function() {
-            if (document.getElementById('dark-mode-popup').style.display === 'block') {
-                document.getElementById('dark-mode-popup').style.display = 'none';
-            }
-            if (!languagePopupShown) {
-                document.getElementById('language-popup').style.display = 'block';
-                languagePopupShown = true;
-            }
-        });
-
-        // Add script to set the current date
-        window.addEventListener('load', function() {
-            const currentDate = new Date();
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            document.getElementById('current-date').textContent = `Today's Date: ${currentDate.toLocaleDateString(undefined, options)}`;
-        });
-
-        // Add script to set the current date in the format like "22nd January"
-        window.addEventListener('load', function() {
+       
+      
+        async function scrollToCurrentDateEvent() {
             const currentDate = new Date();
             const day = currentDate.getDate();
             const month = currentDate.toLocaleString('default', { month: 'long' });
-            const year = currentDate.getFullYear();
-            const suffix = (day % 10 === 1 && day !== 11) ? 'st' : (day % 10 === 2 && day !== 12) ? 'nd' : (day % 10 === 3 && day !== 13) ? 'rd' : 'th';
-            const formattedDate = `${day}${suffix} ${month}`;
-            const currentDateHtml = `
-                <p class="en" style="color: white; background-color: #2383a6; text-align: center; border-radius:9px; "><b>Historical Events on ${formattedDate}</b></p>
-                <p class="hi" style="display: none;">${day} ${month} के ऐतिहासिक घटनाक्रम</p>
-                <p class="en">● ${formattedDate} 1901: After the death of Queen Victoria, Edward VII becomes the King of England.</p>
-                <p class="hi" style="display: none;">● ${day} ${month} 1901: महारानी विक्टोरिया की मृत्यु के बाद, एडवर्ड VII इंग्लैंड के राजा बने।</p>
-                <p class="en">● ${formattedDate} 1924: Ramsay MacDonald becomes the first Prime Minister of the Labour Party in Britain.</p>
-                <p class="hi" style="display: none;">● ${day} ${month} 1924: रैमसे मैकडोनाल्ड ब्रिटेन में लेबर पार्टी के पहले प्रधानमंत्री बने।</p>
-                <p class="en">● ${formattedDate} 1947: The Constitution Committee approves a resolution outlining the structure of the Indian Constitution.</p>
-                <p class="hi" style="display: none;">● ${day} ${month} 1947: संविधान समिति ने भारतीय संविधान की संरचना को रेखांकित करने वाले एक प्रस्ताव को मंजूरी दी।</p>
-                <p class="en">● ${formattedDate} 1963: The National Library for the Blind is established in Dehradun, India.</p>
-                <p class="hi" style="display: none;">● ${day} ${month} 1963: भारत के देहरादून में नेशनल लाइब्रेरी फॉर द ब्लाइंड की स्थापना की गई।</p>
-            `;
-            document.getElementById('current-date').innerHTML = currentDateHtml;
-        });
+            const targetId = `${currentDate.getMonth() + 1}-${day}`;
+
+            // Check in the current page
+            let targetParagraph = document.getElementById(targetId);
+            if (targetParagraph) {
+                targetParagraph.scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+
+            // Check in more-events.html
+            const responseMoreEvents = await fetch('more-events.html');
+            const textMoreEvents = await responseMoreEvents.text();
+            const parserMoreEvents = new DOMParser();
+            const docMoreEvents = parser.parseFromString(textMoreEvents, 'text/html');
+            targetParagraph = docMoreEvents.getElementById(targetId);
+            if (targetParagraph) {
+                window.location.href = `more-events.html#${targetParagraph.id}`;
+                return;
+            }
+
+            // Check in second.html
+            const responseSecond = await fetch('second.html');
+            const textSecond = await responseSecond.text();
+            const parserSecond = new DOMParser();
+            const docSecond = parserSecond.parseFromString(textSecond, 'text/html');
+            targetParagraph = docSecond.getElementById(targetId);
+            if (targetParagraph) {
+                window.location.href = `second.html#${targetParagraph.id}`;
+                return;
+            }
+
+            alert('No events found for today\'s date.');
+        }
+
+        // Scroll to the paragraph with the corresponding date when the current date section or paragraph is clicked
+        document.getElementById('current-date-section').addEventListener('click', scrollToCurrentDateEvent);
+        document.getElementById('current-date-paragraph').addEventListener('click', scrollToCurrentDateEvent);
     </script>
-     <script>
-        window.OneSignalDeferred = window.OneSignalDeferred || [];
-        OneSignalDeferred.push(async function(OneSignal) {
-          await OneSignal.init({
-            appId: "25245e3f-d2a0-439d-b12b-7ded8a71433b",
-            // नीचे दिए गए ऑप्शन्स ऐड करें
-            allowLocalhostAsSecureOrigin: true, // Localhost के लिए
-            promptOptions: {
-              slidedown: {
-                enabled: true, // ऑटो-परमिशन प्रॉम्प्ट
-                autoPrompt: true
-              }
-            },
-            notifyButton: {
-              enable: true // नोटिफिकेशन बेल आइकन दिखाएं
-            }
-          });
+ 
+<script>
+    // Modified language management system
+    let currentLanguage = localStorage.getItem('language') || 'en';
+
+    // Consolidated language apply function
+    function applyLanguageSettings() {
+        document.querySelectorAll('.en, .hi').forEach(el => {
+            el.style.display = el.classList.contains(currentLanguage) ? 'block' : 'none';
         });
-      </script>
-      <script>
-        OneSignalDeferred.push(async function(OneSignal) {
-            const isSubscribed = await OneSignal.User.pushSubscription.optIn;
-            if (isSubscribed) {
-                console.log("यूजर सब्सक्राइब किया हुआ है!");
+        document.querySelector('#language-toggle .lang-text').textContent = 
+            currentLanguage === 'hi' ? 'English' : 'Hindi';
+    }
+
+    // Updated toggle function
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === 'en' ? 'hi' : 'en';
+        localStorage.setItem('language', currentLanguage);
+        applyLanguageSettings();
+    }
+
+    // Enhanced content loader
+    async function checkOtherPages(dateId, defaultParagraph) {
+        const pages = ['more-events.html', 'second.html'];
+        
+        for(const page of pages) {
+            try {
+                const response = await fetch(page);
+                const html = await response.text();
+                const doc = new DOMParser().parseFromString(html, 'text/html');
+                const content = doc.getElementById(dateId);
+
+                if(content) {
+                    defaultParagraph.style.display = 'none';
+                    const dynamicCard = document.querySelector('.dynamic-card');
+                    const clonedContent = content.cloneNode(true);
+
+                    // Apply language filtering before insertion
+                    Array.from(clonedContent.children).forEach(child => {
+                        if(child.classList.contains('en') || child.classList.contains('hi')) {
+                            child.style.display = child.classList.contains(currentLanguage) ? 'block' : 'none';
+                        }
+                    });
+                    
+                    dynamicCard.appendChild(clonedContent);
+                    break;
+                }
+            } catch(error) {
+                console.error(`Error loading ${page}:`, error);
             }
-        });
-      </script>
+        }
+    }
+
+    // Modified initialization sequence
+    window.addEventListener('load', function() {
+        // Apply language first
+        applyLanguageSettings();
+        
+        // Then load dynamic content
+        updateCurrentDate();
+        
+        // Set up other event listeners
+        document.getElementById('language-toggle').addEventListener('click', toggleLanguage);
+        document.getElementById('current-date-section').addEventListener('click', scrollToCurrentDateEvent);
+        document.getElementById('current-date-paragraph').addEventListener('click', scrollToCurrentDateEvent);
+    });
+
+    // Function to update current date and show dynamic content
+    function updateCurrentDate() {
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const today = new Date();
+        const currentDate = `${today.getDate()} ${months[today.getMonth()]}, ${today.getFullYear()}`;
+        document.getElementById('current-date').textContent = currentDate;
+
+        // Format ID as month-day (e.g., February 7 = 2-7)
+        const dateId = `${today.getMonth() + 1}-${today.getDate()}`;
+        
+        // Hide default paragraph when content is found
+        const defaultParagraph = document.getElementById('current-date-paragraph');
+        
+        // Check if element exists in current page
+        const targetElement = document.getElementById(dateId);
+        
+        if(targetElement) {
+            defaultParagraph.style.display = 'none';
+            targetElement.style.display = 'block';
+        } else {
+            // Check other pages using fetch API
+            checkOtherPages(dateId, defaultParagraph);
+        }
+    }
+
+    async function scrollToCurrentDateEvent() {
+        const currentDate = new Date();
+        const day = currentDate.getDate();
+        const month = currentDate.toLocaleString('default', { month: 'long' });
+        const targetId = `${currentDate.getMonth() + 1}-${day}`;
+
+        // Check in the current page
+        let targetParagraph = document.getElementById(targetId);
+        if (targetParagraph) {
+            targetParagraph.scrollIntoView({ behavior: 'smooth' });
+            return;
+        }
+
+        // Check in more-events.html
+        const responseMoreEvents = await fetch('more-events.html');
+        const textMoreEvents = await responseMoreEvents.text();
+        const parserMoreEvents = new DOMParser();
+        const docMoreEvents = parser.parseFromString(textMoreEvents, 'text/html');
+        targetParagraph = docMoreEvents.getElementById(targetId);
+        if (targetParagraph) {
+            window.location.href = `more-events.html#${targetParagraph.id}`;
+            return;
+        }
+
+        // Check in second.html
+        const responseSecond = await fetch('second.html');
+        const textSecond = await responseSecond.text();
+        const parserSecond = new DOMParser();
+        const docSecond = parserSecond.parseFromString(textSecond, 'text/html');
+        targetParagraph = docSecond.getElementById(targetId);
+        if (targetParagraph) {
+            window.location.href = `second.html#${targetParagraph.id}`;
+            return;
+        }
+
+        alert('No events found for today\'s date.');
+    }
+
+    // Scroll to the paragraph with the corresponding date when the current date section or paragraph is clicked
+    document.getElementById('current-date-section').addEventListener('click', scrollToCurrentDateEvent);
+    document.getElementById('current-date-paragraph').addEventListener('click', scrollToCurrentDateEvent);
+</script>
 </body>
 </html>
